@@ -32,12 +32,12 @@
         .video-container { 
             position: relative; 
             width: 100%;
-            aspect-ratio: 16 / 9; /* Modern, stable way to define shape */
-            height: auto; /* Remove the fixed height 0 */
+            aspect-ratio: 16 / 9; 
             overflow: hidden; 
             border-radius: 1rem;
             background: #000;
             display: block;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* Adds a nice depth */
         }
         @media (max-height: 500px) and (orientation: landscape) {
             .video-container {
@@ -279,7 +279,7 @@
         </aside>
 
         <section class="flex-1 overflow-y-auto custom-scrollbar relative bg-white" id="mainDisplay">
-            <div class="max-w-[1100px] mx-auto px-0 md:px-8 py-4 md:py-12 relative z-10">
+            <div class="max-w-[1100px] mx-auto px-4 md:px-8 py-6 md:py-12 relative z-10">
                 <div class="video-container mb-6 group w-full">
                     <iframe id="videoPlayer" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
