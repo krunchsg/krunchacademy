@@ -286,14 +286,22 @@
                     </div>
                 </div>
             </div>
-            <button onclick="toggleMissions()" class="lg:hidden w-full my-6 p-4 bg-emerald-50 text-emerald-700 font-black text-xs uppercase tracking-[0.2em] flex items-center justify-between border-y border-emerald-100 rounded-xl shadow-sm">
-                <span>Open Mission Scroll</span>
-                <i class="fa-solid fa-chevron-down"></i>
+            <button onclick="toggleMissions()" class="lg:hidden w-full px-1 mt-4 mb-2 font-black text-[9px] text-slate-400 uppercase tracking-widest flex items-center justify-between transition-colors hover:text-emerald-600 border-t border-slate-50 pt-6">
+                <span>Select Mission</span>
+                <i class="fa-solid fa-chevron-down text-[8px]"></i>
             </button>
             <div class="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-2 bg-slate-50/50" id="lessonList"></div>
         </aside>
 
-        <section class="flex-1 overflow-y-auto custom-scrollbar relative bg-white" id="mainDisplay">
+        <section class="flex-1 overflow-y-auto custom-scrollbar relative bg-white hidden" id="mainDisplay">
+        <!-- Add this placeholder immediately after the closing </section> tag -->
+        <div id="missionPlaceholder" class="flex-1 flex flex-col items-center justify-center p-12 text-center bg-white lg:h-full">
+            <div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-300 mb-4">
+                <i class="fa-solid fa-scroll text-2xl"></i>
+            </div>
+            <h3 class="font-black text-slate-900 uppercase tracking-tight italic">Ready for Training?</h3>
+            <p class="text-slate-400 text-xs mt-2 max-w-[200px]">Select a mission track and pick a mission to begin.</p>
+        </div>
             <div class="max-w-[1100px] mx-auto px-4 md:px-8 py-6 md:py-12 relative z-10">
                 <div class="video-container mb-6 group w-full">
                     <iframe id="videoPlayer" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -530,7 +538,7 @@
                     <!-- This container now uses flex to put items side-by-side -->
                     <div class="flex-1 min-w-0 flex items-center justify-between">
                         <h4 class="text-sm font-black text-slate-700 truncate ${isActive ? 'text-slate-900' : ''}">
-                            <span class="accent-text mr-3 text-[10px] uppercase tracking-widest">Mission${lesson.number}</span> 
+                            <span class="accent-text mr-3 text-[10px] uppercase tracking-widest">Mission ${lesson.number}</span> 
                             ${lesson.title}
                         </h4>
                         <i class="fa-solid fa-chevron-right text-[10px] text-slate-300"></i>
@@ -544,6 +552,8 @@
         function selectLesson(id) {
             currentLessonId = id;
             renderLessons();
+            document.getElementById('mainDisplay').classList.remove('hidden');
+    if(document.getElementById('missionPlaceholder')) document.getElementById('missionPlaceholder').classList.add('hidden');
             
             // THE AUTO-CLOSE PART:
             if (window.innerWidth < 1024) {
