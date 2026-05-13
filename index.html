@@ -17,7 +17,7 @@
 
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--krunch-bg); color: #334155; }
         
-        .custom-scrollbar::-webkit-scrollbar { width: 5px; }
+        .custom-scrollbar::-webkit-scrollbar { width: 5px; height: 5px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
         
@@ -25,8 +25,8 @@
         
         .active-lesson { 
             background: #fff;
-            border-left: 4px solid var(--krunch-accent);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 2px solid var(--krunch-accent);
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.1);
         }
         
         .video-container { 
@@ -37,11 +37,11 @@
             border-radius: 1rem;
             background: #000;
             display: block;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* Adds a nice depth */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
         @media (max-height: 500px) and (orientation: landscape) {
             .video-container {
-                max-height: 70vh; /* Keeps it visible even on short landscape phones */
+                max-height: 70vh;
                 width: auto;
                 margin-left: auto;
                 margin-right: auto;
@@ -68,8 +68,8 @@
             height: 52px;
             display: flex;
             align-items: center;
-            justify-content: flex-start; /* Flush left */
-            width: fit-content; /* Shrink-wrap the image */
+            justify-content: flex-start;
+            width: fit-content;
             overflow: hidden;
             background: white;
             border-radius: 14px;
@@ -86,7 +86,6 @@
             box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.2);
         }
 
-        /* Top Nav Tab Styles */
         .nav-tab {
             position: relative;
             padding: 1rem 1.5rem;
@@ -111,19 +110,17 @@
             border-radius: 3px 3px 0 0;
         }
 
-        /* Dropdown Styles */
         .dropdown { position: relative; display: inline-block; }
         .dropdown-content {
                 visibility: hidden;
                 opacity: 0;
                 position: absolute;
-                /* Center on mobile by default */
                 left: 50%;
                 transform: translateX(-50%) translateY(10px);
                 top: 100%;
                 background-color: white;
-                width: calc(100vw - 32px); /* Makes it almost full width on mobile */
-                max-width: 280px; /* Limits size on larger screens */
+                width: calc(100vw - 32px);
+                max-width: 280px;
                 box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
                 border: 1px solid #f1f5f9;
                 border-radius: 1.5rem;
@@ -132,7 +129,6 @@
                 transition: all 0.2s ease-out;
             }
 
-            /* Re-align to the right for desktop screens */
             @media (min-width: 768px) {
                 .dropdown-content {
                     left: auto;
@@ -144,7 +140,6 @@
         .dropdown:hover .dropdown-content { 
             visibility: visible;
             opacity: 1;
-            /* Maintain centering on mobile during hover */
             transform: translateX(-50%) translateY(0);
         }
 
@@ -163,15 +158,13 @@
 
         .hidden-page { display: none !important; }
 
-        /* Mobile Mission Accordion */
-        @media (max-width: 1023px) {
-            #lessonList {
-                display: block; /* Changes from grid to list */
-                max-height: 0;   /* Starts closed */
-                overflow: hidden; 
-                transition: max-height 0.5s ease-out; /* Smooth sliding effect */
-                padding: 0;      /* Remove padding when closed */
-            }
+        /* Horizontal Scrollbar Hide for mobile */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
     </style>
 </head>
@@ -238,13 +231,11 @@
         </div>
 
         <div id="mobile-nav" class="hidden lg:hidden bg-white border-b border-slate-100 p-6 space-y-6 shadow-xl animate-in slide-in-from-top duration-300">
-            <!-- Page Tabs -->
             <div class="flex flex-col gap-3">
                 <button onclick="switchPage('skillsslam'); toggleMobileMenu()" class="text-left font-black text-sm uppercase tracking-widest p-3 bg-slate-50 rounded-xl">Skills Slam</button>
                 <button onclick="switchPage('combi'); toggleMobileMenu()" class="text-left font-black text-sm uppercase tracking-widest p-3 bg-slate-50 rounded-xl">Sec 2 Subject Combi</button>
             </div>
             
-            <!-- Courses -->
             <div class="space-y-3">
                 <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-2">Our Courses</p>
                 <div class="grid grid-cols-1 gap-2">
@@ -255,7 +246,6 @@
                 </div>
             </div>
 
-            <!-- Subscribe Button -->
             <a href="https://krunch.sg/subscribe/" target="_blank" class="block w-full accent-bg text-white py-4 rounded-2xl font-black text-center text-xs uppercase tracking-[0.2em]">
                 Subscribe for tips
             </a>
@@ -286,22 +276,20 @@
                     </div>
                 </div>
             </div>
-            <button onclick="toggleMissions()" class="lg:hidden w-full px-1 mt-4 mb-2 font-black text-[9px] text-slate-400 uppercase tracking-widest flex items-center justify-between transition-colors hover:text-emerald-600 border-t border-slate-100 pt-6">
-                <span>Select Mission</span>
-                <i class="fa-solid fa-chevron-down text-[8px]"></i>
-            </button>
-            <div class="flex-1 overflow-y-auto custom-scrollbar px-1 py-4 space-y-2 bg-slate-50/50" id="lessonList"></div>
+
+            <!-- Mobile Horizontal Skill Bar Label -->
+            <div class="lg:hidden px-1 mt-6 mb-2">
+                <p class="font-black text-[9px] text-slate-400 uppercase tracking-widest flex items-center justify-between">
+                    <span>Select Mission</span>
+                    <span id="mobileMissionName" class="text-emerald-600 italic">Select one below</span>
+                </p>
+            </div>
+            
+            <!-- The Skill List (Vertical on Desktop, Horizontal Scroll on Mobile) -->
+            <div class="flex-1 overflow-x-auto lg:overflow-y-auto custom-scrollbar no-scrollbar lg:custom-scrollbar flex lg:flex-col items-center lg:items-stretch px-1 py-4 gap-4 lg:space-y-2 bg-slate-50/50 lg:bg-transparent" id="lessonList"></div>
         </aside>
 
         <section class="flex-1 overflow-y-auto custom-scrollbar relative bg-white hidden" id="mainDisplay">
-        <!-- Add this placeholder immediately after the closing </section> tag -->
-        <div id="missionPlaceholder" class="flex-1 flex flex-col items-center justify-center p-12 text-center bg-white lg:h-full">
-            <div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-300 mb-4">
-                <i class="fa-solid fa-scroll text-2xl"></i>
-            </div>
-            <h3 class="font-black text-slate-900 uppercase tracking-tight italic">Ready for Training?</h3>
-            <p class="text-slate-400 text-xs mt-2 max-w-[200px]">Select a mission track and pick a mission to begin.</p>
-        </div>
             <div class="max-w-[1100px] mx-auto px-4 md:px-8 py-6 md:py-12 relative z-10">
                 <div class="video-container mb-6 group w-full">
                     <iframe id="videoPlayer" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -312,7 +300,6 @@
                         <i class="fa-solid fa-rotate-right"></i>
                         Video glitch? Reset player
                     </button>
-                    <!-- You can put other small utility links here -->
                 </div>
 
                 <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-12">
@@ -350,6 +337,14 @@
                 </div>
             </div>
         </section>
+
+        <div id="missionPlaceholder" class="flex-1 flex flex-col items-center justify-center p-12 text-center bg-white lg:h-full">
+            <div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-300 mb-4">
+                <i class="fa-solid fa-scroll text-2xl"></i>
+            </div>
+            <h3 class="font-black text-slate-900 uppercase tracking-tight italic">Ready for Training?</h3>
+            <p class="text-slate-400 text-xs mt-2 max-w-[200px]">Select a mission track and pick a mission to begin.</p>
+        </div>
     </main>
 
     <main id="page-combi" class="hidden-page h-[calc(100vh-80px)] overflow-y-auto bg-slate-50">
@@ -357,7 +352,7 @@
             <div class="text-center mb-12">
                 <span class="accent-text font-black text-xs uppercase tracking-[0.3em]">Decision Tool</span>
                 <h2 class="text-4xl font-black text-slate-900 mt-2">Sec 2 Subject Combination Interactive</h2>
-                <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Use the interactive tool below to explore your humanities options and find the perfect fit for your academic journey.</p>
+                <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Use the interactive tool below to explore your humanities options.</p>
             </div>
             
             <div class="bg-white rounded-[3rem] shadow-2xl shadow-slate-200 p-8 min-h-[600px] border border-slate-100 flex items-center justify-center">
@@ -366,7 +361,6 @@
                         <i class="fa-solid fa-puzzle-piece"></i>
                     </div>
                     <p class="font-bold text-slate-400 uppercase tracking-widest text-sm">Interactive Logic Placeholder</p>
-                    <p class="text-slate-400 text-xs mt-2">Drop your Subject Combi HTML interactive here!</p>
                 </div>
             </div>
         </div>
@@ -379,134 +373,23 @@
         };
 
         const allLessons = [
-            { 
-                id: 1, 
-                track: "Geography", 
-                number: 1, 
-                title: "Line Graphs", 
-                driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", 
-                pdfId: "1i5p1bLh9-PtME2oRzKfbb3sEIDJC7DDo", 
-                producer: producers.stace,
-                desc: `
-                    <div>
-                        <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
-                        <p class="text-slate-600 mb-6">Describe trends in simple and comparative line graphs</p>
-                        
-                        <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
-                        <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
-                            <li>Describe the overall pattern</li>
-                                <ul class="list-[circle] pl-5 mt-1 space-y-1">
-                                    <li>Does the data increase, decrease, fluctuate or remain constant from the start to the end of the period?</li>
-                                </ul>
-                            <li>Describe specific patterns
-                                <ul class="list-[circle] pl-5 mt-1 space-y-1">
-                                    <li>Are there periods of time with significant increase or decrease?</li>
-                                    <li>Are there exceptions?</li>
-                                </ul>
-                        </ul>
-                        
-                        <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
-                            <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
-                            <p class="text-amber-900/80 text-sm font-medium leading-relaxed">Make sure your units are correct! Look for the correct units in the question context, the title of the figure or the title of each axis in the figure.</p>
-                        </div>
-                    </div>
-                `
-            },
-            { 
-                id: 2, 
-                track: "Geography", 
-                number: 2, 
-                title: "Bar Charts", 
-                driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", 
-                pdfId: "", 
-                producer: producers.stace,
-                desc: `
-                    <div>
-                        <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
-                        <p class="text-slate-600 mb-6">Comparing discrete variables using vertical and horizontal bars safely without losing alignment marks.</p>
-                        
-                        <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
-                        <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
-                            <li>Identify direct comparative relationships quickly.</li>
-                            <li>Properly cluster categories when reading multi-bar graph types.</li>
-                        </ul>
-                        
-                        <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
-                            <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
-                            <p class="text-amber-900/80 text-sm font-medium leading-relaxed">Don't mix up cumulative values on stacked bar variants. Always isolate elements accurately before committing data points.</p>
-                        </div>
-                    </div>
-                `
-            },
-            { 
-                id: 16, 
-                track: "History/SS", 
-                number: 1, 
-                title: "Inference (SBQ)", 
-                driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", 
-                pdfId: "", 
-                producer: producers.mike,
-                desc: `
-                    <div>
-                        <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
-                        <p class="text-slate-600 mb-6">Extracting hidden source meanings safely for Core Source-Based Question skills (tested in Question 1c, worth up to 6 marks).</p>
-                        
-                        <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocl</h3>
-                        <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
-                            <li>Uncover precise subtextual author intent rather than basic summaries.</li>
-                            <li>Link matching source evidence chunks back cleanly to assertions.</li>
-                        </ul>
-                        
-                        <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
-                            <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
-                            <p class="text-amber-900/80 text-sm font-medium leading-relaxed">Don't simply summarize what the text says literally! Pure description caps your grade at the lowest possible marking tier.</p>
-                        </div>
-                    </div>
-                `
-            },
-            { 
-                id: 17, 
-                track: "History/SS", 
-                number: 2, 
-                title: "Purpose Questions", 
-                driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", 
-                pdfId: "", 
-                producer: producers.mike,
-                desc: `
-                    <div>
-                        <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
-                        <p class="text-slate-600 mb-6">Deconstructing historical source background and context to evaluate exact creator motivations.</p>
-                        
-                        <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
-                        <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
-                            <li>Identify target audiences and trace intended emotional impact parameters.</li>
-                            <li>Formulate cross-referenced analysis paragraphs seamlessly.</li>
-                        </ul>
-                        
-                        <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
-                            <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
-                            <p class="text-amber-900/80 text-sm font-medium leading-relaxed">Don't assume authors are completely objective. Every creator has a deliberate outcome or impact goal in mind.</p>
-                        </div>
-                    </div>
-                `
-            }
+            { id: 1, track: "Geography", number: 1, title: "Line Graphs", driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "1i5p1bLh9-PtME2oRzKfbb3sEIDJC7DDo", producer: producers.stace, desc: "<div><h3 class='text-xl font-extrabold text-slate-900 uppercase mb-2'>The Command</h3><p>Describe trends in simple and comparative line graphs</p></div>" },
+            { id: 2, track: "Geography", number: 2, title: "Bar Charts", driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div><h3 class='text-xl font-extrabold text-slate-900 uppercase mb-2'>The Command</h3><p>Comparing discrete variables using bar charts.</p></div>" },
+            { id: 3, track: "Geography", number: 3, title: "Pie Charts", driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div><h3 class='text-xl font-extrabold text-slate-900 uppercase mb-2'>The Command</h3><p>Analyzing proportions in pie charts.</p></div>" },
+            { id: 16, track: "History/SS", number: 1, title: "Inference (SBQ)", driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike, desc: "<div><h3 class='text-xl font-extrabold text-slate-900 uppercase mb-2'>The Command</h3><p>Extracting hidden source meanings.</p></div>" },
+            { id: 17, track: "History/SS", number: 2, title: "Purpose Questions", driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike, desc: "<div><h3 class='text-xl font-extrabold text-slate-900 uppercase mb-2'>The Command</h3><p>Deconstructing historical motivations.</p></div>" }
         ];
 
         let currentTrack = 'Geography';
-        let currentLessonId = allLessons[0].id;
+        let currentLessonId = null;
 
         window.switchPage = function(pageId) {
             document.querySelectorAll('.nav-tab').forEach(tab => tab.classList.remove('active'));
             const targetTab = document.getElementById(`tab-${pageId}`);
             if (targetTab) targetTab.classList.add('active');
 
-            if (pageId === 'skillsslam') {
-                document.getElementById('page-skillsslam').classList.remove('hidden-page');
-                document.getElementById('page-combi').classList.add('hidden-page');
-            } else if (pageId === 'combi') {
-                document.getElementById('page-skillsslam').classList.add('hidden-page');
-                document.getElementById('page-combi').classList.remove('hidden-page');
-            }
+            document.getElementById('page-skillsslam').classList.toggle('hidden-page', pageId !== 'skillsslam');
+            document.getElementById('page-combi').classList.toggle('hidden-page', pageId !== 'combi');
         }
 
         window.setTrack = function(trackName) {
@@ -514,8 +397,6 @@
             document.querySelectorAll('.track-btn').forEach(btn => btn.classList.remove('active'));
             if (trackName === 'Geography') document.getElementById('track-geog').classList.add('active');
             else document.getElementById('track-hist').classList.add('active');
-            const firstOfTrack = allLessons.find(l => l.track === trackName);
-            if (firstOfTrack) currentLessonId = firstOfTrack.id;
             renderLessons();
         }
 
@@ -524,19 +405,24 @@
             if (!list) return;
             list.innerHTML = '';
             const filtered = allLessons.filter(l => l.track === currentTrack);
+            
             filtered.forEach((lesson) => {
                 const isActive = lesson.id === currentLessonId;
                 const div = document.createElement('div');
-                div.className = `p-3 rounded-xl cursor-pointer transition-all flex items-center gap-3 group ${isActive ? 'active-lesson' : 'hover:bg-white hover:shadow-md'}`;
+                
+                // Desktop: Vertical Row | Mobile: Square Card
+                div.className = `shrink-0 p-3 lg:p-4 rounded-xl lg:rounded-2xl cursor-pointer transition-all flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-2 lg:gap-4 group 
+                                 w-16 h-16 lg:w-full lg:h-auto
+                                 ${isActive ? 'active-lesson bg-white' : 'bg-white/50 lg:bg-transparent hover:bg-white hover:shadow-md'}`;
+                
                 div.onclick = () => selectLesson(lesson.id);
+                
                 div.innerHTML = `
-                    <!-- Shorter badge for mobile efficiency -->
-                    <div class="ninja-badge w-10 h-10 flex items-center justify-center text-xs font-black transition-all ${isActive ? 'accent-bg text-white shadow-xl shadow-emerald-100' : 'bg-slate-200 text-slate-400 group-hover:bg-emerald-50 group-hover:text-emerald-600'}">
+                    <div class="ninja-badge w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center text-[10px] lg:text-xs font-black transition-all shrink-0
+                                ${isActive ? 'accent-bg text-white shadow-lg' : 'bg-slate-200 text-slate-400 group-hover:bg-emerald-50 group-hover:text-emerald-600'}">
                         ${lesson.number}
                     </div>
-                    
-                    <!-- This container now uses flex to put items side-by-side -->
-                    <div class="flex-1 min-w-0 flex items-center justify-between">
+                    <div class="hidden lg:flex flex-1 min-w-0 items-center justify-between">
                         <h4 class="text-sm font-black text-slate-700 truncate ${isActive ? 'text-slate-900' : ''}">
                             <span class="accent-text mr-3 text-[10px] uppercase tracking-widest">Mission ${lesson.number}</span> 
                             ${lesson.title}
@@ -546,22 +432,28 @@
                 `;
                 list.appendChild(div);
             });
-            updateLessonContent();
         }
 
         function selectLesson(id) {
             currentLessonId = id;
             renderLessons();
-            document.getElementById('mainDisplay').classList.remove('hidden');
-    if(document.getElementById('missionPlaceholder')) document.getElementById('missionPlaceholder').classList.add('hidden');
             
-            // THE AUTO-CLOSE PART:
-            if (window.innerWidth < 1024) {
-                const list = document.getElementById('lessonList');
-                list.style.maxHeight = '0px'; // Close immediately after selection
+            const main = document.getElementById('mainDisplay');
+            const placeholder = document.getElementById('missionPlaceholder');
+            
+            main.classList.remove('hidden');
+            if(placeholder) placeholder.classList.add('hidden');
+            
+            updateLessonContent();
+            
+            // Mobile Specific Label Update
+            const lesson = allLessons.find(l => l.id === id);
+            if(lesson) {
+                const label = document.getElementById('mobileMissionName');
+                if(label) label.innerText = lesson.title;
             }
-            
-            document.getElementById('mainDisplay').scrollTo({ top: 0, behavior: 'smooth' });
+
+            main.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function updateLessonContent() {
@@ -579,42 +471,21 @@
                 prodLink.href = lesson.producer.link;
                 prodHandle.innerText = lesson.producer.handle;
             }
-
-            document.getElementById('downloadBtn').onclick = () => {
-                if(lesson.pdfId) window.open(`https://drive.google.com/uc?export=download&id=${lesson.pdfId}`, '_blank');
-                else alert("Mission file coming soon!");
-            };
         }
 
-        renderLessons();
-    
-       window.toggleMissions = function() {
-            const list = document.getElementById('lessonList');
-            // Check if it's currently closed
-            if (list.style.maxHeight === '0px' || !list.style.maxHeight) {
-                list.style.maxHeight = '1000px'; // Open it wide enough for 15 missions
-            } else {
-                list.style.maxHeight = '0px'; // Close it
-            }
-        }
-       
         window.toggleMobileMenu = function() {
             const nav = document.getElementById('mobile-nav');
-            // This toggles the 'hidden' class on and off
-            if (nav.classList.contains('hidden')) {
-                nav.classList.remove('hidden');
-            } else {
-                nav.classList.add('hidden');
-            }
+            nav.classList.toggle('hidden');
         };
 
         window.refreshVideo = function() {
             const player = document.getElementById('videoPlayer');
             const currentSrc = player.src;
-            player.src = ''; // Clear it first
-            player.src = currentSrc; // Re-set it to trigger a reload
+            player.src = ''; 
+            player.src = currentSrc;
         }
-        
+
+        renderLessons();
     </script>
 </body>
 </html>
