@@ -132,8 +132,7 @@
             visibility: hidden;
             opacity: 0;
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%) translateY(10px);
+            left: 0;
             top: 100%;
             background-color: white;
             width: calc(100vw - 32px);
@@ -144,20 +143,21 @@
             z-index: 100;
             padding: 1rem;
             transition: all 0.2s ease-out;
+            transform: translateY(10px);
         }
 
         @media (min-width: 768px) {
             .dropdown-content {
                 left: auto;
                 right: 0;
-                transform: translateY(10px);
                 width: 280px;
             }
         }
+
         .dropdown:hover .dropdown-content { 
             visibility: visible;
             opacity: 1;
-            transform: translateX(-50%) translateY(0);
+            transform: translateY(0);
         }
 
         .dropdown-item {
@@ -212,6 +212,7 @@
         @media (orientation: landscape) and (max-width: 1024px) {
             .menu-toggle-btn {
                 display: flex !important;
+                margin-left: auto !important;
             }
         }
     </style>
@@ -219,7 +220,7 @@
 <body class="antialiased">
 
     <header class="glass-header">
-        <div class="w-full px-4 md:px-8 min-h-[80px] py-4 flex flex-row items-center justify-between md:justify-start gap-4">
+        <div class="w-full px-4 md:px-8 min-h-[80px] py-4 flex flex-row items-center justify-between lg:justify-start gap-4">
             <div onclick="switchPage('skillsslam')" class="flex items-center gap-1 cursor-pointer group shrink-0">
                 <div class="logo-container border border-slate-100 shadow-sm transition-transform group-hover:scale-105">
                     <img id="mainLogo" 
@@ -233,12 +234,13 @@
                     <span class="text-[10px] font-bold text-slate-400 tracking-[0.3em] uppercase">Ninja Academy</span>
                 </div>
             </div>
-            <!-- Added specific class for landscape control -->
-            <button onclick="toggleMobileMenu()" class="lg:hidden menu-toggle-btn p-2 text-slate-600 hover:bg-slate-50 rounded-lg ml-auto flex items-center justify-center">
+
+            <!-- Hamburger icon is naturally pushed right by justify-between or ml-auto -->
+            <button onclick="toggleMobileMenu()" class="lg:hidden menu-toggle-btn p-2 text-slate-600 hover:bg-slate-50 rounded-lg flex items-center justify-center">
                 <i class="fa-solid fa-bars text-xl"></i>
             </button>
             
-        <div class="hidden md:block flex-grow"></div>
+        <div class="hidden lg:block flex-grow"></div>
 
         <nav class="hidden lg:flex items-center h-full gap-8">
             <button onclick="switchPage('skillsslam')" id="tab-skillsslam" class="nav-tab active">Skills Slam</button>
