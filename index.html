@@ -21,15 +21,30 @@
         .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
         
-        .glass-header { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid #e2e8f0; }
+        .glass-header { 
+            background: rgba(255, 255, 255, 0.9); 
+            backdrop-filter: blur(12px); 
+            border-bottom: 1px solid #e2e8f0; 
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
         
+        @media (max-height: 500px) and (orientation: landscape) {
+            .glass-header {
+                min-height: 60px;
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+            }
+            .logo-container { height: 40px !important; }
+        }
+
         .active-lesson { 
             background: #fff;
             border-left: 4px solid var(--krunch-accent);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
 
-        /* Mobile specific active state for horizontal cards */
         @media (max-width: 1023px) {
             .active-lesson {
                 border-left: none;
@@ -48,14 +63,7 @@
             display: block;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
-        @media (max-height: 500px) and (orientation: landscape) {
-            .video-container {
-                max-height: 70vh;
-                width: auto;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
+        
         .video-container iframe { 
             position: absolute; 
             top: 0; 
@@ -152,11 +160,6 @@
             transform: translateX(-50%) translateY(0);
         }
 
-        @media (min-width: 768px) {
-            .dropdown:hover .dropdown-content { 
-                transform: translateY(0);
-            }
-        }
         .dropdown-item {
             padding: 0.75rem 1rem;
             border-radius: 1rem;
@@ -167,12 +170,11 @@
 
         .hidden-page { display: none !important; }
 
-        /* Updated Horizontal Scroll for Mobile - 2 Row Stacked Grid */
         @media (max-width: 1023px) {
             #lessonList {
                 display: grid;
-                grid-template-rows: repeat(2, 64px); /* Two fixed rows */
-                grid-auto-flow: column; /* Stack vertically then move right */
+                grid-template-rows: repeat(2, 64px);
+                grid-auto-flow: column;
                 overflow-x: auto;
                 overflow-y: hidden;
                 gap: 12px;
@@ -182,7 +184,7 @@
             }
             #lessonList > div {
                 flex: none; 
-                width: 180px; /* Increased width slightly for readability */
+                width: 180px;
                 scroll-snap-align: start;
                 flex-direction: row !important; 
                 align-items: center !important;
@@ -201,7 +203,7 @@
 </head>
 <body class="antialiased">
 
-    <header class="glass-header static md:sticky top-0 z-50">
+    <header class="glass-header">
         <div class="w-full px-4 md:px-8 min-h-[80px] py-4 flex flex-row items-center justify-between md:justify-start gap-4">
             <div onclick="switchPage('skillsslam')" class="flex items-center gap-1 cursor-pointer group shrink-0">
                 <div class="logo-container border border-slate-100 shadow-sm transition-transform group-hover:scale-105">
@@ -284,7 +286,16 @@
     </header>
 
     <main id="page-skillsslam" class="flex flex-col lg:flex-row h-auto lg:h-[calc(100vh-80px)] overflow-y-auto lg:overflow-hidden">
-        <aside class="w-full lg:w-[380px] px-4 bg-white border-r border-slate-100 flex flex-col h-auto lg:h-full z-10 shadow-sm">
+        <aside id="sidebar-container" class="w-full lg:w-[380px] px-4 bg-white border-r border-slate-100 flex flex-col h-auto lg:h-full z-10 shadow-sm">
+            
+            <div id="mobilePlaceholder" class="lg:hidden p-8 text-center bg-white border-b border-slate-100">
+                <div class="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-500 mb-4 shadow-md mx-auto">
+                    <i class="fa-solid fa-user-ninja text-2xl"></i>
+                </div>
+                <h3 class="font-black text-xl text-slate-900 uppercase tracking-tight italic">Ready for Training?</h3>
+                <p class="text-slate-500 text-[11px] mt-1 max-w-[240px] mx-auto">Choose your mission track and select a mission to begin your briefing.</p>
+            </div>
+
             <div class="p-8 border-b border-slate-100 bg-white">
                 <div class="flex items-center justify-between mb-6">
                     <div>
@@ -308,7 +319,6 @@
                 </div>
             </div>
             
-            <!-- Mobile indicator for horizontal cards -->
             <div class="lg:hidden px-4 mt-6 mb-1 font-black text-[9px] text-slate-400 uppercase tracking-widest flex items-center justify-between">
                 <span>Select Your Mission</span>
                 <i class="fa-solid fa-arrow-right-long animate-pulse"></i>
@@ -317,67 +327,70 @@
             <div class="flex-1 overflow-y-auto custom-scrollbar px-1 py-4 space-y-2 lg:space-y-2 bg-slate-50/50" id="lessonList"></div>
         </aside>
 
-        <!-- Start screen / Placeholder logic -->
-        <div id="missionPlaceholder" class="flex-1 flex flex-col items-center justify-center p-12 text-center bg-white lg:h-full">
-            <div class="w-20 h-20 bg-emerald-50 rounded-3xl flex items-center justify-center text-emerald-500 mb-6 shadow-xl shadow-emerald-50">
-                <i class="fa-solid fa-user-ninja text-3xl"></i>
+        <!-- Container for right-side content: placeholder OR main display -->
+        <div class="flex-1 relative lg:h-full overflow-hidden bg-white">
+            <div id="missionPlaceholder" class="absolute inset-0 flex flex-col items-center justify-center p-12 text-center bg-white">
+                <div class="w-20 h-20 bg-emerald-50 rounded-3xl flex items-center justify-center text-emerald-500 mb-6 shadow-xl shadow-emerald-50">
+                    <i class="fa-solid fa-user-ninja text-3xl"></i>
+                </div>
+                <h3 class="font-black text-2xl text-slate-900 uppercase tracking-tight italic">Ready for Training?</h3>
+                <p class="text-slate-500 text-sm mt-3 max-w-[280px] leading-relaxed">Choose your mission track and select a mission to begin your briefing.</p>
             </div>
-            <h3 class="font-black text-2xl text-slate-900 uppercase tracking-tight italic">Ready for Training?</h3>
-            <p class="text-slate-500 text-sm mt-3 max-w-[280px] leading-relaxed">Choose your mission track and select a mission to begin your briefing.</p>
+
+            <section class="absolute inset-0 overflow-y-auto custom-scrollbar bg-white hidden" id="mainDisplay">
+                <div class="max-w-[1100px] mx-auto px-4 md:px-8 py-6 md:py-12 relative z-10">
+                    
+                    <button onclick="resetToSelection()" class="lg:hidden mb-8 flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest hover:text-emerald-600 transition-colors">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Back to Missions
+                    </button>
+
+                    <div class="flex flex-col mb-8">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span id="lessonCategory" class="ninja-badge px-5 py-1.5 dark-accent text-white text-[10px] font-black uppercase tracking-widest shadow-lg">Geography</span>
+                            <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                            <span id="missionLabel" class="text-[11px] font-black text-emerald-500 uppercase tracking-[0.2em]">Mission 1</span>
+                        </div>
+                        <h2 id="lessonTitle" class="text-3xl md:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">Line Graphs</h2>
+                    </div>
+
+                    <div class="video-container group w-full">
+                        <iframe id="videoPlayer" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    
+                    <div class="flex justify-end px-2 mt-3 mb-8">
+                        <button onclick="refreshVideo()" class="text-[10px] font-black text-slate-400 hover:text-emerald-600 uppercase tracking-widest flex items-center gap-2 transition-colors">
+                            <i class="fa-solid fa-rotate-right"></i>
+                            Video glitch? Reset player
+                        </button>
+                    </div>
+
+                    <div class="mb-12">
+                        <button id="downloadBtn" class="w-full flex items-center justify-center gap-3 bg-emerald-50 text-emerald-700 border-2 border-emerald-100 px-8 py-5 rounded-2xl font-black hover:bg-emerald-100 hover:border-emerald-200 transition-all transform active:scale-[0.98] shadow-sm">
+                            <i class="fa-solid fa-file-arrow-down text-lg"></i>
+                            DOWNLOAD MISSION FILE
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white rounded-3xl md:rounded-[3rem] border border-slate-100 shadow-2xl shadow-slate-200/40 overflow-hidden flex flex-col mb-24">
+                        <div class="p-6 md:p-16 flex-1">
+                            <div class="flex items-center gap-3 mb-8 text-[11px] font-black uppercase tracking-[0.3em] text-slate-400">
+                                <span class="w-8 h-[2px] bg-emerald-500"></span>
+                                Mission Brief
+                            </div>
+                            <div id="lessonDescription" class="prose prose-slate max-w-none text-slate-600 space-y-6 text-lg"></div>
+                            <div class="flex items-center justify-end gap-2 mt-12 mb-6 px-2">
+                                <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Assigned by</span>
+                                <a id="producerLink" href="https://www.instagram.com/geographer.stace/" target="_blank" class="flex items-center gap-1.5 group">
+                                    <i class="fa-brands fa-instagram text-emerald-500 group-hover:scale-110 transition-transform"></i>
+                                    <span id="producerHandle" class="text-[11px] font-black text-slate-600 group-hover:text-emerald-600 transition-colors tracking-tight">@geographer.stace</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-
-        <section class="flex-1 overflow-y-auto custom-scrollbar relative bg-white hidden" id="mainDisplay">
-            <div class="max-w-[1100px] mx-auto px-4 md:px-8 py-6 md:py-12 relative z-10">
-                
-                <!-- Mission Title Section First -->
-                <div class="flex flex-col mb-8">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span id="lessonCategory" class="ninja-badge px-5 py-1.5 dark-accent text-white text-[10px] font-black uppercase tracking-widest shadow-lg">Geography</span>
-                        <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                        <span id="missionLabel" class="text-[11px] font-black text-emerald-500 uppercase tracking-[0.2em]">Mission 1</span>
-                    </div>
-                    <h2 id="lessonTitle" class="text-3xl md:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">Line Graphs</h2>
-                </div>
-
-                <!-- Video Section Second -->
-                <div class="video-container group w-full">
-                    <iframe id="videoPlayer" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                
-                <div class="flex justify-end px-2 mt-3 mb-8">
-                    <button onclick="refreshVideo()" class="text-[10px] font-black text-slate-400 hover:text-emerald-600 uppercase tracking-widest flex items-center gap-2 transition-colors">
-                        <i class="fa-solid fa-rotate-right"></i>
-                        Video glitch? Reset player
-                    </button>
-                </div>
-
-                <!-- Action Row: Download Button -->
-                <div class="mb-12">
-                    <button id="downloadBtn" class="w-full flex items-center justify-center gap-3 bg-emerald-50 text-emerald-700 border-2 border-emerald-100 px-8 py-5 rounded-2xl font-black hover:bg-emerald-100 hover:border-emerald-200 transition-all transform active:scale-[0.98] shadow-sm">
-                        <i class="fa-solid fa-file-arrow-down text-lg"></i>
-                        DOWNLOAD MISSION FILE
-                    </button>
-                </div>
-                
-                <!-- Mission Brief Container -->
-                <div class="bg-white rounded-3xl md:rounded-[3rem] border border-slate-100 shadow-2xl shadow-slate-200/40 overflow-hidden flex flex-col mb-24">
-                    <div class="p-6 md:p-16 flex-1">
-                        <div class="flex items-center gap-3 mb-8 text-[11px] font-black uppercase tracking-[0.3em] text-slate-400">
-                            <span class="w-8 h-[2px] bg-emerald-500"></span>
-                            Mission Brief
-                        </div>
-                        <div id="lessonDescription" class="prose prose-slate max-w-none text-slate-600 space-y-6 text-lg"></div>
-                        <div class="flex items-center justify-end gap-2 mt-12 mb-6 px-2">
-                            <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Assigned by</span>
-                            <a id="producerLink" href="https://www.instagram.com/geographer.stace/" target="_blank" class="flex items-center gap-1.5 group">
-                                <i class="fa-brands fa-instagram text-emerald-500 group-hover:scale-110 transition-transform"></i>
-                                <span id="producerHandle" class="text-[11px] font-black text-slate-600 group-hover:text-emerald-600 transition-colors tracking-tight">@geographer.stace</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <main id="page-combi" class="hidden-page h-[calc(100vh-80px)] overflow-y-auto bg-slate-50">
@@ -407,7 +420,6 @@
         };
 
         const allLessons = [
-            // Geography Track (1-15)
             { id: 1, track: "Geography", number: 1, title: "Line Graphs", driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "1i5p1bLh9-PtME2oRzKfbb3sEIDJC7DDo", producer: producers.stace, desc: `<div><h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3><p class="text-slate-600 mb-6">Describe trends in simple and comparative line graphs</p><h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3><ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6"><li>Describe the overall pattern</li><ul class="list-[circle] pl-5 mt-1 space-y-1"><li>Does the data increase, decrease, fluctuate or remain constant from the start to the end of the period?</li></ul><li>Describe specific patterns<ul class="list-[circle] pl-5 mt-1 space-y-1"><li>Are there periods of time with significant increase or decrease?</li><li>Are there exceptions?</li></ul></ul><div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl"><h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4><p class="text-amber-900/80 text-sm font-medium leading-relaxed">Make sure your units are correct! Look for the correct units in the question context, the title of the figure or the title of each axis in the figure.</p></div></div>` },
             { id: 2, track: "Geography", number: 2, title: "Bar Charts", driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on comparing discrete variables using bar charts.</div>" },
             { id: 3, track: "Geography", number: 3, title: "Pie Charts", driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on proportion analysis using pie charts.</div>" },
@@ -424,7 +436,6 @@
             { id: 14, track: "Geography", number: 14, title: "Tourism", driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on the impacts of global tourism.</div>" },
             { id: 15, track: "Geography", number: 15, title: "Food Resources", driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on food shortage and farming systems.</div>" },
 
-            // History/SS Track (16-30)
             { id: 16, track: "History/SS", number: 1, title: "Inference (SBQ)", driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike, desc: `<div><h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3><p class="text-slate-600 mb-6">Extracting hidden source meanings safely for Core Source-Based Question skills.</p><h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3><ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6"><li>Uncover precise subtextual author intent rather than basic summaries.</li><li>Link matching source evidence chunks back cleanly to assertions.</li></ul><div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl"><h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4><p class="text-amber-900/80 text-sm font-medium leading-relaxed">Don't simply summarize what the text says literally!</p></div></div>` },
             { id: 17, track: "History/SS", number: 2, title: "Purpose", driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike, desc: "<div>Briefing on evaluating author intent and desired outcomes.</div>" },
             { id: 18, track: "History/SS", number: 3, title: "Reliability", driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike, desc: "<div>Briefing on cross-referencing and checking source trustworthiness.</div>" },
@@ -466,7 +477,16 @@
             else document.getElementById('track-hist').classList.add('active');
             
             currentLessonId = null;
+            renderLessons();
+            resetToSelection(); 
+        }
+
+        window.resetToSelection = function() {
+            currentLessonId = null;
             document.getElementById('mainDisplay').classList.add('hidden');
+            document.getElementById('sidebar-container').classList.remove('hidden');
+            
+            // Show placeholder on desktop
             document.getElementById('missionPlaceholder').classList.remove('hidden');
             
             renderLessons();
@@ -480,15 +500,12 @@
             filtered.forEach((lesson) => {
                 const isActive = lesson.id === currentLessonId;
                 const div = document.createElement('div');
-                
                 div.className = `p-3 rounded-xl cursor-pointer transition-all flex items-center gap-3 group ${isActive ? 'active-lesson' : 'hover:bg-white hover:shadow-md'}`;
-                
                 div.onclick = () => selectLesson(lesson.id);
                 div.innerHTML = `
                     <div class="ninja-badge w-10 h-10 flex items-center justify-center text-xs font-black transition-all shrink-0 ${isActive ? 'accent-bg text-white shadow-xl shadow-emerald-100' : 'bg-slate-200 text-slate-400 group-hover:bg-emerald-50 group-hover:text-emerald-600'}">
                         ${lesson.number}
                     </div>
-                    
                     <div class="flex-1 min-w-0 mobile-text-container text-left">
                         <span class="hidden lg:inline accent-text text-[9px] uppercase tracking-widest block font-bold">Mission ${lesson.number}</span> 
                         <h4 class="text-[11px] lg:text-sm font-black text-slate-700 leading-tight lg:leading-normal line-clamp-2 lg:line-clamp-1 ${isActive ? 'text-slate-900' : ''}">
@@ -505,8 +522,15 @@
         function selectLesson(id) {
             currentLessonId = id;
             renderLessons();
+            
+            // Toggle visibility
             document.getElementById('mainDisplay').classList.remove('hidden');
             document.getElementById('missionPlaceholder').classList.add('hidden');
+            
+            if (window.innerWidth < 1024) {
+                document.getElementById('sidebar-container').classList.add('hidden');
+            }
+            
             document.getElementById('mainDisplay').scrollTo({ top: 0, behavior: 'smooth' });
         }
 
@@ -549,6 +573,19 @@
             player.src = ''; 
             player.src = currentSrc; 
         }
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024) {
+                document.getElementById('sidebar-container').classList.remove('hidden');
+                if (currentLessonId === null) {
+                    document.getElementById('missionPlaceholder').classList.remove('hidden');
+                    document.getElementById('mainDisplay').classList.add('hidden');
+                } else {
+                    document.getElementById('missionPlaceholder').classList.add('hidden');
+                    document.getElementById('mainDisplay').classList.remove('hidden');
+                }
+            }
+        });
     </script>
 </body>
 </html>
