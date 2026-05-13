@@ -167,7 +167,7 @@
 
         .hidden-page { display: none !important; }
 
-        /* Updated Horizontal Scroll for Mobile */
+        /* Updated Horizontal Scroll for Mobile - Fixed Alignment */
         @media (max-width: 1023px) {
             #lessonList {
                 display: flex;
@@ -180,8 +180,10 @@
                 -webkit-overflow-scrolling: touch;
             }
             #lessonList > div {
-                flex: 0 0 110px; /* Fixed width for vertical cards */
+                flex: 0 0 160px; /* Increased width to accommodate horizontal layout */
                 scroll-snap-align: start;
+                flex-direction: row !important; /* Force horizontal alignment */
+                text-align: left !important;
             }
         }
     </style>
@@ -390,6 +392,7 @@
         };
 
         const allLessons = [
+            // Geography Tracks
             { 
                 id: 1, 
                 track: "Geography", 
@@ -398,57 +401,30 @@
                 driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", 
                 pdfId: "1i5p1bLh9-PtME2oRzKfbb3sEIDJC7DDo", 
                 producer: producers.stace,
-                desc: `
-                    <div>
-                        <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
-                        <p class="text-slate-600 mb-6">Describe trends in simple and comparative line graphs</p>
-                        
-                        <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
-                        <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
-                            <li>Describe the overall pattern</li>
-                                <ul class="list-[circle] pl-5 mt-1 space-y-1">
-                                    <li>Does the data increase, decrease, fluctuate or remain constant from the start to the end of the period?</li>
-                                </ul>
-                            <li>Describe specific patterns
-                                <ul class="list-[circle] pl-5 mt-1 space-y-1">
-                                    <li>Are there periods of time with significant increase or decrease?</li>
-                                    <li>Are there exceptions?</li>
-                                </ul>
-                        </ul>
-                        
-                        <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
-                            <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
-                            <p class="text-amber-900/80 text-sm font-medium leading-relaxed">Make sure your units are correct! Look for the correct units in the question context, the title of the figure or the title of each axis in the figure.</p>
-                        </div>
-                    </div>
-                `
+                desc: `<div><h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3><p class="text-slate-600 mb-6">Describe trends in simple and comparative line graphs</p><h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3><ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6"><li>Describe the overall pattern</li><ul class="list-[circle] pl-5 mt-1 space-y-1"><li>Does the data increase, decrease, fluctuate or remain constant from the start to the end of the period?</li></ul><li>Describe specific patterns<ul class="list-[circle] pl-5 mt-1 space-y-1"><li>Are there periods of time with significant increase or decrease?</li><li>Are there exceptions?</li></ul></ul><div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl"><h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4><p class="text-amber-900/80 text-sm font-medium leading-relaxed">Make sure your units are correct!</p></div></div>`
             },
             { 
-                id: 2, 
-                track: "Geography", 
-                number: 2, 
-                title: "Bar Charts", 
-                driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", 
-                pdfId: "", 
-                producer: producers.stace,
-                desc: `
-                    <div>
-                        <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
-                        <p class="text-slate-600 mb-6">Comparing discrete variables using vertical and horizontal bars safely without losing alignment marks.</p>
-                        
-                        <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
-                        <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
-                            <li>Identify direct comparative relationships quickly.</li>
-                            <li>Properly cluster categories when reading multi-bar graph types.</li>
-                        </ul>
-                        
-                        <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
-                            <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
-                            <p class="text-amber-900/80 text-sm font-medium leading-relaxed">Don't mix up cumulative values on stacked bar variants. Always isolate elements accurately before committing data points.</p>
-                        </div>
-                    </div>
-                `
+                id: 2, track: "Geography", number: 2, title: "Bar Charts", 
+                driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace,
+                desc: "<div>Briefing on comparing discrete variables using bar charts. Check back for full protocol.</div>"
             },
+            { 
+                id: 3, track: "Geography", number: 3, title: "Pie Charts", 
+                driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace,
+                desc: "<div>Briefing on proportion analysis using pie charts. Check back for full protocol.</div>"
+            },
+            { 
+                id: 4, track: "Geography", number: 4, title: "Fieldwork Skills", 
+                driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace,
+                desc: "<div>Briefing on data collection and inquiry techniques. Check back for full protocol.</div>"
+            },
+            { 
+                id: 5, track: "Geography", number: 5, title: "Weather Instruments", 
+                driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace,
+                desc: "<div>Briefing on identifying and using meteorological tools. Check back for full protocol.</div>"
+            },
+
+            // History/SS Tracks
             { 
                 id: 16, 
                 track: "History/SS", 
@@ -457,54 +433,32 @@
                 driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", 
                 pdfId: "", 
                 producer: producers.mike,
-                desc: `
-                    <div>
-                        <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
-                        <p class="text-slate-600 mb-6">Extracting hidden source meanings safely for Core Source-Based Question skills (tested in Question 1c, worth up to 6 marks).</p>
-                        
-                        <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
-                        <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
-                            <li>Uncover precise subtextual author intent rather than basic summaries.</li>
-                            <li>Link matching source evidence chunks back cleanly to assertions.</li>
-                        </ul>
-                        
-                        <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
-                            <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
-                            <p class="text-amber-900/80 text-sm font-medium leading-relaxed">Don't simply summarize what the text says literally! Pure description caps your grade at the lowest possible marking tier.</p>
-                        </div>
-                    </div>
-                `
+                desc: `<div><h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3><p class="text-slate-600 mb-6">Extracting hidden source meanings safely for Core Source-Based Question skills.</p><h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3><ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6"><li>Uncover precise subtextual author intent rather than basic summaries.</li><li>Link matching source evidence chunks back cleanly to assertions.</li></ul><div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl"><h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4><p class="text-amber-900/80 text-sm font-medium leading-relaxed">Don't simply summarize what the text says literally!</p></div></div>`
             },
             { 
-                id: 17, 
-                track: "History/SS", 
-                number: 2, 
-                title: "Purpose Questions", 
-                driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", 
-                pdfId: "", 
-                producer: producers.mike,
-                desc: `
-                    <div>
-                        <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
-                        <p class="text-slate-600 mb-6">Deconstructing historical source background and context to evaluate exact creator motivations.</p>
-                        
-                        <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
-                        <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
-                            <li>Identify target audiences and trace intended emotional impact parameters.</li>
-                            <li>Formulate cross-referenced analysis paragraphs seamlessly.</li>
-                        </ul>
-                        
-                        <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
-                            <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
-                            <p class="text-amber-900/80 text-sm font-medium leading-relaxed">Don't assume authors are completely objective. Every creator has a deliberate outcome or impact goal in mind.</p>
-                        </div>
-                    </div>
-                `
+                id: 17, track: "History/SS", number: 2, title: "Purpose", 
+                driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike,
+                desc: "<div>Briefing on evaluating author intent and desired outcomes. Check back for full protocol.</div>"
+            },
+            { 
+                id: 18, track: "History/SS", number: 3, title: "Reliability", 
+                driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike,
+                desc: "<div>Briefing on cross-referencing and checking source trustworthiness. Check back for full protocol.</div>"
+            },
+            { 
+                id: 19, track: "History/SS", number: 4, title: "Utility", 
+                driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike,
+                desc: "<div>Briefing on the usefulness of sources in historical inquiry. Check back for full protocol.</div>"
+            },
+            { 
+                id: 20, track: "History/SS", number: 5, title: "Contextual Knowledge", 
+                driveVideoId: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike,
+                desc: "<div>Briefing on using background knowledge to support source analysis. Check back for full protocol.</div>"
             }
         ];
 
         let currentTrack = 'Geography';
-        let currentLessonId = null; // Start null for "Ready for Training" screen
+        let currentLessonId = null;
 
         window.switchPage = function(pageId) {
             document.querySelectorAll('.nav-tab').forEach(tab => tab.classList.remove('active'));
@@ -526,7 +480,6 @@
             if (trackName === 'Geography') document.getElementById('track-geog').classList.add('active');
             else document.getElementById('track-hist').classList.add('active');
             
-            // Show placeholder again when track changes
             currentLessonId = null;
             document.getElementById('mainDisplay').classList.add('hidden');
             document.getElementById('missionPlaceholder').classList.remove('hidden');
@@ -543,8 +496,8 @@
                 const isActive = lesson.id === currentLessonId;
                 const div = document.createElement('div');
                 
-                // Card logic: Vertical on mobile, row on desktop
-                div.className = `p-3 rounded-xl cursor-pointer transition-all flex flex-col lg:flex-row items-center gap-2 lg:gap-3 group ${isActive ? 'active-lesson' : 'hover:bg-white hover:shadow-md'}`;
+                // Card logic: Flex-row always on mobile for alignment
+                div.className = `p-3 rounded-xl cursor-pointer transition-all flex flex-col lg:flex-row items-center gap-3 group ${isActive ? 'active-lesson' : 'hover:bg-white hover:shadow-md'}`;
                 
                 div.onclick = () => selectLesson(lesson.id);
                 div.innerHTML = `
@@ -568,17 +521,13 @@
         function selectLesson(id) {
             currentLessonId = id;
             renderLessons();
-            
-            // Toggle Visibility
             document.getElementById('mainDisplay').classList.remove('hidden');
             document.getElementById('missionPlaceholder').classList.add('hidden');
-            
             document.getElementById('mainDisplay').scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function updateLessonContent() {
             if (currentLessonId === null) return;
-            
             const lesson = allLessons.find(l => l.id === currentLessonId);
             if (!lesson) return;
             document.getElementById('videoPlayer').src = `https://drive.google.com/file/d/${lesson.driveVideoId}/preview`;
@@ -586,14 +535,12 @@
             document.getElementById('lessonCategory').innerText = lesson.track;
             document.getElementById('missionLabel').innerText = `Mission ${lesson.number}`;
             document.getElementById('lessonDescription').innerHTML = lesson.desc;
-            
             const prodLink = document.getElementById('producerLink');
             const prodHandle = document.getElementById('producerHandle');
             if (lesson.producer) {
                 prodLink.href = lesson.producer.link;
                 prodHandle.innerText = lesson.producer.handle;
             }
-
             document.getElementById('downloadBtn').onclick = () => {
                 if(lesson.pdfId) window.open(`https://drive.google.com/uc?export=download&id=${lesson.pdfId}`, '_blank');
                 else alert("Mission file coming soon!");
@@ -604,11 +551,7 @@
        
         window.toggleMobileMenu = function() {
             const nav = document.getElementById('mobile-nav');
-            if (nav.classList.contains('hidden')) {
-                nav.classList.remove('hidden');
-            } else {
-                nav.classList.add('hidden');
-            }
+            nav.classList.toggle('hidden');
         };
 
         window.refreshVideo = function() {
@@ -617,7 +560,6 @@
             player.src = ''; 
             player.src = currentSrc; 
         }
-        
     </script>
 </body>
 </html>
