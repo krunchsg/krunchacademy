@@ -162,6 +162,17 @@
         .dropdown-item:hover { background-color: var(--krunch-accent-soft); }
 
         .hidden-page { display: none !important; }
+
+        /* Mobile Mission Grid */
+        @media (max-width: 1023px) {
+            #lessonList {
+                display: block; /* Changes from grid to list */
+                max-height: 0;   /* Starts closed */
+                overflow: hidden; 
+                transition: max-height 0.5s ease-out; /* Smooth sliding effect */
+                padding: 0;      /* Remove padding when closed */
+            }
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -523,6 +534,13 @@
         function selectLesson(id) {
             currentLessonId = id;
             renderLessons();
+            
+            // THE AUTO-CLOSE PART:
+            if (window.innerWidth < 1024) {
+                const list = document.getElementById('lessonList');
+                list.style.maxHeight = '0px'; // Close immediately after selection
+            }
+            
             document.getElementById('mainDisplay').scrollTo({ top: 0, behavior: 'smooth' });
         }
 
@@ -550,6 +568,16 @@
 
         renderLessons();
     
+       window.toggleMissions = function() {
+            const list = document.getElementById('lessonList');
+            // Check if it's currently closed
+            if (list.style.maxHeight === '0px' || !list.style.maxHeight) {
+                list.style.maxHeight = '1000px'; // Open it wide enough for 15 missions
+            } else {
+                list.style.maxHeight = '0px'; // Close it
+            }
+        }
+       
         window.toggleMobileMenu = function() {
             const nav = document.getElementById('mobile-nav');
             // This toggles the 'hidden' class on and off
@@ -566,6 +594,7 @@
             player.src = ''; // Clear it first
             player.src = currentSrc; // Re-set it to trigger a reload
         }
+        
     </script>
 </body>
 </html>
