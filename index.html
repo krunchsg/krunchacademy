@@ -49,7 +49,6 @@
         .dark-accent { background: var(--krunch-dark); }
 
         .logo-container {
-            width: 52px;
             height: 52px;
             display: flex;
             align-items: center;
@@ -59,8 +58,8 @@
             border-radius: 14px;
         }
         .logo-img {
-            width: 90%;
-            height: 90%;
+            height: 100%;
+            width: auto;
             object-fit: contain;
         }
 
@@ -133,7 +132,7 @@
 
     <header class="glass-header sticky top-0 z-50">
         <div class="max-w-[1600px] mx-auto px-6 h-20 flex items-center justify-between">
-            <div onclick="switchPage('skillsslam')" class="flex items-center gap-3 cursor-pointer group">
+            <div onclick="switchPage('skillsslam')" class="flex items-center gap-1 cursor-pointer group">
                 <div class="logo-container border border-slate-100 shadow-sm transition-transform group-hover:scale-105">
                     <img id="mainLogo" 
                          src="https://lh3.googleusercontent.com/d/1jf3Kop9mGRripXM8WCxV9n9M5VceElcH" 
@@ -187,8 +186,8 @@
         </div>
     </header>
 
-    <main id="page-skillsslam" class="flex flex-col lg:flex-row h-[calc(100vh-80px)] overflow-hidden">
-        <aside class="w-full lg:w-[380px] bg-white border-r border-slate-100 flex flex-col h-full z-10 shadow-sm">
+    <main id="page-skillsslam" class="flex flex-col lg:flex-row h-auto lg:h-[calc(100vh-80px)] overflow-y-auto lg:overflow-hidden">
+        <aside class="w-full lg:w-[380px] bg-white border-r border-slate-100 flex flex-col h-auto lg:h-full z-10 shadow-sm">
             <div class="p-8 border-b border-slate-100 bg-white">
                 <div class="flex items-center justify-between mb-6">
                     <div>
@@ -215,7 +214,7 @@
         </aside>
 
         <section class="flex-1 overflow-y-auto custom-scrollbar relative bg-white" id="mainDisplay">
-            <div class="max-w-[1100px] mx-auto px-8 py-12 relative z-10">
+            <div class="max-w-[1100px] mx-auto px-4 md:px-8 py-6 md:py-12 relative z-10">
                 <div class="video-container mb-4 group">
                     <iframe id="videoPlayer" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
@@ -235,7 +234,7 @@
                             <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                             <span id="missionLabel" class="text-[11px] font-black text-emerald-500 uppercase tracking-[0.2em]">Mission 1</span>
                         </div>
-                        <h2 id="lessonTitle" class="text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">Line Graphs</h2>
+                        <h2 id="lessonTitle" class="text-3xl md:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">Line Graphs</h2>
                     </div>
                     <div class="flex gap-4 w-full lg:w-auto">
                         <button id="downloadBtn" class="flex-1 lg:flex-none flex items-center justify-center gap-3 bg-white text-slate-700 border-2 border-slate-100 px-8 py-4 rounded-2xl font-black hover:border-emerald-600 hover:text-emerald-600 transition-all transform active:scale-95 shadow-xl shadow-slate-100">
@@ -245,8 +244,8 @@
                     </div>
                 </div>
                 
-                <div class="bg-white rounded-[3rem] border border-slate-100 shadow-2xl shadow-slate-200/40 overflow-hidden flex flex-col mb-24">
-                    <div class="p-10 md:p-16 flex-1">
+                <div class="bg-white rounded-3xl md:rounded-[3rem] border border-slate-100 shadow-2xl shadow-slate-200/40 overflow-hidden flex flex-col mb-24">
+                    <div class="p-6 md:p-16 flex-1">
                         <div class="flex items-center gap-3 mb-8 text-[11px] font-black uppercase tracking-[0.3em] text-slate-400">
                             <span class="w-8 h-[2px] bg-emerald-500"></span>
                             Mission Brief
