@@ -163,7 +163,7 @@
 
         .hidden-page { display: none !important; }
 
-        /* Mobile Mission Grid */
+        /* Mobile Mission Accordion */
         @media (max-width: 1023px) {
             #lessonList {
                 display: block; /* Changes from grid to list */
@@ -286,6 +286,10 @@
                     </div>
                 </div>
             </div>
+            <button onclick="toggleMissions()" class="lg:hidden w-full p-4 bg-emerald-50 text-emerald-700 font-black text-xs uppercase tracking-[0.2em] flex items-center justify-between border-b border-emerald-100">
+                <span>Open Mission Scroll</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
             <div class="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-2 bg-slate-50/50" id="lessonList"></div>
         </aside>
 
