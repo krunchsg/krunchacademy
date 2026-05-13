@@ -167,25 +167,26 @@
 
         .hidden-page { display: none !important; }
 
-        /* Updated Horizontal Scroll for Mobile - Fixed Alignment */
+        /* Updated Horizontal Scroll for Mobile - 2 Row Stacked Grid */
         @media (max-width: 1023px) {
             #lessonList {
-                display: flex;
-                flex-direction: row;
+                display: grid;
+                grid-template-rows: repeat(2, 64px); /* Two fixed rows */
+                grid-auto-flow: column; /* Stack vertically then move right */
                 overflow-x: auto;
                 overflow-y: hidden;
                 gap: 12px;
-                padding: 12px 4px;
+                padding: 12px 8px;
                 scroll-snap-type: x mandatory;
                 -webkit-overflow-scrolling: touch;
-                align-items: center; /* Ensure all items align on horizontal axis */
             }
             #lessonList > div {
-                flex: 0 0 160px; 
+                flex: none; 
+                width: 180px; /* Increased width slightly for readability */
                 scroll-snap-align: start;
                 flex-direction: row !important; 
-                align-items: center !important; /* Forces badge and text to align vertically */
-                height: 64px; /* Fixed height to prevent "Mission 1" jump */
+                align-items: center !important;
+                height: 64px; 
                 margin: 0 !important;
             }
             .mobile-text-container {
@@ -193,6 +194,7 @@
                 flex-direction: column;
                 justify-content: center;
                 height: 100%;
+                overflow: hidden;
             }
         }
     </style>
@@ -312,7 +314,7 @@
                 <i class="fa-solid fa-arrow-right-long animate-pulse"></i>
             </div>
             
-            <div class="flex-1 overflow-y-auto custom-scrollbar px-1 py-4 space-y-2 bg-slate-50/50" id="lessonList"></div>
+            <div class="flex-1 overflow-y-auto custom-scrollbar px-1 py-4 space-y-2 lg:space-y-2 bg-slate-50/50" id="lessonList"></div>
         </aside>
 
         <!-- Start screen / Placeholder logic -->
@@ -326,34 +328,38 @@
 
         <section class="flex-1 overflow-y-auto custom-scrollbar relative bg-white hidden" id="mainDisplay">
             <div class="max-w-[1100px] mx-auto px-4 md:px-8 py-6 md:py-12 relative z-10">
-                <div class="video-container mb-6 group w-full">
+                
+                <!-- Mission Title Section First -->
+                <div class="flex flex-col mb-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span id="lessonCategory" class="ninja-badge px-5 py-1.5 dark-accent text-white text-[10px] font-black uppercase tracking-widest shadow-lg">Geography</span>
+                        <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span id="missionLabel" class="text-[11px] font-black text-emerald-500 uppercase tracking-[0.2em]">Mission 1</span>
+                    </div>
+                    <h2 id="lessonTitle" class="text-3xl md:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">Line Graphs</h2>
+                </div>
+
+                <!-- Video Section Second -->
+                <div class="video-container group w-full">
                     <iframe id="videoPlayer" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 
-                <div class="flex justify-end px-2 mb-6">
+                <div class="flex justify-end px-2 mt-3 mb-8">
                     <button onclick="refreshVideo()" class="text-[10px] font-black text-slate-400 hover:text-emerald-600 uppercase tracking-widest flex items-center gap-2 transition-colors">
                         <i class="fa-solid fa-rotate-right"></i>
                         Video glitch? Reset player
                     </button>
                 </div>
 
-                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-12">
-                    <div class="flex-1">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span id="lessonCategory" class="ninja-badge px-5 py-1.5 dark-accent text-white text-[10px] font-black uppercase tracking-widest shadow-lg">Geography</span>
-                            <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                            <span id="missionLabel" class="text-[11px] font-black text-emerald-500 uppercase tracking-[0.2em]">Mission 1</span>
-                        </div>
-                        <h2 id="lessonTitle" class="text-3xl md:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">Line Graphs</h2>
-                    </div>
-                    <div class="flex gap-4 w-full lg:w-auto">
-                        <button id="downloadBtn" class="flex-1 lg:flex-none flex items-center justify-center gap-3 bg-white text-slate-700 border-2 border-slate-100 px-8 py-4 rounded-2xl font-black hover:border-emerald-600 hover:text-emerald-600 transition-all transform active:scale-95 shadow-xl shadow-slate-100">
-                            <i class="fa-solid fa-file-arrow-down"></i>
-                            Mission File
-                        </button>
-                    </div>
+                <!-- Action Row: Download Button -->
+                <div class="mb-12">
+                    <button id="downloadBtn" class="w-full flex items-center justify-center gap-3 bg-emerald-50 text-emerald-700 border-2 border-emerald-100 px-8 py-5 rounded-2xl font-black hover:bg-emerald-100 hover:border-emerald-200 transition-all transform active:scale-[0.98] shadow-sm">
+                        <i class="fa-solid fa-file-arrow-down text-lg"></i>
+                        DOWNLOAD MISSION FILE
+                    </button>
                 </div>
                 
+                <!-- Mission Brief Container -->
                 <div class="bg-white rounded-3xl md:rounded-[3rem] border border-slate-100 shadow-2xl shadow-slate-200/40 overflow-hidden flex flex-col mb-24">
                     <div class="p-6 md:p-16 flex-1">
                         <div class="flex items-center gap-3 mb-8 text-[11px] font-black uppercase tracking-[0.3em] text-slate-400">
@@ -475,7 +481,6 @@
                 const isActive = lesson.id === currentLessonId;
                 const div = document.createElement('div');
                 
-                // Card logic: Centered alignment with fixed vertical constraints for mobile
                 div.className = `p-3 rounded-xl cursor-pointer transition-all flex items-center gap-3 group ${isActive ? 'active-lesson' : 'hover:bg-white hover:shadow-md'}`;
                 
                 div.onclick = () => selectLesson(lesson.id);
@@ -522,7 +527,12 @@
             }
             document.getElementById('downloadBtn').onclick = () => {
                 if(lesson.pdfId) window.open(`https://drive.google.com/uc?export=download&id=${lesson.pdfId}`, '_blank');
-                else alert("Mission file coming soon!");
+                else {
+                    const btn = document.getElementById('downloadBtn');
+                    const originalText = btn.innerHTML;
+                    btn.innerHTML = `<i class="fa-solid fa-clock"></i> Coming Soon!`;
+                    setTimeout(() => btn.innerHTML = originalText, 2000);
+                }
             };
         }
 
