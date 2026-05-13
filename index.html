@@ -235,8 +235,8 @@
                 </div>
             </div>
 
-            <!-- Hamburger icon is naturally pushed right by justify-between or ml-auto -->
-            <button onclick="toggleMobileMenu()" class="lg:hidden menu-toggle-btn p-2 text-slate-600 hover:bg-slate-50 rounded-lg flex items-center justify-center">
+            <!-- Hamburger icon pushed right on mobile -->
+            <button onclick="toggleMobileMenu()" class="lg:hidden menu-toggle-btn p-2 text-slate-600 hover:bg-slate-50 rounded-lg flex items-center justify-center ml-auto">
                 <i class="fa-solid fa-bars text-xl"></i>
             </button>
             
@@ -501,6 +501,13 @@
 
         window.resetToSelection = function() {
             currentLessonId = null;
+            
+            // STOP VIDEO PLAYBACK
+            const player = document.getElementById('videoPlayer');
+            if (player) {
+                player.src = "";
+            }
+
             document.getElementById('mainDisplay').classList.add('hidden');
             document.getElementById('sidebar-container').classList.remove('hidden');
             
