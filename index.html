@@ -32,16 +32,19 @@
         .video-container { 
             position: relative; 
             width: 100%;
-            /* Use padding-top for a solid 16:9 ratio across all browsers */
-            padding-top: 56.25%; 
-            height: 0;
+            aspect-ratio: 16 / 9; /* Modern, stable way to define shape */
+            height: auto; /* Remove the fixed height 0 */
             overflow: hidden; 
             border-radius: 1rem;
-            background: #000; /* Prevents white flashes/gaps */
+            background: #000;
+            display: block;
         }
-        @media (min-width: 768px) {
+        @media (max-height: 500px) and (orientation: landscape) {
             .video-container {
-                border-radius: 2rem;
+                max-height: 70vh; /* Keeps it visible even on short landscape phones */
+                width: auto;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
         .video-container iframe { 
@@ -234,15 +237,15 @@
             <div class="space-y-3">
                 <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-2">Our Courses</p>
                 <div class="grid grid-cols-1 gap-2">
-                    <a href="https://krunch.sg/sec1hum/" class="p-3 border border-slate-100 rounded-xl font-bold text-sm">Sec 1 Geography & History</a>
-                    <a href="https://krunch.sg/sec2hum/" class="p-3 border border-slate-100 rounded-xl font-bold text-sm">Sec 2 Geography & History</a>
-                    <a href="https://krunch.sg/sec3hum/" class="p-3 border border-slate-100 rounded-xl font-bold text-sm">Sec 3 Geography, History & Social Studies</a>
-                    <a href="https://krunch.sg/sec4hum/" class="p-3 border border-slate-100 rounded-xl font-bold text-sm">Sec 4 Geography, History & Social Studies</a>
+                    <a href="https://krunch.sg/sec1hum/" target="_blank" class="p-3 border border-slate-100 rounded-xl font-bold text-sm">Sec 1 Geography & History</a>
+                    <a href="https://krunch.sg/sec2hum/" target="_blank" class="p-3 border border-slate-100 rounded-xl font-bold text-sm">Sec 2 Geography & History</a>
+                    <a href="https://krunch.sg/sec3hum/" target="_blank" class="p-3 border border-slate-100 rounded-xl font-bold text-sm">Sec 3 Geography, History & Social Studies</a>
+                    <a href="https://krunch.sg/sec4hum/" target="_blank" class="p-3 border border-slate-100 rounded-xl font-bold text-sm">Sec 4 Geography, History & Social Studies</a>
                 </div>
             </div>
 
             <!-- Subscribe Button -->
-            <a href="https://krunch.sg/subscribe/" class="block w-full accent-bg text-white py-4 rounded-2xl font-black text-center text-xs uppercase tracking-[0.2em]">
+            <a href="https://krunch.sg/subscribe/" target="_blank" class="block w-full accent-bg text-white py-4 rounded-2xl font-black text-center text-xs uppercase tracking-[0.2em]">
                 Subscribe for tips
             </a>
         </div>
@@ -276,7 +279,7 @@
         </aside>
 
         <section class="flex-1 overflow-y-auto custom-scrollbar relative bg-white" id="mainDisplay">
-            <div class="max-w-[1100px] mx-auto px-2 md:px-8 py-6 md:py-12 relative z-10">
+            <div class="max-w-[1100px] mx-auto px-0 md:px-8 py-4 md:py-12 relative z-10">
                 <div class="video-container mb-6 group w-full">
                     <iframe id="videoPlayer" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
