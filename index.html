@@ -100,10 +100,10 @@
             visibility: hidden;
             opacity: 0;
             position: absolute;
-            right: 0;
+            right: -50px;
             top: 100%;
             background-color: white;
-            min-width: 320px;
+            min-width: 280px;
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             border: 1px solid #f1f5f9;
             border-radius: 1.5rem;
@@ -131,8 +131,8 @@
 <body class="antialiased">
 
     <header class="glass-header sticky top-0 z-50">
-        <div class="max-w-[1600px] mx-auto px-6 h-20 flex items-center justify-between">
-            <div onclick="switchPage('skillsslam')" class="flex items-center gap-1 cursor-pointer group">
+        <div class="max-w-[1600px] mx-auto px-4 md:px-6 min-h-[80px] py-4 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div onclick="switchPage('skillsslam')" class="flex items-center gap-2 cursor-pointer group shrink-0">
                 <div class="logo-container border border-slate-100 shadow-sm transition-transform group-hover:scale-105">
                     <img id="mainLogo" 
                          src="https://lh3.googleusercontent.com/d/1jf3Kop9mGRripXM8WCxV9n9M5VceElcH" 
@@ -151,7 +151,7 @@
                 <button onclick="switchPage('combi')" id="tab-combi" class="nav-tab">Sec 2 Subject Combi</button>
             </nav>
 
-            <nav class="hidden lg:flex items-center gap-6">
+            <nav class="flex items-center gap-4 md:gap-6">
                 <div class="dropdown">
                     <button class="flex items-center gap-2 text-sm font-bold text-slate-700 hover:text-emerald-600 transition-colors py-4">
                         Courses
@@ -179,7 +179,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="https://krunch.sg/subscribe/" target="_blank" class="accent-bg text-white px-8 py-3 rounded-2xl font-black text-sm hover:bg-slate-900 transition-all shadow-xl shadow-emerald-100 transform hover:-translate-y-0.5 uppercase tracking-wider">
+                <a href="..." class="... px-4 md:px-8 py-2 md:py-3 text-[12px] md:text-sm ...">
                     Subscribe
                 </a>
             </nav>
