@@ -284,6 +284,14 @@
                     <iframe id="videoPlayer" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 
+                <div class="flex justify-between items-center px-2 mb-6">
+                    <button onclick="refreshVideo()" class="text-[10px] font-black text-slate-400 hover:text-emerald-600 uppercase tracking-widest flex items-center gap-2 transition-colors">
+                        <i class="fa-solid fa-rotate-right"></i>
+                        Reset Player if video does not load well
+                    </button>
+                    <!-- You can put other small utility links here -->
+                </div>
+
                 <div class="flex items-center justify-end gap-2 mb-12 px-2">
                     <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Produced by</span>
                     <a id="producerLink" href="https://www.instagram.com/geographer.stace/" target="_blank" class="flex items-center gap-1.5 group">
@@ -552,6 +560,13 @@
                 nav.classList.add('hidden');
             }
         };
+
+        window.refreshVideo = function() {
+            const player = document.getElementById('videoPlayer');
+            const currentSrc = player.src;
+            player.src = ''; // Clear it first
+            player.src = currentSrc; // Re-set it to trigger a reload
+        }
     </script>
 </body>
 </html>
