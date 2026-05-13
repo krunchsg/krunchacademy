@@ -170,7 +170,15 @@
 
         .hidden-page { display: none !important; }
 
+        /* Ensure mobile display fills screen correctly */
         @media (max-width: 1023px) {
+            #mainDisplay:not(.hidden) {
+                display: block !important;
+                position: relative;
+                min-height: calc(100vh - 80px);
+                z-index: 20;
+            }
+
             #lessonList {
                 display: grid;
                 grid-template-rows: repeat(2, 64px);
@@ -199,6 +207,13 @@
                 overflow: hidden;
             }
         }
+
+        /* Landscape orientation fixes for Menu button */
+        @media (orientation: landscape) and (max-width: 1024px) {
+            .menu-toggle-btn {
+                display: flex !important;
+            }
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -218,7 +233,8 @@
                     <span class="text-[10px] font-bold text-slate-400 tracking-[0.3em] uppercase">Ninja Academy</span>
                 </div>
             </div>
-            <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-slate-600 hover:bg-slate-50 rounded-lg ml-auto">
+            <!-- Added specific class for landscape control -->
+            <button onclick="toggleMobileMenu()" class="lg:hidden menu-toggle-btn p-2 text-slate-600 hover:bg-slate-50 rounded-lg ml-auto flex items-center justify-center">
                 <i class="fa-solid fa-bars text-xl"></i>
             </button>
             
@@ -523,15 +539,21 @@
             currentLessonId = id;
             renderLessons();
             
-            // Toggle visibility
-            document.getElementById('mainDisplay').classList.remove('hidden');
-            document.getElementById('missionPlaceholder').classList.add('hidden');
+            // Toggle visibility for main content display
+            const mainDisplay = document.getElementById('mainDisplay');
+            const missionPlaceholder = document.getElementById('missionPlaceholder');
+            const sidebar = document.getElementById('sidebar-container');
+
+            mainDisplay.classList.remove('hidden');
+            missionPlaceholder.classList.add('hidden');
             
             if (window.innerWidth < 1024) {
-                document.getElementById('sidebar-container').classList.add('hidden');
+                sidebar.classList.add('hidden');
             }
             
-            document.getElementById('mainDisplay').scrollTo({ top: 0, behavior: 'smooth' });
+            // Fix: ensure viewport scroll is corrected for mobile
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            mainDisplay.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function updateLessonContent() {
