@@ -31,10 +31,9 @@
         
         .video-container { 
             position: relative; 
-            padding-bottom: 56.25%; 
-            height: 0; 
+            width: 100%;
+            aspect-ratio: 16 / 9; /* This replaces padding-bottom */
             overflow: hidden; 
-            /* Responsive rounded corners */
             border-radius: 1rem;
         }
         @media (min-width: 768px) {
@@ -209,7 +208,7 @@
                 </div>
             </div>
             <a href="https://krunch.sg/subscribe/" target="_blank" class="accent-bg text-white px-4 md:px-8 py-2 md:py-3 rounded-xl md:rounded-2xl text-[12px] md:text-sm font-black uppercase tracking-widest hover:opacity-90 transition-all shadow-lg shadow-emerald-200 active:scale-95">
-                Subscribe
+                Subscribe for tips
             </a>
             </nav>
         </div>
@@ -218,7 +217,7 @@
             <!-- Page Tabs -->
             <div class="flex flex-col gap-3">
                 <button onclick="switchPage('skillsslam'); toggleMobileMenu()" class="text-left font-black text-sm uppercase tracking-widest p-3 bg-slate-50 rounded-xl">Skills Slam</button>
-                <button onclick="switchPage('combi'); toggleMobileMenu()" class="text-left font-black text-sm uppercase tracking-widest p-3 bg-slate-50 rounded-xl">Subject Combi</button>
+                <button onclick="switchPage('combi'); toggleMobileMenu()" class="text-left font-black text-sm uppercase tracking-widest p-3 bg-slate-50 rounded-xl">Sec 2 Subject Combi</button>
             </div>
             
             <!-- Courses -->
@@ -234,7 +233,7 @@
 
             <!-- Subscribe Button -->
             <a href="https://krunch.sg/subscribe/" class="block w-full accent-bg text-white py-4 rounded-2xl font-black text-center text-xs uppercase tracking-[0.2em]">
-                Subscribe Now
+                Subscribe for tips
             </a>
         </div>
     </header>
@@ -267,8 +266,8 @@
         </aside>
 
         <section class="flex-1 overflow-y-auto custom-scrollbar relative bg-white" id="mainDisplay">
-            <div class="max-w-[1100px] mx-auto px-4 md:px-8 py-6 md:py-12 relative z-10">
-                <div class="video-container mb-6 group mx-0 md:mx-auto">
+            <div class="max-w-[1100px] mx-auto px-2 md:px-8 py-6 md:py-12 relative z-10">
+                <div class="video-container mb-6 group w-full">
                     <iframe id="videoPlayer" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 
