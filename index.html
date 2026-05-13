@@ -56,11 +56,11 @@
             height: 52px;
             display: flex;
             align-items: center;
-            justify-content: flex-start; /* Aligns the image to the left */
+            justify-content: flex-start; /* Flush left */
+            width: fit-content; /* Shrink-wrap the image */
             overflow: hidden;
             background: white;
             border-radius: 14px;
-            width: fit-content; /* Shrinks the box to only fit the image */
         }
         .logo-img {
             height: 100%;
@@ -154,7 +154,7 @@
 </head>
 <body class="antialiased">
 
-    <header class="glass-header sticky top-0 z-50">
+    <header class="glass-header static md:sticky top-0 z-50">
         <div class="max-w-[1600px] mx-auto px-4 md:px-6 min-h-[80px] py-4 flex flex-col md:flex-row items-center justify-between gap-4">
             <div onclick="switchPage('skillsslam')" class="flex items-center gap-1 cursor-pointer group shrink-0">
                 <div class="logo-container border border-slate-100 shadow-sm transition-transform group-hover:scale-105">
@@ -169,6 +169,9 @@
                     <span class="text-[10px] font-bold text-slate-400 tracking-[0.3em] uppercase">Ninja Academy</span>
                 </div>
             </div>
+            <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-slate-600 hover:bg-slate-50 rounded-lg">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
             
             <nav class="flex items-center h-full">
                 <button onclick="switchPage('skillsslam')" id="tab-skillsslam" class="nav-tab active">Skills Slam</button>
@@ -501,6 +504,11 @@
         }
 
         renderLessons();
+    
+        window.toggleMobileMenu = function() {
+            const nav = document.getElementById('mobile-nav');
+            nav.classList.toggle('hidden');
+        };
     </script>
 </body>
 </html>
