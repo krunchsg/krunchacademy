@@ -225,13 +225,42 @@
                 margin-left: auto !important;
             }
         }
+
+        /* Gateway Styles */
+        .gateway-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .gateway-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Back Link Professional Style */
+        .back-menu-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #94a3b8;
+            transition: all 0.2s;
+            cursor: pointer;
+            margin-bottom: 1.5rem;
+            width: fit-content;
+        }
+        .back-menu-link:hover {
+            color: var(--krunch-accent);
+            transform: translateX(-2px);
+        }
     </style>
 </head>
 <body class="antialiased">
 
     <header class="glass-header">
         <div class="w-full px-4 md:px-8 min-h-[80px] py-4 flex flex-row items-center justify-between lg:justify-start gap-4">
-            <div onclick="switchPage('skillsslam')" class="flex items-center gap-1 cursor-pointer group shrink-0">
+            <div onclick="resetToGateway()" class="flex items-center gap-1 cursor-pointer group shrink-0">
                 <div class="logo-container border border-slate-100 shadow-sm transition-transform group-hover:scale-105">
                     <img id="mainLogo" 
                          src="https://lh3.googleusercontent.com/d/1jf3Kop9mGRripXM8WCxV9n9M5VceElcH" 
@@ -252,8 +281,8 @@
             <div class="hidden lg:block flex-grow"></div>
 
             <nav class="hidden lg:flex items-center h-full gap-8">
-                <button onclick="switchPage('skillsslam')" id="tab-skillsslam" class="nav-tab active">Skills Slam</button>
-                <button onclick="switchPage('combi')" id="tab-combi" class="nav-tab">Sec 2 Subject Combi</button>
+                <button onclick="switchPage('skillsslam')" id="tab-skillsslam" class="nav-tab">Skills Slam</button>
+                <button onclick="switchPage('combi')" id="tab-combi" class="nav-tab">Subject Navigator</button>
 
                 <div class="w-px h-6 bg-slate-200 mx-2"></div>
 
@@ -312,10 +341,57 @@
         </div>
     </header>
 
-    <main id="page-skillsslam" class="flex flex-col lg:flex-row h-auto lg:h-[calc(100vh-80px)] overflow-y-auto lg:overflow-hidden">
+    <!-- Start Screen (Gateway) -->
+    <main id="page-gateway" class="min-h-[calc(100vh-80px)] flex items-center justify-center p-6 bg-slate-50">
+        <div class="max-w-4xl w-full mx-auto">
+            <div class="text-center mb-12">
+                <span class="accent-text font-black text-xs uppercase tracking-[0.3em]">Welcome</span>
+                <h2 class="text-3xl md:text-5xl font-black text-slate-900 mt-2 tracking-tight">What would you like to explore?</h2>
+                <p class="text-slate-500 mt-4 text-sm md:text-base">Select your focus for today.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Skills Slam Option -->
+                <div onclick="switchPage('skillsslam')" class="gateway-card bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-xl cursor-pointer group flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-emerald-50 rounded-3xl flex items-center justify-center text-emerald-500 mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-emerald-50">
+                        <i class="fa-solid fa-bolt text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 uppercase tracking-tight italic">Skills Slam</h3>
+                    <p class="text-slate-500 text-sm mt-3 leading-relaxed">
+                        Master 30 essential Humanities skills in 30 days
+                    </p>
+                    <div class="mt-8 px-6 py-2 rounded-full bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest group-hover:bg-emerald-500 transition-colors">
+                        Start Training
+                    </div>
+                </div>
+
+                <!-- Subject Combi Option -->
+                <div onclick="switchPage('combi')" class="gateway-card bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-xl cursor-pointer group flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-blue-50 rounded-3xl flex items-center justify-center text-blue-500 mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-blue-50">
+                        <i class="fa-solid fa-compass text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 uppercase tracking-tight italic">Subject Navigator</h3>
+                    <p class="text-slate-500 text-sm mt-3 leading-relaxed">
+                        Find out if you're a better fit for Geography or History 
+                    </p>
+                    <div class="mt-8 px-6 py-2 rounded-full bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest group-hover:bg-blue-500 transition-colors">
+                        Open Navigator
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <main id="page-skillsslam" class="hidden-page flex flex-col lg:flex-row h-auto lg:h-[calc(100vh-80px)] overflow-y-auto lg:overflow-hidden">
         <aside id="sidebar-container" class="w-full lg:w-[380px] px-4 bg-white border-r border-slate-100 flex flex-col h-auto lg:h-full z-10 shadow-sm">
             
             <div id="mobilePlaceholder" class="lg:hidden p-8 text-center bg-white border-b border-slate-100">
+                <!-- Mobile specific back button -->
+                <button onclick="resetToGateway()" class="mb-6 mx-auto flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest hover:text-emerald-600 transition-colors">
+                    <i class="fa-solid fa-house"></i>
+                    Back to Menu
+                </button>
+
                 <div class="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-500 mb-4 shadow-md mx-auto">
                     <i class="fa-solid fa-user-ninja text-2xl"></i>
                 </div>
@@ -326,7 +402,6 @@
                 <div class="lg:hidden px-6 pt-4 text-center">
                     <div class="inline-flex items-center gap-2 py-1 px-3 bg-emerald-50 rounded-full border border-emerald-100 shadow-sm">
                         <i class="fa-solid fa-mobile-screen-button text-[10px] text-emerald-500"></i>
-                        <!-- Added whitespace-nowrap and slightly tightened tracking to ensure one-line fit -->
                         <p class="text-[9px] font-bold text-emerald-700 uppercase tracking-normal whitespace-nowrap">
                             Best viewed on a Personal Learning Device
                         </p>
@@ -335,6 +410,11 @@
             </div>
 
             <div class="p-8 border-b border-slate-100 bg-white">
+                <!-- NEW: Back to Menu for Desktop/Tablet Sidebar -->
+                <div onclick="resetToGateway()" class="hidden lg:flex back-menu-link">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Menu
+                </div>
+
                 <div class="flex items-center justify-between mb-6">
                     <div>
                         <h2 class="font-black text-xl text-slate-900 tracking-tight italic uppercase">Skills Slam</h2>
@@ -437,6 +517,13 @@
     </main>
 
     <main id="page-combi" class="hidden-page h-[calc(100vh-80px)] overflow-y-auto bg-slate-50">
+        <!-- Back button for mobile and now consistent text link for Desktop -->
+        <div class="p-4 md:px-12 md:py-8 bg-white border-b border-slate-100 flex items-center">
+            <div onclick="resetToGateway()" class="back-menu-link !mb-0">
+                <i class="fa-solid fa-arrow-left"></i> Back to Menu
+            </div>
+        </div>
+        
         <div class="max-w-[1200px] mx-auto px-8 py-16 flex flex-col min-h-full">
             <div class="flex-grow">
                 <div class="text-center mb-12">
@@ -448,7 +535,7 @@
                 <div class="bg-white rounded-[3rem] shadow-2xl shadow-slate-200 p-8 min-h-[600px] border border-slate-100 flex items-center justify-center mb-16">
                     <div class="text-center">
                         <div class="w-20 h-20 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-500 mx-auto mb-6 text-3xl">
-                            <i class="fa-solid fa-puzzle-piece"></i>
+                            <i class="fa-solid fa-compass"></i>
                         </div>
                         <p class="font-bold text-slate-400 uppercase tracking-widest text-sm">Interactive Logic Placeholder</p>
                         <p class="text-slate-400 text-xs mt-2">Drop your Subject Combi HTML interactive here!</p>
@@ -507,18 +594,33 @@
         let currentTrack = 'Geography';
         let currentLessonId = null;
 
-        window.switchPage = function(pageId) {
+        window.resetToGateway = function() {
+            localStorage.removeItem('selectedAcademyPage');
+            showPage('gateway');
+        };
+
+        function showPage(pageId) {
+            document.getElementById('page-gateway').classList.add('hidden-page');
+            document.getElementById('page-skillsslam').classList.add('hidden-page');
+            document.getElementById('page-combi').classList.add('hidden-page');
+
             document.querySelectorAll('.nav-tab').forEach(tab => tab.classList.remove('active'));
+
+            const targetPage = document.getElementById(`page-${pageId}`);
+            if (targetPage) targetPage.classList.remove('hidden-page');
+
             const targetTab = document.getElementById(`tab-${pageId}`);
             if (targetTab) targetTab.classList.add('active');
 
-            if (pageId === 'skillsslam') {
-                document.getElementById('page-skillsslam').classList.remove('hidden-page');
-                document.getElementById('page-combi').classList.add('hidden-page');
-            } else if (pageId === 'combi') {
-                document.getElementById('page-skillsslam').classList.add('hidden-page');
-                document.getElementById('page-combi').classList.remove('hidden-page');
+            if (pageId !== 'skillsslam') {
+                const player = document.getElementById('videoPlayer');
+                if (player) { player.pause(); player.src = ""; }
             }
+        }
+
+        window.switchPage = function(pageId) {
+            localStorage.setItem('selectedAcademyPage', pageId);
+            showPage(pageId);
         }
 
         window.setTrack = function(trackName) {
@@ -540,11 +642,8 @@
                 player.src = "";
             }
             
-            // Hide the video/lesson display
             document.getElementById('mainDisplay').classList.add('hidden');
             document.getElementById('missionPlaceholder').classList.remove('hidden');
-            
-            // CRITICAL: Reveal the sidebar for mobile users
             document.getElementById('sidebar-container').classList.remove('hidden');
             
             renderLessons();
@@ -641,6 +740,13 @@
                 }
             }
         });
+
+        const savedPage = localStorage.getItem('selectedAcademyPage');
+        if (savedPage) {
+            showPage(savedPage);
+        } else {
+            showPage('gateway');
+        }
 
         renderLessons();
     </script>
