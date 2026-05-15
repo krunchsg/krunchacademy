@@ -53,16 +53,17 @@
             }
         }
         
-        /* Updated Video Container for better Vertical Mobile alignment */
+        /* Fixed Video Container for Google Drive Compatibility */
         .video-container { 
             position: relative; 
             width: 100%;
-            aspect-ratio: 16 / 9; /* Modern aspect ratio control */
-            overflow: hidden; 
+            aspect-ratio: 16 / 9;
             border-radius: 1rem;
             background: #000;
             display: block;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            /* Removed overflow: hidden to prevent clipping of the video layer on mobile */
+            z-index: 5;
         }
         
         .video-container iframe { 
@@ -73,6 +74,17 @@
             height: 100%; 
             border: none; 
             display: block;
+            border-radius: 1rem;
+            /* Ensures the video content fits correctly within the frame */
+            object-fit: contain;
+            background: black;
+        }
+
+        /* Specifically target mobile to ensure height isn't collapsed */
+        @media (max-width: 767px) {
+            .video-container {
+                min-height: 220px; /* Force minimum height for G-Drive player UI */
+            }
         }
         
         .academy-badge {
@@ -310,7 +322,6 @@
                     <i class="fa-solid fa-graduation-cap text-2xl"></i>
                 </div>
                 <h3 class="font-black text-xl text-slate-900 uppercase tracking-tight italic">Ready to Learn?</h3>
-                <!-- Moved instructions above the badge per user request -->
                 <p class="text-slate-500 text-[11px] max-w-[240px] mx-auto mt-2">Select your subject and select a skill to start your journey!</p>
                 <div class="mt-4 mb-1 inline-flex items-center gap-2 py-1.5 px-3 bg-emerald-50 rounded-full border border-emerald-100 shadow-sm mx-auto">
                     <i class="fa-solid fa-mobile-screen-button text-[10px] text-emerald-500"></i>
@@ -355,7 +366,6 @@
                     <i class="fa-solid fa-graduation-cap text-3xl"></i>
                 </div>
                 <h3 class="font-black text-2xl text-slate-900 uppercase tracking-tight italic">Ready to Learn?</h3>
-                <!-- Moved instructions above the badge per user request -->
                 <p class="text-slate-500 text-sm max-w-[280px] leading-relaxed mt-2 mb-6">Select your subject and skill to start your journey!</p>
                 <div class="lg:hidden inline-flex items-center gap-2 py-1.5 px-4 bg-emerald-50 rounded-full border border-emerald-100 shadow-sm mx-auto">
                     <i class="fa-solid fa-mobile-screen-button text-[11px] text-emerald-500"></i>
@@ -580,7 +590,10 @@
             if (currentLessonId === null) return;
             const lesson = allLessons.find(l => l.id === currentLessonId);
             if (!lesson) return;
+            
+            // Re-constructing G-Drive URL with standard preview parameters
             document.getElementById('videoPlayer').src = `https://drive.google.com/file/d/${lesson.driveVideoId}/preview`;
+            
             document.getElementById('lessonTitle').innerText = lesson.title;
             document.getElementById('lessonCategory').innerText = lesson.track;
             document.getElementById('skillLabel').innerText = `Skill ${lesson.number}`;
@@ -613,7 +626,10 @@
             const player = document.getElementById('videoPlayer');
             const currentSrc = player.src;
             player.src = ''; 
-            player.src = currentSrc; 
+            // Small timeout to ensure the DOM refreshes before re-setting the src
+            setTimeout(() => {
+                player.src = currentSrc;
+            }, 50);
         }
 
         window.addEventListener('resize', () => {
