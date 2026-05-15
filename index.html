@@ -589,7 +589,6 @@
         let currentLessonId = null;
 
         window.resetToGateway = function() {
-            localStorage.removeItem('selectedAcademyPage');
             showPage('gateway');
         };
 
@@ -613,7 +612,6 @@
         }
 
         window.switchPage = function(pageId) {
-            localStorage.setItem('selectedAcademyPage', pageId);
             showPage(pageId);
         }
 
@@ -735,12 +733,7 @@
             }
         });
 
-        const savedPage = localStorage.getItem('selectedAcademyPage');
-        if (savedPage) {
-            showPage(savedPage);
-        } else {
-            showPage('gateway');
-        }
+        resetToGateway();
 
         renderLessons();
     </script>
