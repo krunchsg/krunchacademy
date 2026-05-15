@@ -53,12 +53,11 @@
             }
         }
         
-        /* Fixed Video Container for Mobile alignment */
+        /* Updated Video Container for better Vertical Mobile alignment */
         .video-container { 
             position: relative; 
             width: 100%;
-            height: 0;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            aspect-ratio: 16 / 9; /* Modern aspect ratio control */
             overflow: hidden; 
             border-radius: 1rem;
             background: #000;
@@ -311,11 +310,12 @@
                     <i class="fa-solid fa-graduation-cap text-2xl"></i>
                 </div>
                 <h3 class="font-black text-xl text-slate-900 uppercase tracking-tight italic">Ready to Learn?</h3>
-                <div class="mt-2 mb-3 inline-flex items-center gap-2 py-1.5 px-3 bg-emerald-50 rounded-full border border-emerald-100 shadow-sm mx-auto">
+                <!-- Moved instructions above the badge per user request -->
+                <p class="text-slate-500 text-[11px] max-w-[240px] mx-auto mt-2">Select your subject and select a skill to start your journey!</p>
+                <div class="mt-4 mb-1 inline-flex items-center gap-2 py-1.5 px-3 bg-emerald-50 rounded-full border border-emerald-100 shadow-sm mx-auto">
                     <i class="fa-solid fa-mobile-screen-button text-[10px] text-emerald-500"></i>
                     <p class="text-[9px] font-black text-emerald-700 uppercase tracking-widest">Best viewed on a Personal Learning Device</p>
                 </div>
-                <p class="text-slate-500 text-[11px] max-w-[240px] mx-auto">Select your subject and skill to start your journey!</p>
             </div>
 
             <div class="p-8 border-b border-slate-100 bg-white">
@@ -355,11 +355,12 @@
                     <i class="fa-solid fa-graduation-cap text-3xl"></i>
                 </div>
                 <h3 class="font-black text-2xl text-slate-900 uppercase tracking-tight italic">Ready to Learn?</h3>
-                <div class="lg:hidden mt-2 mb-4 inline-flex items-center gap-2 py-1.5 px-4 bg-emerald-50 rounded-full border border-emerald-100 shadow-sm mx-auto">
+                <!-- Moved instructions above the badge per user request -->
+                <p class="text-slate-500 text-sm max-w-[280px] leading-relaxed mt-2 mb-6">Select your subject and skill to start your journey!</p>
+                <div class="lg:hidden inline-flex items-center gap-2 py-1.5 px-4 bg-emerald-50 rounded-full border border-emerald-100 shadow-sm mx-auto">
                     <i class="fa-solid fa-mobile-screen-button text-[11px] text-emerald-500"></i>
                     <p class="text-[10px] font-black text-emerald-700 uppercase tracking-widest">Best viewed on a Personal Learning Device</p>
                 </div>
-                <p class="text-slate-500 text-sm max-w-[280px] leading-relaxed">Select your subject and skill to start your journey!</p>
             </div>
 
             <section class="absolute inset-0 overflow-y-auto custom-scrollbar bg-white hidden" id="mainDisplay">
