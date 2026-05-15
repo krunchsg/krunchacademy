@@ -321,7 +321,7 @@
                     <div class="inline-flex items-center gap-2 py-1 px-3 bg-emerald-50 rounded-full border border-emerald-100 shadow-sm">
                         <i class="fa-solid fa-mobile-screen-button text-[10px] text-emerald-500"></i>
                         <!-- Added whitespace-nowrap and slightly tightened tracking to ensure one-line fit -->
-                        <p class="text-[9px] font-black text-emerald-700 uppercase tracking-tighter sm:tracking-widest whitespace-nowrap">
+                        <p class="text-[9px] font-bold text-emerald-700 uppercase tracking-normal whitespace-nowrap">
                             Best viewed on a Personal Learning Device
                         </p>
                     </div>
@@ -386,7 +386,7 @@
                     </div>
 
                     <div class="video-container group w-full">
-                        <video id="videoPlayer" controls controlsList="nodownload" class="absolute top-0 left-0 w-full h-full"></video>
+                        <video id="videoPlayer" playsinline webkit-playsinline controls controlsList="nodownload" class="absolute top-0 left-0 w-full h-full"></video>
                     </div>
                     
                     <div class="flex justify-end px-2 mt-3 mb-8">
@@ -528,13 +528,19 @@
 
         window.resetToSelection = function() {
             currentLessonId = null;
-            const Player = document.getElementById('videoPlayer');
-            if (lesson.directUrl && lesson.directUrl.startsWith('http')) {
-                Player.src = lesson.directUrl;
-            } 
+            const player = document.getElementById('videoPlayer');
+            if (player) {
+                player.pause();
+                player.src = "";
+            }
+            
+            // Hide the video/lesson display
             document.getElementById('mainDisplay').classList.add('hidden');
-            document.getElementById('sidebar-container').classList.remove('hidden');
             document.getElementById('missionPlaceholder').classList.remove('hidden');
+            
+            // CRITICAL: Reveal the sidebar for mobile users
+            document.getElementById('sidebar-container').classList.remove('hidden');
+            
             renderLessons();
         }
 
