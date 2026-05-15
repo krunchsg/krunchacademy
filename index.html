@@ -53,10 +53,12 @@
             }
         }
         
+        /* Fixed Video Container for Mobile alignment */
         .video-container { 
             position: relative; 
             width: 100%;
-            aspect-ratio: 16 / 9; 
+            height: 0;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
             overflow: hidden; 
             border-radius: 1rem;
             background: #000;
@@ -71,6 +73,7 @@
             width: 100%; 
             height: 100%; 
             border: none; 
+            display: block;
         }
         
         .academy-badge {
@@ -307,12 +310,12 @@
                 <div class="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-500 mb-4 shadow-md mx-auto">
                     <i class="fa-solid fa-graduation-cap text-2xl"></i>
                 </div>
-                <h3 class="font-black text-xl text-slate-900 uppercase tracking-tight italic">Ready to Excel?</h3>
-                <div class="mt-2 mb-3 inline-flex items-center gap-2 py-1 px-3 bg-emerald-50 rounded-full border border-emerald-100 shadow-sm mx-auto">
+                <h3 class="font-black text-xl text-slate-900 uppercase tracking-tight italic">Ready to Learn?</h3>
+                <div class="mt-2 mb-3 inline-flex items-center gap-2 py-1.5 px-3 bg-emerald-50 rounded-full border border-emerald-100 shadow-sm mx-auto">
                     <i class="fa-solid fa-mobile-screen-button text-[10px] text-emerald-500"></i>
                     <p class="text-[9px] font-black text-emerald-700 uppercase tracking-widest">Best viewed on a Personal Learning Device</p>
                 </div>
-                <p class="text-slate-500 text-[11px] max-w-[240px] mx-auto">Choose your subject and select a skill to begin learning.</p>
+                <p class="text-slate-500 text-[11px] max-w-[240px] mx-auto">Select your subject and skill to start your journey!</p>
             </div>
 
             <div class="p-8 border-b border-slate-100 bg-white">
@@ -351,13 +354,12 @@
                 <div class="w-20 h-20 bg-emerald-50 rounded-3xl flex items-center justify-center text-emerald-500 mb-6 shadow-xl shadow-emerald-50">
                     <i class="fa-solid fa-graduation-cap text-3xl"></i>
                 </div>
-                <h3 class="font-black text-2xl text-slate-900 uppercase tracking-tight italic">Ready to Excel?</h3>
-                <!-- Added lg:hidden class below to hide the PLD notice on Desktop/Laptop views -->
+                <h3 class="font-black text-2xl text-slate-900 uppercase tracking-tight italic">Ready to Learn?</h3>
                 <div class="lg:hidden mt-2 mb-4 inline-flex items-center gap-2 py-1.5 px-4 bg-emerald-50 rounded-full border border-emerald-100 shadow-sm mx-auto">
                     <i class="fa-solid fa-mobile-screen-button text-[11px] text-emerald-500"></i>
                     <p class="text-[10px] font-black text-emerald-700 uppercase tracking-widest">Best viewed on a Personal Learning Device</p>
                 </div>
-                <p class="text-slate-500 text-sm max-w-[280px] leading-relaxed">Choose your subject and select a skill to begin learning.</p>
+                <p class="text-slate-500 text-sm max-w-[280px] leading-relaxed">Select your subject and skill to start your journey!</p>
             </div>
 
             <section class="absolute inset-0 overflow-y-auto custom-scrollbar bg-white hidden" id="mainDisplay">
