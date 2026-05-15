@@ -612,6 +612,10 @@
         }
 
         window.switchPage = function(pageId) {
+            // If the user is entering Skills Slam, reset the mission view to the placeholder
+            if (pageId === 'skillsslam') {
+                resetToSelection();
+            }
             showPage(pageId);
         }
 
