@@ -308,14 +308,18 @@
                     <i class="fa-solid fa-graduation-cap text-2xl"></i>
                 </div>
                 <h3 class="font-black text-xl text-slate-900 uppercase tracking-tight italic">Ready to Excel?</h3>
-                <p class="text-slate-500 text-[11px] mt-1 max-w-[240px] mx-auto">Choose your subject and select a skill to begin learning.</p>
+                <div class="mt-2 mb-3 inline-flex items-center gap-2 py-1 px-3 bg-emerald-50 rounded-full border border-emerald-100 shadow-sm mx-auto">
+                    <i class="fa-solid fa-mobile-screen-button text-[10px] text-emerald-500"></i>
+                    <p class="text-[9px] font-black text-emerald-700 uppercase tracking-widest">Best viewed on a Personal Learning Device</p>
+                </div>
+                <p class="text-slate-500 text-[11px] max-w-[240px] mx-auto">Choose your subject and select a skill to begin learning.</p>
             </div>
 
             <div class="p-8 border-b border-slate-100 bg-white">
                 <div class="flex items-center justify-between mb-6">
                     <div>
                         <h2 class="font-black text-xl text-slate-900 tracking-tight italic uppercase">Skills Slam</h2>
-                        <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Master 30 essential Humanities Skills</p>
+                        <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Master 30 essential Skills</p>
                     </div>
                     <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600">
                         <i class="fa-solid fa-book-open"></i>
@@ -333,13 +337,6 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="lg:hidden px-6 pt-4 text-center">
-                <div class="inline-flex items-center gap-2 py-1 px-3 bg-emerald-50 rounded-full border border-emerald-100 shadow-sm">
-                    <i class="fa-solid fa-mobile-screen-button text-[10px] text-emerald-500"></i>
-                    <p class="text-[9px] font-black text-emerald-700 uppercase tracking-widest">Best viewed on a Personal Learning Device</p>
-                </div>
-            </div>
 
             <div class="lg:hidden px-4 mt-6 mb-1 font-black text-[9px] text-slate-400 uppercase tracking-widest flex items-center justify-between">
                 <span>Select Skill</span>
@@ -355,7 +352,12 @@
                     <i class="fa-solid fa-graduation-cap text-3xl"></i>
                 </div>
                 <h3 class="font-black text-2xl text-slate-900 uppercase tracking-tight italic">Ready to Excel?</h3>
-                <p class="text-slate-500 text-sm mt-3 max-w-[280px] leading-relaxed">Choose your subject and select a skill to begin learning.</p>
+                <!-- Added lg:hidden class below to hide the PLD notice on Desktop/Laptop views -->
+                <div class="lg:hidden mt-2 mb-4 inline-flex items-center gap-2 py-1.5 px-4 bg-emerald-50 rounded-full border border-emerald-100 shadow-sm mx-auto">
+                    <i class="fa-solid fa-mobile-screen-button text-[11px] text-emerald-500"></i>
+                    <p class="text-[10px] font-black text-emerald-700 uppercase tracking-widest">Best viewed on a Personal Learning Device</p>
+                </div>
+                <p class="text-slate-500 text-sm max-w-[280px] leading-relaxed">Choose your subject and select a skill to begin learning.</p>
             </div>
 
             <section class="absolute inset-0 overflow-y-auto custom-scrollbar bg-white hidden" id="mainDisplay">
@@ -389,7 +391,7 @@
                     <div class="mb-12">
                         <button id="downloadBtn" class="w-full flex items-center justify-center gap-3 bg-emerald-50 text-emerald-700 border-2 border-emerald-100 px-8 py-5 rounded-2xl font-black hover:bg-emerald-100 hover:border-emerald-200 transition-all transform active:scale-[0.98] shadow-sm">
                             <i class="fa-solid fa-file-arrow-down text-lg"></i>
-                            DOWNLOAD HANDOUT
+                            DOWNLOAD STUDY GUIDE
                         </button>
                     </div>
                     
