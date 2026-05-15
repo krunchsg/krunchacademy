@@ -322,7 +322,7 @@
         <div id="mobile-nav" class="hidden lg:hidden bg-white border-b border-slate-100 p-6 space-y-6 shadow-xl animate-in slide-in-from-top duration-300">
             <div class="flex flex-col gap-3">
                 <button onclick="switchPage('skillsslam'); toggleMobileMenu()" class="text-left font-black text-sm uppercase tracking-widest p-3 bg-slate-50 rounded-xl">Skills Slam</button>
-                <button onclick="switchPage('combi'); toggleMobileMenu()" class="text-left font-black text-sm uppercase tracking-widest p-3 bg-slate-50 rounded-xl">Sec 2 Subject Combi</button>
+                <button onclick="switchPage('combi'); toggleMobileMenu()" class="text-left font-black text-sm uppercase tracking-widest p-3 bg-slate-50 rounded-xl">Subject Navigator</button>
             </div>
             
             <div class="space-y-3">
@@ -345,6 +345,10 @@
     <main id="page-gateway" class="min-h-[calc(100vh-80px)] flex items-center justify-center p-6 bg-slate-50">
         <div class="max-w-4xl w-full mx-auto">
             <div class="text-center mb-12">
+                <!-- Mobile only plain text notice positioned at top -->
+                <p class="lg:hidden text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-4">
+                    Best viewed on a personal learning device
+                </p>
                 <span class="accent-text font-black text-xs uppercase tracking-[0.3em]">Welcome</span>
                 <h2 class="text-3xl md:text-5xl font-black text-slate-900 mt-2 tracking-tight">What would you like to explore?</h2>
                 <p class="text-slate-500 mt-4 text-sm md:text-base">Select your focus for today.</p>
@@ -397,16 +401,6 @@
                 </div>
                 <h3 class="font-black text-xl text-slate-900 uppercase tracking-tight italic">Ready for Training?</h3>
                 <p class="text-slate-500 text-[11px] mt-1 max-w-[240px] mx-auto">Choose your mission track and select a mission to begin your briefing.</p>
-               
-                <!-- Mobile Optimization Line -->
-                <div class="lg:hidden px-6 pt-4 text-center">
-                    <div class="inline-flex items-center gap-2 py-1 px-3 bg-emerald-50 rounded-full border border-emerald-100 shadow-sm">
-                        <i class="fa-solid fa-mobile-screen-button text-[10px] text-emerald-500"></i>
-                        <p class="text-[9px] font-bold text-emerald-700 uppercase tracking-normal whitespace-nowrap">
-                            Best viewed on a Personal Learning Device
-                        </p>
-                    </div>
-                </div>
             </div>
 
             <div class="p-8 border-b border-slate-100 bg-white">
