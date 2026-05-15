@@ -1,1 +1,1 @@
-# ninjaacademy
+# krunchacademy
