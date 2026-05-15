@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KRUNCH Ninja Academy</title>
+    <title>KRUNCH Academy</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        {
+        * {
         -webkit-tap-highlight-color: transparent;
         }
         :root {
@@ -40,7 +40,6 @@
                 padding-bottom: 0.5rem;
             }
             .logo-container { height: 40px !important; }
-            /* Force video container to remain visible in tight landscape */
             .video-container { margin-bottom: 1rem !important; }
         }
 
@@ -57,16 +56,10 @@
                 transform: translateY(-2px);
             }
         }
-        stream-player .overlay, 
-        stream-player .action-icon {
-        display: none !important;
-        }
         
-        /* FIXED VIDEO PLAYER CONTAINER */
         .video-container { 
             position: relative; 
             width: 100%;
-            /* Height is 0, padding forces 16:9 ratio correctly on all browsers */
             height: 0;
             padding-bottom: 56.25%; 
             overflow: hidden; 
@@ -76,7 +69,6 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
         
-        /* FIXED IFRAME BEHAVIOR */
         .video-container iframe { 
             position: absolute; 
             top: 0; 
@@ -184,7 +176,6 @@
 
         .hidden-page { display: none !important; }
 
-        /* Ensure mobile display fills screen correctly */
         @media (max-width: 1023px) {
             #mainDisplay:not(.hidden) {
                 display: block !important;
@@ -222,7 +213,6 @@
             }
         }
 
-        /* Landscape orientation fixes for Menu button */
         @media (orientation: landscape) and (max-width: 1024px) {
             .menu-toggle-btn {
                 display: flex !important;
@@ -249,49 +239,48 @@
                 </div>
             </div>
 
-            <!-- Hamburger icon pushed right on mobile -->
             <button onclick="toggleMobileMenu()" class="lg:hidden menu-toggle-btn p-2 text-slate-600 hover:bg-slate-50 rounded-lg flex items-center justify-center ml-auto">
                 <i class="fa-solid fa-bars text-xl"></i>
             </button>
             
-        <div class="hidden lg:block flex-grow"></div>
+            <div class="hidden lg:block flex-grow"></div>
 
-        <nav class="hidden lg:flex items-center h-full gap-8">
-            <button onclick="switchPage('skillsslam')" id="tab-skillsslam" class="nav-tab active">Skills Slam</button>
-            <button onclick="switchPage('combi')" id="tab-combi" class="nav-tab">Sec 2 Subject Combi</button>
+            <nav class="hidden lg:flex items-center h-full gap-8">
+                <button onclick="switchPage('skillsslam')" id="tab-skillsslam" class="nav-tab active">Skills Slam</button>
+                <button onclick="switchPage('combi')" id="tab-combi" class="nav-tab">Sec 2 Subject Combi</button>
 
-            <div class="w-px h-6 bg-slate-200 mx-2"></div>
+                <div class="w-px h-6 bg-slate-200 mx-2"></div>
 
-            <div class="dropdown">
-                <button class="flex items-center gap-2 text-sm font-bold text-slate-700 hover:text-emerald-600 transition-colors py-4">
-                    Courses
-                    <i class="fa-solid fa-chevron-down text-[10px]"></i>
-                </button>
-                <div class="dropdown-content">
-                    <div class="bg-white rounded-2xl border border-slate-50 p-2 shadow-inner">
-                        <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest px-3 py-2">Select Your Level</p>
-                        <a href="https://krunch.sg/sec1hum/" target="_blank" class="dropdown-item group">
-                            <span class="block text-[10px] font-bold text-emerald-600 uppercase tracking-tight">Sec 1</span>
-                            <span class="block text-sm font-black text-slate-700 group-hover:text-emerald-700">Geography & History</span>
-                        </a>
-                        <a href="https://krunch.sg/sec2hum/" target="_blank" class="dropdown-item group">
-                            <span class="block text-[10px] font-bold text-emerald-600 uppercase tracking-tight">Sec 2</span>
-                            <span class="block text-sm font-black text-slate-700 group-hover:text-emerald-700">Geography & History</span>
-                        </a>
-                        <a href="https://krunch.sg/sec3hum/" target="_blank" class="dropdown-item group">
-                            <span class="block text-[10px] font-bold text-emerald-600 uppercase tracking-tight">Sec 3</span>
-                            <span class="block text-sm font-black text-slate-700 group-hover:text-emerald-700">Geography, History & Social Studies</span>
-                        </a>
-                        <a href="https://krunch.sg/sec4hum/" target="_blank" class="dropdown-item group">
-                            <span class="block text-[10px] font-bold text-emerald-600 uppercase tracking-tight">Sec 4</span>
-                            <span class="block text-sm font-black text-slate-700 group-hover:text-emerald-700">Geography, History & Social Studies</span>
-                        </a>
+                <div class="dropdown">
+                    <button class="flex items-center gap-2 text-sm font-bold text-slate-700 hover:text-emerald-600 transition-colors py-4">
+                        Courses
+                        <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <div class="bg-white rounded-2xl border border-slate-50 p-2 shadow-inner">
+                            <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest px-3 py-2">Select Your Level</p>
+                            <a href="https://krunch.sg/sec1hum/" target="_blank" class="dropdown-item group">
+                                <span class="block text-[10px] font-bold text-emerald-600 uppercase tracking-tight">Sec 1</span>
+                                <span class="block text-sm font-black text-slate-700 group-hover:text-emerald-700">Geography & History</span>
+                            </a>
+                            <a href="https://krunch.sg/sec2hum/" target="_blank" class="dropdown-item group">
+                                <span class="block text-[10px] font-bold text-emerald-600 uppercase tracking-tight">Sec 2</span>
+                                <span class="block text-sm font-black text-slate-700 group-hover:text-emerald-700">Geography & History</span>
+                            </a>
+                            <a href="https://krunch.sg/sec3hum/" target="_blank" class="dropdown-item group">
+                                <span class="block text-[10px] font-bold text-emerald-600 uppercase tracking-tight">Sec 3</span>
+                                <span class="block text-sm font-black text-slate-700 group-hover:text-emerald-700">Geography, History & Social Studies</span>
+                            </a>
+                            <a href="https://krunch.sg/sec4hum/" target="_blank" class="dropdown-item group">
+                                <span class="block text-[10px] font-bold text-emerald-600 uppercase tracking-tight">Sec 4</span>
+                                <span class="block text-sm font-black text-slate-700 group-hover:text-emerald-700">Geography, History & Social Studies</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <a href="https://krunch.sg/subscribe/" target="_blank" class="accent-bg text-white px-4 md:px-8 py-2 md:py-3 rounded-xl md:rounded-2xl text-[12px] md:text-sm font-black uppercase tracking-widest hover:opacity-90 transition-all shadow-lg shadow-emerald-200 active:scale-95">
-                Subscribe for tips
-            </a>
+                <a href="https://krunch.sg/subscribe/" target="_blank" class="accent-bg text-white px-4 md:px-8 py-2 md:py-3 rounded-xl md:rounded-2xl text-[12px] md:text-sm font-black uppercase tracking-widest hover:opacity-90 transition-all shadow-lg shadow-emerald-200 active:scale-95">
+                    Subscribe for tips
+                </a>
             </nav>
         </div>
 
@@ -326,13 +315,12 @@
                 </div>
                 <h3 class="font-black text-xl text-slate-900 uppercase tracking-tight italic">Ready for Training?</h3>
                 <p class="text-slate-500 text-[11px] mt-1 max-w-[240px] mx-auto">Choose your mission track and select a mission to begin your briefing.</p>
-            </div>
-
-            <!-- Mobile Optimization Line -->
-            <div class="lg:hidden px-6 pt-4 text-center">
-                <div class="inline-flex items-center gap-2 py-1 px-3 bg-emerald-50 rounded-full border border-emerald-100 shadow-sm">
-                    <i class="fa-solid fa-mobile-screen-button text-[10px] text-emerald-500"></i>
-                    <p class="text-[9px] font-black text-emerald-700 uppercase tracking-widest">Best viewed on a Personal Learning Device</p>
+               
+                <div class="lg:hidden px-6 pt-4 text-center">
+                    <div class="inline-flex items-center gap-2 py-1 px-3 bg-emerald-50 rounded-full border border-emerald-100 shadow-sm">
+                        <i class="fa-solid fa-mobile-screen-button text-[10px] text-emerald-500"></i>
+                        <p class="text-[9px] font-black text-emerald-700 uppercase tracking-widest">Best viewed on a Personal Learning Device</p>
+                    </div>
                 </div>
             </div>
 
@@ -367,7 +355,6 @@
             <div class="flex-1 overflow-y-auto custom-scrollbar px-1 py-4 space-y-2 lg:space-y-2 bg-slate-50/50" id="lessonList"></div>
         </aside>
 
-        <!-- Container for right-side content: placeholder OR main display -->
         <div class="flex-1 relative lg:h-full overflow-hidden bg-white">
             <div id="missionPlaceholder" class="absolute inset-0 flex flex-col items-center justify-center p-12 text-center bg-white">
                 <div class="w-20 h-20 bg-emerald-50 rounded-3xl flex items-center justify-center text-emerald-500 mb-6 shadow-xl shadow-emerald-50">
@@ -395,7 +382,6 @@
                     </div>
 
                     <div class="video-container group w-full">
-                        <!-- Fix applied: Added base parameters for better iframe stability -->
                         <iframe id="videoPlayer" src="" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     
@@ -430,7 +416,6 @@
                         </div>
                     </div>
 
-                    <!-- Option 1 Footer -->
                     <footer class="mt-16 pt-8 border-t border-slate-100 text-center pb-8">
                         <p class="text-xs font-medium text-slate-400 tracking-wide">
                             We make every byte count. | <a href="http://krunch.sg/" target="_blank" class="text-emerald-500 hover:text-emerald-600 transition-colors font-bold">krunch.sg</a>
@@ -461,7 +446,6 @@
                 </div>
             </div>
 
-            <!-- Option 1 Footer for Combi Page -->
             <footer class="mt-8 pt-8 border-t border-slate-200/60 text-center pb-8">
                 <p class="text-xs font-medium text-slate-400 tracking-wide">
                     We make every byte count. | <a href="http://krunch.sg/" target="_blank" class="text-emerald-500 hover:text-emerald-600 transition-colors font-bold">krunch.sg</a>
@@ -540,19 +524,11 @@
 
         window.resetToSelection = function() {
             currentLessonId = null;
-            
-            // STOP VIDEO PLAYBACK
             const player = document.getElementById('videoPlayer');
-            if (player) {
-                player.src = "";
-            }
-
+            if (player) player.src = "";
             document.getElementById('mainDisplay').classList.add('hidden');
             document.getElementById('sidebar-container').classList.remove('hidden');
-            
-            // Show placeholder on desktop
             document.getElementById('missionPlaceholder').classList.remove('hidden');
-            
             renderLessons();
         }
 
@@ -586,22 +562,11 @@
         function selectLesson(id) {
             currentLessonId = id;
             renderLessons();
-            
-            // Toggle visibility for main content display
-            const mainDisplay = document.getElementById('mainDisplay');
-            const missionPlaceholder = document.getElementById('missionPlaceholder');
-            const sidebar = document.getElementById('sidebar-container');
-
-            mainDisplay.classList.remove('hidden');
-            missionPlaceholder.classList.add('hidden');
-            
-            if (window.innerWidth < 1024) {
-                sidebar.classList.add('hidden');
-            }
-            
-            // Fix: ensure viewport scroll is corrected for mobile
+            document.getElementById('mainDisplay').classList.remove('hidden');
+            document.getElementById('missionPlaceholder').classList.add('hidden');
+            if (window.innerWidth < 1024) document.getElementById('sidebar-container').classList.add('hidden');
             window.scrollTo({ top: 0, behavior: 'smooth' });
-            mainDisplay.scrollTo({ top: 0, behavior: 'smooth' });
+            document.getElementById('mainDisplay').scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function updateLessonContent() {
@@ -609,26 +574,25 @@
             const lesson = allLessons.find(l => l.id === currentLessonId);
             if (!lesson) return;
             
-            // CHECK FOR YOUTUBE OR GOOGLE DRIVE
-            if (lesson.youtubeId) {
-                document.getElementById('videoPlayer').src = `https://www.youtube.com/embed/${lesson.youtubeId}?rel=0&modestbranding=1`;
+            const player = document.getElementById('videoPlayer');
+            if (lesson.directUrl) {
+                player.src = lesson.directUrl;
             } else if (lesson.driveVideoId) {
-                document.getElementById('videoPlayer').src = `https://drive.google.com/file/d/${lesson.driveVideoId}/preview?authuser=0`;
-            }
-                else if (lesson.directUrl) {
-                document.getElementById('videoPlayer').src = lesson.directUrl;
+                player.src = `https://drive.google.com/file/d/${lesson.driveVideoId}/preview?authuser=0`;
+            } else if (lesson.youtubeId) {
+                player.src = `https://www.youtube.com/embed/${lesson.youtubeId}?rel=0&modestbranding=1`;
             }
             
             document.getElementById('lessonTitle').innerText = lesson.title;
             document.getElementById('lessonCategory').innerText = lesson.track;
             document.getElementById('missionLabel').innerText = `Mission ${lesson.number}`;
             document.getElementById('lessonDescription').innerHTML = lesson.desc;
-            const prodLink = document.getElementById('producerLink');
-            const prodHandle = document.getElementById('producerHandle');
+            
             if (lesson.producer) {
-                prodLink.href = lesson.producer.link;
-                prodHandle.innerText = lesson.producer.handle;
+                document.getElementById('producerLink').href = lesson.producer.link;
+                document.getElementById('producerHandle').innerText = lesson.producer.handle;
             }
+
             document.getElementById('downloadBtn').onclick = () => {
                 if(lesson.pdfId) window.open(`https://drive.google.com/uc?export=download&id=${lesson.pdfId}`, '_blank');
                 else {
@@ -640,11 +604,8 @@
             };
         }
 
-        renderLessons();
-       
         window.toggleMobileMenu = function() {
-            const nav = document.getElementById('mobile-nav');
-            nav.classList.toggle('hidden');
+            document.getElementById('mobile-nav').classList.toggle('hidden');
         };
 
         window.refreshVideo = function() {
@@ -666,6 +627,8 @@
                 }
             }
         });
+
+        renderLessons();
     </script>
 </body>
 </html>
