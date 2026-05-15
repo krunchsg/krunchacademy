@@ -393,12 +393,6 @@
         <aside id="sidebar-container" class="w-full lg:w-[380px] px-4 bg-white border-r border-slate-100 flex flex-col h-auto lg:h-full z-10 shadow-sm">
             
             <div id="mobilePlaceholder" class="lg:hidden p-8 text-center bg-white border-b border-slate-100">
-                <!-- Mobile specific back button -->
-                <button onclick="resetToGateway()" class="mb-6 mx-auto flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest hover:text-emerald-600 transition-colors">
-                    <i class="fa-solid fa-house"></i>
-                    Back to Menu
-                </button>
-
                 <div class="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-500 mb-4 shadow-md mx-auto">
                     <i class="fa-solid fa-user-ninja text-2xl"></i>
                 </div>
@@ -407,11 +401,6 @@
             </div>
 
             <div class="p-8 border-b border-slate-100 bg-white">
-                <!-- NEW: Back to Menu for Desktop/Tablet Sidebar -->
-                <div onclick="resetToGateway()" class="hidden lg:flex back-menu-link">
-                    <i class="fa-solid fa-arrow-left"></i> Back to Menu
-                </div>
-
                 <div class="flex items-center justify-between mb-6">
                     <div>
                         <h2 class="font-black text-xl text-slate-900 tracking-tight italic uppercase">Skills Slam</h2>
@@ -514,13 +503,6 @@
     </main>
 
     <main id="page-combi" class="hidden-page h-[calc(100vh-80px)] overflow-y-auto bg-slate-50">
-        <!-- Back button for mobile and now consistent text link for Desktop -->
-        <div class="p-4 md:px-12 md:py-8 bg-white border-b border-slate-100 flex items-center">
-            <div onclick="resetToGateway()" class="back-menu-link !mb-0">
-                <i class="fa-solid fa-arrow-left"></i> Back to Menu
-            </div>
-        </div>
-        
         <div class="max-w-[1200px] mx-auto px-8 py-16 flex flex-col min-h-full">
             <div class="flex-grow">
                 <div class="text-center mb-12">
