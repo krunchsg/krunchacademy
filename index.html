@@ -55,7 +55,7 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
 
-        @media (max-width: 767px) {
+        @media (max-width: 1023px) {
             .active-lesson {
                 border-left: none;
                 border-bottom: 4px solid var(--krunch-accent);
@@ -182,7 +182,7 @@
 
         .hidden-page { display: none !important; }
 
-        @media (max-width: 767px) {
+        @media (max-width: 1023px) {
             #mainDisplay:not(.hidden) {
                 display: block !important;
                 position: relative;
@@ -245,13 +245,13 @@
                 </div>
             </div>
 
-            <button onclick="toggleMobileMenu()" class="md:hidden menu-toggle-btn p-2 text-slate-600 hover:bg-slate-50 rounded-lg flex items-center justify-center ml-auto">
+            <button onclick="toggleMobileMenu()" class="lg:hidden menu-toggle-btn p-2 text-slate-600 hover:bg-slate-50 rounded-lg flex items-center justify-center ml-auto">
                 <i class="fa-solid fa-bars text-xl"></i>
             </button>
             
-            <div class="hidden md:block flex-grow"></div>
+            <div class="hidden lg:block flex-grow"></div>
 
-            <nav class="hidden md:flex items-center h-full gap-8">
+            <nav class="hidden lg:flex items-center h-full gap-8">
                 <button onclick="switchPage('skillsslam')" id="tab-skillsslam" class="nav-tab active">Skills Slam</button>
                 <button onclick="switchPage('combi')" id="tab-combi" class="nav-tab">Sec 2 Subject Combi</button>
 
@@ -290,7 +290,7 @@
             </nav>
         </div>
 
-        <div id="mobile-nav" class="hidden md:hidden bg-white border-b border-slate-100 p-6 space-y-6 shadow-xl animate-in slide-in-from-top duration-300">
+        <div id="mobile-nav" class="hidden lg:hidden bg-white border-b border-slate-100 p-6 space-y-6 shadow-xl animate-in slide-in-from-top duration-300">
             <div class="flex flex-col gap-3">
                 <button onclick="switchPage('skillsslam'); toggleMobileMenu()" class="text-left font-black text-sm uppercase tracking-widest p-3 bg-slate-50 rounded-xl">Skills Slam</button>
                 <button onclick="switchPage('combi'); toggleMobileMenu()" class="text-left font-black text-sm uppercase tracking-widest p-3 bg-slate-50 rounded-xl">Sec 2 Subject Combi</button>
@@ -312,10 +312,10 @@
         </div>
     </header>
 
-    <main id="page-skillsslam" class="flex flex-col md:flex-row h-auto md:h-[calc(100vh-80px)] overflow-y-auto lg:overflow-hidden">
-        <aside id="sidebar-container" class="w-full md:w-[380px] px-4 bg-white border-r border-slate-100 flex flex-col h-auto lg:h-full z-10 shadow-sm">
+    <main id="page-skillsslam" class="flex flex-col lg:flex-row h-auto lg:h-[calc(100vh-80px)] overflow-y-auto lg:overflow-hidden">
+        <aside id="sidebar-container" class="w-full lg:w-[380px] px-4 bg-white border-r border-slate-100 flex flex-col h-auto lg:h-full z-10 shadow-sm">
             
-            <div id="mobilePlaceholder" class="md:hidden p-8 text-center bg-white border-b border-slate-100">
+            <div id="mobilePlaceholder" class="lg:hidden p-8 text-center bg-white border-b border-slate-100">
                 <div class="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-500 mb-4 shadow-md mx-auto">
                     <i class="fa-solid fa-user-ninja text-2xl"></i>
                 </div>
@@ -323,7 +323,7 @@
                 <p class="text-slate-500 text-[11px] mt-1 max-w-[240px] mx-auto">Choose your mission track and select a mission to begin your briefing.</p>
                
                 <!-- Mobile Optimization Line -->
-                <div class="md:hidden px-6 pt-4 text-center">
+                <div class="lg:hidden px-6 pt-4 text-center">
                     <div class="inline-flex items-center gap-2 py-1 px-3 bg-emerald-50 rounded-full border border-emerald-100 shadow-sm">
                         <i class="fa-solid fa-mobile-screen-button text-[10px] text-emerald-500"></i>
                         <!-- Added whitespace-nowrap and slightly tightened tracking to ensure one-line fit -->
@@ -357,7 +357,7 @@
                 </div>
             </div>
 
-            <div class="md:hidden px-4 mt-6 mb-1 font-black text-[9px] text-slate-400 uppercase tracking-widest flex items-center justify-between">
+            <div class="lg:hidden px-4 mt-6 mb-1 font-black text-[9px] text-slate-400 uppercase tracking-widest flex items-center justify-between">
                 <span>Select Your Mission</span>
                 <i class="fa-solid fa-arrow-right-long animate-pulse"></i>
             </div>
@@ -377,7 +377,7 @@
             <section class="absolute inset-0 overflow-y-auto custom-scrollbar bg-white hidden" id="mainDisplay">
                 <div class="max-w-[1100px] mx-auto px-4 md:px-8 py-6 md:py-12 relative z-10">
                     
-                    <button onclick="resetToSelection()" class="md:hidden mb-8 flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest hover:text-emerald-600 transition-colors">
+                    <button onclick="resetToSelection()" class="lg:hidden mb-8 flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest hover:text-emerald-600 transition-colors">
                         <i class="fa-solid fa-arrow-left"></i>
                         Back to Missions
                     </button>
@@ -570,7 +570,7 @@
                             ${lesson.title}
                         </h4>
                     </div>
-                    <i class="hidden md:block fa-solid fa-chevron-right text-[10px] text-slate-300"></i>
+                    <i class="hidden lg:block fa-solid fa-chevron-right text-[10px] text-slate-300"></i>
                 `;
                 list.appendChild(div);
             });
@@ -582,7 +582,7 @@
             renderLessons();
             document.getElementById('mainDisplay').classList.remove('hidden');
             document.getElementById('missionPlaceholder').classList.add('hidden');
-            if (window.innerWidth < 768) document.getElementById('sidebar-container').classList.add('hidden');
+            if (window.innerWidth < 1024) document.getElementById('sidebar-container').classList.add('hidden');
             window.scrollTo({ top: 0, behavior: 'smooth' });
             document.getElementById('mainDisplay').scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -630,7 +630,7 @@
         }
 
         window.addEventListener('resize', () => {
-            if (window.innerWidth >= 768) {
+            if (window.innerWidth >= 1024) {
                 document.getElementById('sidebar-container').classList.remove('hidden');
                 if (currentLessonId === null) {
                     document.getElementById('missionPlaceholder').classList.remove('hidden');
