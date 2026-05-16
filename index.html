@@ -275,7 +275,7 @@
             </div>
 
             <button onclick="toggleMobileMenu()" class="lg:hidden menu-toggle-btn p-2 text-slate-600 hover:bg-slate-50 rounded-lg flex items-center justify-center ml-auto">
-                <i class="fa-solid fa-bars text-xl"></i>
+                <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
             </button>
             
             <div class="hidden lg:block flex-grow"></div>
@@ -477,11 +477,25 @@
                     
                     <div class="bg-white rounded-3xl md:rounded-[3rem] border border-slate-100 shadow-2xl shadow-slate-200/40 overflow-hidden flex flex-col mb-12">
                         <div class="p-6 md:p-16 flex-1">
-                            <div class="flex items-center gap-3 mb-8 text-[11px] font-black uppercase tracking-[0.3em] text-slate-400">
-                                <span class="w-8 h-[2px] bg-emerald-500"></span>
-                                Mission Brief
+                            <div class="flex border-b border-slate-100 mb-8">
+                                <button onclick="switchMissionTab('brief')" id="mission-tab-brief" class="pb-4 px-2 text-[11px] font-black uppercase tracking-[0.3em] text-emerald-500 border-b-2 border-emerald-500 transition-all">
+                                    Mission Brief
+                                </button>
+                                <button onclick="switchMissionTab('challenge')" id="mission-tab-challenge" class="pb-4 px-2 ml-6 text-[11px] font-black uppercase tracking-[0.3em] text-slate-400 hover:text-slate-600 transition-all">
+                                    1-Min Challenge
+                                </button>
                             </div>
-                            <div id="lessonDescription" class="prose prose-slate max-w-none text-slate-600 space-y-6 text-lg"></div>
+                            
+                            <div id="briefContent">
+                                <div id="lessonDescription" class="prose prose-slate max-w-none text-slate-600 space-y-6 text-lg leading-relaxed"></div>
+                            </div>
+
+                            <div id="challengeContent" class="hidden">
+                                <div id="challengeContainer" class="py-4">
+                                    <!-- Content will be injected here by JS -->
+                                </div>
+                            </div>
+
                             <div class="flex items-center justify-end gap-2 mt-12 mb-6 px-2">
                                 <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Assigned by</span>
                                 <a id="producerLink" href="https://www.instagram.com/geographer.stace/" target="_blank" class="flex items-center gap-1.5 group">
@@ -505,20 +519,13 @@
     <main id="page-combi" class="hidden-page h-[calc(100vh-80px)] overflow-y-auto bg-slate-50">
         <div class="max-w-[1200px] mx-auto px-8 py-16 flex flex-col min-h-full">
             <div class="flex-grow">
-                <div class="text-center mb-12">
-                    <span class="accent-text font-black text-xs uppercase tracking-[0.3em]">Decision Tool</span>
-                    <h2 class="text-4xl font-black text-slate-900 mt-2">Sec 2 Subject Combination Interactive</h2>
-                    <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Use the interactive tool below to explore your humanities options and find the perfect fit for your academic journey.</p>
-                </div>
-                
-                <div class="bg-white rounded-[3rem] shadow-2xl shadow-slate-200 p-8 min-h-[600px] border border-slate-100 flex items-center justify-center mb-16">
-                    <div class="text-center">
-                        <div class="w-20 h-20 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-500 mx-auto mb-6 text-3xl">
-                            <i class="fa-solid fa-compass"></i>
-                        </div>
-                        <p class="font-bold text-slate-400 uppercase tracking-widest text-sm">Interactive Logic Placeholder</p>
-                        <p class="text-slate-400 text-xs mt-2">Drop your Subject Combi HTML interactive here!</p>
-                    </div>
+                <iframe 
+                    src="https://krunchsg.github.io/krunchacademy/quiz.html" 
+                    width="100%" 
+                    height="600px" 
+                    frameborder="0" 
+                    style="border:none; overflow:hidden;">
+                </iframe>
                 </div>
             </div>
 
@@ -537,7 +544,26 @@
         };
 
         const allLessons = [
-            { id: 1, track: "Geography", number: 1, title: "Line Graphs", directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/Line%20Graphs.mp4", pdfId: "1i5p1bLh9-PtME2oRzKfbb3sEIDJC7DDo", producer: producers.stace, desc: `<div><h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3><p class="text-slate-600 mb-6">Describe trends in simple and comparative line graphs</p><h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3><ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6"><li>Describe the overall pattern</li><ul class="list-[circle] pl-5 mt-1 space-y-1"><li>Does the data increase, decrease, fluctuate or remain constant from the start to the end of the period?</li></ul><li>Describe specific patterns<ul class="list-[circle] pl-5 mt-1 space-y-1"><li>Are there periods of time with significant increase or decrease?</li><li>Are there exceptions?</li></ul></ul><div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl"><h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4><p class="text-amber-900/80 text-sm font-medium leading-relaxed">Make sure your units are correct! Look for the correct units in the question context, the title of the figure or the title of each axis in the figure.</p></div></div>` },
+            { 
+                id: 1, 
+                track: "Geography", 
+                number: 1, 
+                title: "Line Graphs", 
+                directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/Line%20Graphs.mp4", 
+                pdfId: "1i5p1bLh9-PtME2oRzKfbb3sEIDJC7DDo", 
+                producer: producers.stace, 
+                desc: `<div><h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3><p class="text-slate-600 mb-6">Describe trends in simple and comparative line graphs</p><h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3><ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6"><li>Describe the overall pattern</li><ul class="list-[circle] pl-5 mt-1 space-y-1"><li>Does the data increase, decrease, fluctuate or remain constant from the start to the end of the period?</li></ul><li>Describe specific patterns<ul class="list-[circle] pl-5 mt-1 space-y-1"><li>Are there periods of time with significant increase or decrease?</li><li>Are there exceptions?</li></ul></ul><div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl"><h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4><p class="text-amber-900/80 text-sm font-medium leading-relaxed">Make sure your units are correct! Look for the correct units in the question context, the title of the figure or the title of each axis in the figure.</p></div></div>`,
+                challenge: {
+                    question: "Look at the video briefing again. Which of the following is the most accurate way to describe a line graph that goes up and down multiple times?",
+                    options: [
+                        { text: "The data is constantly increasing.", correct: false },
+                        { text: "The data shows a fluctuating trend.", correct: true },
+                        { text: "The data remains constant.", correct: false }
+                    ],
+                    successMsg: "🎯 Mission Success! You've mastered the 'Fluctuation' concept.",
+                    failMsg: "❌ Mission Failed: Check 'The Protocol' again for trends that change direction."
+                }
+            },
             { id: 2, track: "Geography", number: 2, title: "Bar Charts", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on comparing discrete variables using bar charts.</div>" },
             { id: 3, track: "Geography", number: 3, title: "Pie Charts", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on proportion analysis using pie charts.</div>" },
             { id: 4, track: "Geography", number: 4, title: "Fieldwork Skills", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on data collection and inquiry techniques.</div>" },
@@ -597,7 +623,6 @@
         }
 
         window.switchPage = function(pageId) {
-            // If the user is entering Skills Slam, reset the mission view to the placeholder
             if (pageId === 'skillsslam') {
                 resetToSelection();
             }
@@ -669,6 +694,9 @@
 
         function updateLessonContent() {
             if (currentLessonId === null) return;
+            
+            window.switchMissionTab('brief');
+            
             const lesson = allLessons.find(l => l.id === currentLessonId);
             if (!lesson) return;
             
@@ -699,7 +727,22 @@
         }
 
         window.toggleMobileMenu = function() {
-            document.getElementById('mobile-nav').classList.toggle('hidden');
+            const mobileNav = document.getElementById('mobile-nav');
+            const menuIcon = document.getElementById('menu-icon');
+            
+            // Toggle the hidden class on the menu
+            mobileNav.classList.toggle('hidden');
+            
+            // Check if the menu is now hidden or shown
+            if (mobileNav.classList.contains('hidden')) {
+                // If hidden, show the bars icon
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                // If shown, show the cross icon
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
         };
 
         window.refreshVideo = function() {
@@ -722,8 +765,72 @@
             }
         });
 
-        resetToGateway();
+        window.switchMissionTab = function(tab) {
+            const briefBtn = document.getElementById('mission-tab-brief');
+            const challengeBtn = document.getElementById('mission-tab-challenge');
+            const briefContent = document.getElementById('briefContent');
+            const challengeContent = document.getElementById('challengeContent');
 
+            if (!briefBtn || !challengeBtn) return;
+
+            if (tab === 'brief') {
+                briefBtn.className = "pb-4 px-2 text-[11px] font-black uppercase tracking-[0.3em] text-emerald-500 border-b-2 border-emerald-500 transition-all";
+                challengeBtn.className = "pb-4 px-2 ml-6 text-[11px] font-black uppercase tracking-[0.3em] text-slate-400 hover:text-slate-600 transition-all";
+                briefContent.classList.remove('hidden');
+                challengeContent.classList.add('hidden');
+            } else {
+                challengeBtn.className = "pb-4 px-2 ml-6 text-[11px] font-black uppercase tracking-[0.3em] text-emerald-500 border-b-2 border-emerald-500 transition-all";
+                briefBtn.className = "pb-4 px-2 text-[11px] font-black uppercase tracking-[0.3em] text-slate-400 hover:text-slate-600 transition-all";
+                briefContent.classList.add('hidden');
+                challengeContent.classList.remove('hidden');
+                renderChallenge();
+            }
+        };
+
+        function renderChallenge() {
+            const lesson = allLessons.find(l => l.id === currentLessonId);
+            const container = document.getElementById('challengeContainer');
+            
+            if (!lesson || !lesson.challenge) {
+                container.innerHTML = `
+                    <div class="flex flex-col items-center justify-center py-10 text-center">
+                        <div class="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center text-slate-300 mb-4">
+                            <i class="fa-solid fa-circle-info text-2xl"></i>
+                        </div>
+                        <p class="text-slate-400 font-bold italic">Intel not yet available. HQ is preparing the challenge for this mission.</p>
+                    </div>`;
+                return;
+            }
+
+            container.innerHTML = `
+                <h4 class="text-xl font-extrabold text-slate-900 mb-6 leading-tight">${lesson.challenge.question}</h4>
+                <div class="grid gap-3">
+                    ${lesson.challenge.options.map((opt, i) => `
+                        <button onclick="checkAnswer(${i})" class="w-full text-left p-5 rounded-2xl border-2 border-slate-100 hover:border-emerald-200 hover:bg-emerald-50 transition-all font-bold text-slate-700 group flex justify-between items-center">
+                            <span>${opt.text}</span>
+                            <div class="w-6 h-6 rounded-full border-2 border-slate-200 group-hover:border-emerald-300"></div>
+                        </button>
+                    `).join('')}
+                </div>
+                <div id="challengeFeedback" class="mt-8 hidden p-6 rounded-2xl font-black text-center border"></div>
+            `;
+        }
+
+        window.checkAnswer = function(index) {
+            const lesson = allLessons.find(l => l.id === currentLessonId);
+            const feedback = document.getElementById('challengeFeedback');
+            const isCorrect = lesson.challenge.options[index].correct;
+            
+            feedback.classList.remove('hidden', 'bg-red-50', 'text-red-700', 'bg-emerald-50', 'text-emerald-700', 'border-red-100', 'border-emerald-100');
+            feedback.classList.add(isCorrect ? 'bg-emerald-50' : 'bg-red-50');
+            feedback.classList.add(isCorrect ? 'text-emerald-700' : 'text-red-700');
+            feedback.classList.add(isCorrect ? 'border-emerald-100' : 'border-red-100');
+            feedback.innerText = isCorrect ? lesson.challenge.successMsg : lesson.challenge.failMsg;
+            feedback.classList.remove('hidden');
+        };
+
+        // Initialize
+        resetToGateway();
         renderLessons();
     </script>
 </body>
