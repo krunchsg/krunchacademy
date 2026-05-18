@@ -186,10 +186,16 @@
                         </div>
                     </div>
                     
-                    <!-- Updated Action Bar: Home and Retake Quiz side by side -->
-                    <div class="flex items-center gap-4 w-full pb-4 sm:max-w-[80%]">
-                        <button onclick="startQuiz()" class="flex-[2] btn-krunch text-white px-8 py-4 rounded-2xl font-bold text-[13px] uppercase tracking-widest shadow-lg">
+                    <!-- Action Bar: Retake Quiz and Share Results side-by-side -->
+                    <div class="flex flex-col sm:flex-row items-center gap-3 w-full pb-4">
+                        <button onclick="startQuiz()" class="w-full sm:flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 px-6 py-4 rounded-2xl font-bold text-[13px] uppercase tracking-widest transition-all">
                             Retake Quiz
+                        </button>
+                        <button onclick="shareResults()" id="share-btn" class="w-full sm:flex-1 btn-krunch text-white px-6 py-4 rounded-2xl font-bold text-[13px] uppercase tracking-widest shadow-lg flex items-center justify-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 10 0 2.186m0-2.186l5.566-2.783m-5.566 2.783l5.566 2.783m3.478-6.004a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5zm0 6.004a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5z" />
+                            </svg>
+                            <span>Share Results</span>
                         </button>
                     </div>
                 </div>
@@ -375,6 +381,53 @@
             document.getElementById('result-screen').classList.add('hidden');
             document.getElementById('quiz-screen').classList.add('hidden');
             document.getElementById('welcome-screen').classList.remove('hidden');
+        }
+
+        function shareResults() {
+            const finalType = scores.H > scores.G ? 'H' : 'G';
+            const titleText = finalType === 'H' ? "Humanities Detective (History)" : "Global Systems Thinker (Geography)";
+            const shareMessage = `I just took the Krunch Academy Subject Navigator and matched as a ${titleText}! 🕵️‍♂️🧭 Find your pathway matches here:`;
+            const shareUrl = window.location.href;
+            const shareBtn = document.getElementById('share-btn');
+
+            // Attempt browser's native share feature (primarily mobile)
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Krunch Academy | Subject Navigator',
+                    text: `${shareMessage}\n`,
+                    url: shareUrl
+                }).catch(err => {
+                    console.log('Share prompt dismissed', err);
+                });
+            } else {
+                // Clipboard fallback (primarily desktop)
+                const fallbackText = `${shareMessage} ${shareUrl}`;
+                const tempInput = document.createElement('textarea');
+                tempInput.value = fallbackText;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                try {
+                    document.execCommand('copy');
+                    
+                    // Temporary visual feedback button change
+                    const originalContent = shareBtn.innerHTML;
+                    shareBtn.innerHTML = `
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        <span>Copied!</span>
+                    `;
+                    shareBtn.style.backgroundColor = '#10B981'; // Green confirmation color
+                    
+                    setTimeout(() => {
+                        shareBtn.innerHTML = originalContent;
+                        shareBtn.style.backgroundColor = '';
+                    }, 2000);
+                } catch (err) {
+                    console.error('Copy failed: ', err);
+                }
+                document.body.removeChild(tempInput);
+            }
         }
     </script>
 </body>
