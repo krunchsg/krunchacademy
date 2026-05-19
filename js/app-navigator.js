@@ -223,3 +223,5 @@ const rawQuestions = [
           document.body.removeChild(tempInput);
       }
   }
+
+document.getElementById('menu-btn')?.addEventListener('click', toggleMobileMenu);
