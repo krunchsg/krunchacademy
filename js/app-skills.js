@@ -231,6 +231,7 @@ window.checkAnswer = function(index) {
     feedback.innerText = isCorrect ? lesson.challenge.successMsg : lesson.challenge.failMsg;
     feedback.classList.remove('hidden');
 };
+document.getElementById('menu-btn')?.addEventListener('click', toggleMobileMenu);
 
 // Initialize
 renderLessons();
