@@ -1,103 +1,12 @@
 <html lang="en-GB">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Krunch Academy | Subject Navigator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KRUNCH Academy</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        :root {
-            --krunch-green: #63C191;
-            --krunch-dark: #0F172A;
-            --krunch-light: #F8FAFC;
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: #F8FAFC;
-            color: var(--krunch-dark);
-            -webkit-tap-highlight-color: transparent;
-            overflow: hidden;
-            min-height: 100vh;
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.7);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
-            max-height: 94vh;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-
-        .btn-krunch {
-            background-color: var(--krunch-green);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 10px 20px -5px rgba(99, 193, 145, 0.4);
-        }
-
-        .btn-krunch:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 25px -5px rgba(99, 193, 145, 0.5);
-            filter: brightness(1.05);
-        }
-
-        .option-card {
-            border: 1.5px solid #F1F5F9;
-            background: white;
-            transition: all 0.2s ease;
-        }
-
-        .option-card:hover {
-            border-color: var(--krunch-green);
-            background: #F0FDF4;
-            transform: translateX(4px);
-        }
-
-        .progress-bar {
-            background: linear-gradient(90deg, #63C191, #4facfe);
-            transition: width 0.6s cubic-bezier(0.65, 0, 0.35, 1);
-        }
-
-        .fade-in {
-            animation: fadeIn 0.4s ease-out forwards;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .app-container {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-        }
-
-        .result-frame {
-            background: white;
-            border: 1px solid #F1F5F9;
-            border-radius: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-
-        .top-home-btn {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            z-index: 50;
-        }
-    </style>
 </head>
 
 <body>
