@@ -233,5 +233,4 @@ window.checkAnswer = function(index) {
 };
 
 // Initialize
-resetToGateway();
 renderLessons();
