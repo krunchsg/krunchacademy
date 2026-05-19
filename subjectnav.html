@@ -12,7 +12,7 @@
 
     <header class="glass-header">
         <div class="w-full px-4 md:px-8 min-h-[80px] py-4 flex flex-row items-center justify-between lg:justify-start gap-4">
-            <div onclick="resetToGateway()" class="flex items-center gap-1 cursor-pointer group shrink-0">
+            <a href="index.html" class="flex items-center gap-1 cursor-pointer group shrink-0">
                 <div class="logo-container border border-slate-100 shadow-sm transition-transform group-hover:scale-105">
                     <img id="mainLogo" 
                          src="https://lh3.googleusercontent.com/d/1jf3Kop9mGRripXM8WCxV9n9M5VceElcH" 
@@ -20,6 +20,7 @@
                          class="logo-img"
                          onerror="this.src='https://krunch.sg/wp-content/uploads/2022/01/cropped-Krunch-Logo-Circle-192x192.png'">
                 </div>
+            </a>
                 <div>
                     <h1 class="font-black text-2xl tracking-tighter leading-none text-slate-900 uppercase group-hover:text-emerald-600 transition-colors">KRUNCH</h1>
                     <span class="text-[10px] font-bold text-slate-400 tracking-[0.3em] uppercase">Academy</span>
@@ -103,6 +104,12 @@
             style="border:none; overflow:hidden;">
         </iframe>
     </div>
+     <footer class="mt-16 pt-8 border-t border-slate-100 text-center pb-8">
+          <p class="text-xs font-medium text-slate-400 tracking-wide">
+              We make every byte count. | <a href="http://krunch.sg/" target="_blank" class="text-emerald-500 hover:text-emerald-600 transition-colors font-bold">krunch.sg</a>
+          </p>
+      </footer>
+</main>
 <script type="module" src="js/app-navigator.js"></script>
 </body>
 </html>
