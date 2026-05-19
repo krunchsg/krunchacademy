@@ -223,5 +223,22 @@ const rawQuestions = [
           document.body.removeChild(tempInput);
       }
   }
-
+      window.toggleMobileMenu = function() {
+          const mobileNav = document.getElementById('mobile-nav');
+          const menuIcon = document.getElementById('menu-icon');
+          
+          // Toggle the hidden class on the menu
+          mobileNav.classList.toggle('hidden');
+          
+          // Check if the menu is now hidden or shown
+          if (mobileNav.classList.contains('hidden')) {
+              // If hidden, show the bars icon
+              menuIcon.classList.remove('fa-xmark');
+              menuIcon.classList.add('fa-bars');
+          } else {
+              // If shown, show the cross icon
+              menuIcon.classList.remove('fa-bars');
+              menuIcon.classList.add('fa-xmark');
+          }
+      };
 document.getElementById('menu-btn')?.addEventListener('click', toggleMobileMenu);
