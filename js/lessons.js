@@ -39,16 +39,6 @@ export const allLessons = [
                     </div>
                 </div>
             `,
-        challenge: {
-            question: "Look at the video briefing again. Which of the following is the most accurate way to describe a line graph that goes up and down multiple times?",
-            options: [
-                { text: "The data is constantly increasing.", correct: false },
-                { text: "The data shows a fluctuating trend.", correct: true },
-                { text: "The data remains constant.", correct: false }
-            ],
-            successMsg: "🎯 Mission Success! You've mastered the 'Fluctuation' concept.",
-            failMsg: "❌ Mission Failed: Check 'The Protocol' again for trends that change direction."
-        }
     },
     { id: 2, track: "Geography", number: 2, title: "Bar Charts", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on comparing discrete variables using bar charts.</div>" },
     { id: 3, track: "Geography", number: 3, title: "Pie Charts", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on proportion analysis using pie charts.</div>" },
