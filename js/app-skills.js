@@ -2,10 +2,6 @@ import { producers, allLessons } from './lessons.js';
 let currentTrack = 'Geography';
 let currentLessonId = null;
 
-window.resetToGateway = function() {
-    showPage('gateway');
-};
-
 function showPage(pageId) {
     document.getElementById('page-gateway').classList.add('hidden-page');
     document.getElementById('page-skillsslam').classList.add('hidden-page');
@@ -168,69 +164,6 @@ window.addEventListener('resize', () => {
     }
 });
 
-window.switchMissionTab = function(tab) {
-    const briefBtn = document.getElementById('mission-tab-brief');
-    const challengeBtn = document.getElementById('mission-tab-challenge');
-    const briefContent = document.getElementById('briefContent');
-    const challengeContent = document.getElementById('challengeContent');
-
-    if (!briefBtn || !challengeBtn) return;
-
-    if (tab === 'brief') {
-        briefBtn.className = "pb-4 px-2 text-[11px] font-black uppercase tracking-[0.3em] text-emerald-500 border-b-2 border-emerald-500 transition-all";
-        challengeBtn.className = "pb-4 px-2 ml-6 text-[11px] font-black uppercase tracking-[0.3em] text-slate-400 hover:text-slate-600 transition-all";
-        briefContent.classList.remove('hidden');
-        challengeContent.classList.add('hidden');
-    } else {
-        challengeBtn.className = "pb-4 px-2 ml-6 text-[11px] font-black uppercase tracking-[0.3em] text-emerald-500 border-b-2 border-emerald-500 transition-all";
-        briefBtn.className = "pb-4 px-2 text-[11px] font-black uppercase tracking-[0.3em] text-slate-400 hover:text-slate-600 transition-all";
-        briefContent.classList.add('hidden');
-        challengeContent.classList.remove('hidden');
-        renderChallenge();
-    }
-};
-
-function renderChallenge() {
-    const lesson = allLessons.find(l => l.id === currentLessonId);
-    const container = document.getElementById('challengeContainer');
-    
-    if (!lesson || !lesson.challenge) {
-        container.innerHTML = `
-            <div class="flex flex-col items-center justify-center py-10 text-center">
-                <div class="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center text-slate-300 mb-4">
-                    <i class="fa-solid fa-circle-info text-2xl"></i>
-                </div>
-                <p class="text-slate-400 font-bold italic">Intel not yet available. HQ is preparing the challenge for this mission.</p>
-            </div>`;
-        return;
-    }
-
-    container.innerHTML = `
-        <h4 class="text-xl font-extrabold text-slate-900 mb-6 leading-tight">${lesson.challenge.question}</h4>
-        <div class="grid gap-3">
-            ${lesson.challenge.options.map((opt, i) => `
-                <button onclick="checkAnswer(${i})" class="w-full text-left p-5 rounded-2xl border-2 border-slate-100 hover:border-emerald-200 hover:bg-emerald-50 transition-all font-bold text-slate-700 group flex justify-between items-center">
-                    <span>${opt.text}</span>
-                    <div class="w-6 h-6 rounded-full border-2 border-slate-200 group-hover:border-emerald-300"></div>
-                </button>
-            `).join('')}
-        </div>
-        <div id="challengeFeedback" class="mt-8 hidden p-6 rounded-2xl font-black text-center border"></div>
-    `;
-}
-
-window.checkAnswer = function(index) {
-    const lesson = allLessons.find(l => l.id === currentLessonId);
-    const feedback = document.getElementById('challengeFeedback');
-    const isCorrect = lesson.challenge.options[index].correct;
-    
-    feedback.classList.remove('hidden', 'bg-red-50', 'text-red-700', 'bg-emerald-50', 'text-emerald-700', 'border-red-100', 'border-emerald-100');
-    feedback.classList.add(isCorrect ? 'bg-emerald-50' : 'bg-red-50');
-    feedback.classList.add(isCorrect ? 'text-emerald-700' : 'text-red-700');
-    feedback.classList.add(isCorrect ? 'border-emerald-100' : 'border-red-100');
-    feedback.innerText = isCorrect ? lesson.challenge.successMsg : lesson.challenge.failMsg;
-    feedback.classList.remove('hidden');
-};
 document.getElementById('menu-btn')?.addEventListener('click', toggleMobileMenu);
 
 // Initialize
