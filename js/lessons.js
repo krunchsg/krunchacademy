@@ -77,7 +77,7 @@ export const allLessons = [
             `,
     },
     { id: 3, track: "Geography", number: 3, title: "Pie Charts", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on proportion analysis using pie charts.</div>" },
-    { id: 4, track: "Geography", number: 4, title: "Fieldwork Skills", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on data collection and inquiry techniques.</div>" },
+    { id: 4, track: "Geography", number: 4, title: "Climographs", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on data collection and inquiry techniques.</div>" },
     { id: 5, track: "Geography", number: 5, title: "Weather Instruments", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on identifying and using meteorological tools.</div>" },
     { id: 6, track: "Geography", number: 6, title: "Map Reading", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on grid references and symbols.</div>" },
     { id: 7, track: "Geography", number: 7, title: "Data Collection", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on primary vs secondary data methods.</div>" },
