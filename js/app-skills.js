@@ -164,6 +164,18 @@ window.addEventListener('resize', () => {
     }
 });
 
+window.switchMissionTab = function(tab) {
+        const briefBtn = document.getElementById('mission-tab-brief');
+        const briefContent = document.getElementById('briefContent');
+
+        if (!briefBtn) return;
+
+        if (tab === 'brief') {
+            briefBtn.className = "pb-4 px-2 text-[11px] font-black uppercase tracking-[0.3em] text-emerald-500 border-b-2 border-emerald-500 transition-all";
+            briefContent.classList.remove('hidden');
+        }
+    };
+
 document.getElementById('menu-btn')?.addEventListener('click', toggleMobileMenu);
 
 // Initialize
