@@ -9,7 +9,7 @@ export const allLessons = [
         track: "Geography", 
         number: 1, 
         title: "Line Graphs", 
-        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/Line%20Graphs.mp4", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/GY%20Mission%201%20-%20Line%20Graphs.mp4", 
         pdfId: "1i5p1bLh9-PtME2oRzKfbb3sEIDJC7DDo", 
         producer: producers.stace, 
         desc: `
