@@ -42,10 +42,6 @@ window.setTrack = function(trackName) {
     else document.getElementById('track-hist').classList.add('active');
     
     currentLessonId = null;
-    const btnText = document.getElementById('masterDownloadText');
-    if (btnText) {
-        btnText.innerText = `Download Master ${trackName} Workbook`;
-    }
     renderLessons();
     resetToSelection(); 
 }
