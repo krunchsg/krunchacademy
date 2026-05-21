@@ -28,6 +28,13 @@ window.switchPage = function(pageId) {
     showPage(pageId);
 }
 
+window.downloadMasterWorkbook = function() {
+    const url = masterWorkbooks[currentTrack];
+    if (url) {
+        window.open(url, '_blank');
+    }
+};
+
 window.setTrack = function(trackName) {
     currentTrack = trackName;
     document.querySelectorAll('.track-btn').forEach(btn => btn.classList.remove('active'));
