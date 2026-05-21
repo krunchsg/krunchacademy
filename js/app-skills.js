@@ -42,6 +42,10 @@ window.setTrack = function(trackName) {
     else document.getElementById('track-hist').classList.add('active');
     
     currentLessonId = null;
+    const btnText = document.getElementById('masterDownloadText');
+    if (btnText) {
+        btnText.innerText = `Download Master ${trackName} Workbook`;
+    }
     renderLessons();
     resetToSelection(); 
 }
@@ -101,8 +105,6 @@ function selectLesson(id) {
 function updateLessonContent() {
     if (currentLessonId === null) return;
     
-    window.switchMissionTab('brief');
-    
     const lesson = allLessons.find(l => l.id === currentLessonId);
     if (!lesson) return;
     
@@ -121,15 +123,10 @@ function updateLessonContent() {
         document.getElementById('producerHandle').innerText = lesson.producer.handle;
     }
 
-    document.getElementById('downloadBtn').onclick = () => {
-        if(lesson.pdfId) window.open(`https://drive.google.com/uc?export=download&id=${lesson.pdfId}`, '_blank');
-        else {
-            const btn = document.getElementById('downloadBtn');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = `<i class="fa-solid fa-clock"></i> Coming Soon!`;
-            setTimeout(() => btn.innerHTML = originalText, 2000);
-        }
-    };
+    const guidanceText = document.getElementById('lessonWorkbookGuidance');
+    if (guidanceText) {
+        guidanceText.innerHTML = `Grab your master workbook and look at <span class="text-emerald-600 font-extrabold underline">${lesson.track} Mission ${lesson.number}</span> to complete today's briefing.`;
+    }
 }
 
 window.toggleMobileMenu = function() {
