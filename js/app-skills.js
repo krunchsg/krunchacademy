@@ -121,7 +121,7 @@ function updateLessonContent() {
 
     const guidanceText = document.getElementById('lessonWorkbookGuidance');
     if (guidanceText) {
-        guidanceText.innerHTML = `Look at <span class="text-emerald-600 font-extrabold underline">${lesson.track} Mission ${lesson.number}</span> in your Skills Manual to complete today's training.`;
+        guidanceText.innerHTML = `Read <span class="text-emerald-600 font-extrabold underline">${lesson.track} Mission ${lesson.number}</span> in your Skills Manual to complete today's training.`;
     }
 }
 
