@@ -184,7 +184,7 @@
         
         <div id="discountBanner" class="bg-stone-50 text-stone-700 text-xs p-3 rounded-sm border border-stone-200 hidden">
           <div class="flex items-center space-x-2 font-bold text-stone-950 mb-1 uppercase tracking-wider text-[9px]">
-            <span>Package Discount Applied</span>
+            <span>Bundle Discount Applied</span>
           </div>
           <p id="discountDetails" class="text-stone-500 leading-relaxed text-[10px]"></p>
         </div>
@@ -527,10 +527,10 @@
       let discountsApplied = [];
 
       if (['geo_water', 'geo_forest', 'geo_mock'].every(id => cart.includes(id))) {
-        finalTotal -= 30; discountsApplied.push({ name: 'Geography Core Bundle Discount Applied (Save $30.00)' });
+        finalTotal -= 30; discountsApplied.push({ name: 'Geography Bundle Discount Applied (Save $30.00)' });
       }
       if (['hist_content', 'hist_skills', 'hist_mock'].every(id => cart.includes(id))) {
-        finalTotal -= 30; discountsApplied.push({ name: 'History Core Bundle Discount Applied (Save $30.00)' });
+        finalTotal -= 30; discountsApplied.push({ name: 'History Bundle Discount Applied (Save $30.00)' });
       }
 
       mobileSelectedCount.innerText = `${selectedCount} Course${selectedCount > 1 ? 's' : ''} Selected`;
