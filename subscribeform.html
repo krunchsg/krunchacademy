@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscribe to Krunch</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Inter Font for modern premium typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    /* Smooth transition presets */
+    .expandable-content {
+      max-height: 1200px;
+      opacity: 1;
+      transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, padding 0.4s ease;
+    }
+    .expandable-content.collapsed {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      padding-top: 0;
+      padding-bottom: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    /* Smooth scale and opacity toggle for subjects */
+    .subject-transition {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 min-h-screen flex flex-col justify-center items-center p-4 sm:p-6">
+
+  <!-- Main Container: Light Mode Theme matching Krunch Academy style -->
+  <div class="w-full max-w-xl bg-white rounded-2xl border border-slate-200/80 shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:border-emerald-500/20">
+    
+    <!-- Top Branding Stripe -->
+    <div class="h-2 bg-gradient-to-r from-emerald-400 to-teal-500"></div>
+
+    <!-- Header Block -->
+    <div class="p-6 sm:p-8 border-b border-slate-100 bg-slate-50/50">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-800 mt-2 tracking-tight">The Humanities Tip-Off</h2>
+      <p class="text-slate-500 text-sm mt-2 leading-relaxed">
+        Join our community of proactive students and parents to receive intel delivered straight to your inbox!
+      </p>
+      <p class="text-slate-500 text-sm mt-2 leading-relaxed">
+        We send out tips from January to September on these days each month:
+      </p>
+      <ul class="list-disc list-inside mt-3.5 space-y-1.5 text-slate-500 text-sm leading-relaxed pl-1">
+        <li>1st Saturday: History</li>
+        <li>2nd Saturday: Geography</li>
+        <li>3rd Saturday: Social Studies</li>
+      </ul>
+    </div>
+
+    <!-- Form Content Area -->
+    <div class="p-6 sm:p-8">
+
+      <!-- Subscription Form -->
+      <div id="formSection" class="expandable-content">
+        <form id="academySubscribeForm" class="space-y-5">
+          
+          <!-- Field 1: Role Selector (Parent / Student) -->
+          <div>
+            <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2.5">I am a...</label>
+            <div class="grid grid-cols-2 gap-3">
+              <!-- Parent Option -->
+              <label class="relative flex items-center justify-center p-3.5 rounded-xl border-2 border-slate-200 bg-white cursor-pointer transition-all select-none hover:border-slate-300" id="labelParent">
+                <input type="radio" name="userRole" value="parent" checked class="sr-only">
+                <span class="text-sm font-semibold text-slate-700" id="textParent">Parent</span>
+                <span class="absolute top-2.5 right-2.5 flex h-2 w-2" id="indicatorParent">
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+              </label>
+
+              <!-- Student Option -->
+              <label class="relative flex items-center justify-center p-3.5 rounded-xl border-2 border-slate-200 bg-white cursor-pointer transition-all select-none hover:border-slate-300" id="labelStudent">
+                <input type="radio" name="userRole" value="student" class="sr-only">
+                <span class="text-sm font-semibold text-slate-400" id="textStudent">Student</span>
+                <span class="absolute top-2.5 right-2.5 h-2 w-2 hidden" id="indicatorStudent">
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Name Input -->
+          <div>
+            <label for="fullName" id="nameLabel" class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Parent's Name</label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                </svg>
+              </span>
+              <input 
+                type="text" 
+                id="fullName" 
+                required 
+                placeholder="e.g. Eleanor Tan" 
+                class="w-full pl-10 pr-4 py-3 bg-slate-50/50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 text-slate-800 placeholder-slate-400 transition-all text-sm"
+              />
+            </div>
+          </div>
+
+          <!-- Email Input -->
+          <div>
+            <label for="emailAddress" class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Email Address</label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                </svg>
+              </span>
+              <input 
+                type="email" 
+                id="emailAddress" 
+                required 
+                placeholder="parent.email@domain.com" 
+                class="w-full pl-10 pr-4 py-3 bg-slate-50/50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 text-slate-800 placeholder-slate-400 transition-all text-sm"
+              />
+            </div>
+          </div>
+
+          <!-- Academic Level -->
+          <div>
+            <label for="academicLevel" class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Academic Level</label>
+            <select 
+              id="academicLevel" 
+              required
+              class="w-full px-4 py-3 bg-slate-50/50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 text-slate-700 transition-all text-sm cursor-pointer"
+            >
+              <option value="" disabled selected>Select level...</option>
+              <option value="Sec 1">Secondary 1</option>
+              <option value="Sec 2">Secondary 2</option>
+              <option value="Sec 3">Secondary 3</option>
+              <option value="Sec 4/5">Secondary 4 / 5</option>
+            </select>
+          </div>
+
+          <!-- Subjects Required -->
+          <div>
+            <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2.5">Subjects (Tick all that apply)</label>
+            <div class="grid grid-cols-3 gap-2" id="subjectsGrid">
+              
+              <!-- Geography -->
+              <label id="subjectGeo" class="subject-transition flex flex-col items-center justify-center p-3 rounded-xl border border-slate-200 bg-white hover:border-emerald-500/30 hover:bg-slate-50 cursor-pointer transition-all select-none group">
+                <input type="checkbox" name="subjects" value="Geography" class="rounded border-slate-300 bg-white text-emerald-500 focus:ring-emerald-500/20 h-4 w-4 mb-2">
+                <span class="text-xs font-semibold text-slate-500 group-hover:text-slate-800">Geography</span>
+              </label>
+
+              <!-- History -->
+              <label id="subjectHistory" class="subject-transition flex flex-col items-center justify-center p-3 rounded-xl border border-slate-200 bg-white hover:border-emerald-500/30 hover:bg-slate-50 cursor-pointer transition-all select-none group">
+                <input type="checkbox" name="subjects" value="History" class="rounded border-slate-300 bg-white text-emerald-500 focus:ring-emerald-500/20 h-4 w-4 mb-2">
+                <span class="text-xs font-semibold text-slate-500 group-hover:text-slate-800">History</span>
+              </label>
+
+              <!-- Social Studies -->
+              <label id="subjectSS" class="subject-transition flex flex-col items-center justify-center p-3 rounded-xl border border-slate-200 bg-white hover:border-emerald-500/30 hover:bg-slate-50 cursor-pointer transition-all select-none group">
+                <input type="checkbox" name="subjects" id="checkboxSS" value="Social Studies" class="rounded border-slate-300 bg-white text-emerald-500 focus:ring-emerald-500/20 h-4 w-4 mb-2">
+                <span class="text-xs font-semibold text-slate-500 group-hover:text-slate-800">Social Studies</span>
+              </label>
+
+            </div>
+          </div>
+
+          <!-- Submit Button & Terms Note -->
+          <div class="pt-2">
+            <button 
+              type="submit" 
+              id="submitBtn" 
+              class="w-full py-4 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/10 active:scale-[0.99]"
+            >
+              <span>Subscribe</span>
+            </button>
+            
+            <!-- Terms and Privacy Policy Note -->
+            <p class="text-center text-[11px] text-slate-400 mt-3 leading-relaxed">
+              By subscribing, you agree to Krunch’s 
+              <a href="https://krunch.sg/terms-and-conditions/" target="_blank" rel="noopener noreferrer" class="text-emerald-500 hover:text-emerald-600 hover:underline font-medium">terms</a> 
+              and 
+              <a href="https://krunch.sg/privacy-policy/" target="_blank" rel="noopener noreferrer" class="text-emerald-500 hover:text-emerald-600 hover:underline font-medium">privacy policy</a>. 
+              Unsubscribe <a href="https://krunch.sg/unsubscribe/" target="_blank" rel="noopener noreferrer" class="text-emerald-500 hover:text-emerald-600 hover:underline font-medium">here</a> at any time.
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <!-- Success State Area (Initially Hidden) -->
+      <div id="successSection" class="expandable-content collapsed">
+        <div class="text-center flex flex-col items-center py-6">
+          
+          <!-- Green Circle Checkmark -->
+          <div class="w-16 h-16 bg-emerald-50 border border-emerald-200 rounded-full flex items-center justify-center text-emerald-600 mb-5 animate-bounce">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+
+          <h3 class="text-xl font-extrabold text-slate-800">Awesome, you're on the list!</h3>
+          <p class="text-slate-500 text-sm mt-3 max-w-sm mx-auto leading-relaxed">
+            We've sent a welcome email with high-yield Humanities guides directly to <span id="displayEmail" class="text-emerald-600 font-semibold break-all">your email</span>.
+          </p>
+          
+          <button id="resetBtn" class="mt-8 text-sm font-bold text-slate-400 hover:text-emerald-600 transition-all underline decoration-1 underline-offset-4">
+            Sign up another profile
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Dynamic Field Selectors
+      const radioParents = document.querySelectorAll('input[name="userRole"]');
+      const labelParent = document.getElementById("labelParent");
+      const labelStudent = document.getElementById("labelStudent");
+      const textParent = document.getElementById("textParent");
+      const textStudent = document.getElementById("textStudent");
+      const indicatorParent = document.getElementById("indicatorParent");
+      const indicatorStudent = document.getElementById("indicatorStudent");
+      
+      const nameLabel = document.getElementById("nameLabel");
+      const fullNameInput = document.getElementById("fullName");
+      const emailAddressInput = document.getElementById("emailAddress");
+
+      // Form, Level & Subject Selectors
+      const academicLevelSelect = document.getElementById("academicLevel");
+      const subjectSS = document.getElementById("subjectSS");
+      const checkboxSS = document.getElementById("checkboxSS");
+      const subjectsGrid = document.getElementById("subjectsGrid");
+
+      // Form & Success Block Elements
+      const formSection = document.getElementById("formSection");
+      const successSection = document.getElementById("successSection");
+      const academySubscribeForm = document.getElementById("academySubscribeForm");
+      const submitBtn = document.getElementById("submitBtn");
+      const displayEmail = document.getElementById("displayEmail");
+      const resetBtn = document.getElementById("resetBtn");
+
+      // 1. Dynamic Toggle Switch between Parent & Student
+      radioParents.forEach(radio => {
+        radio.addEventListener("change", (e) => {
+          if (e.target.value === "parent") {
+            // Stylize Parent Card Active (Light Mode)
+            labelParent.classList.add("border-emerald-500", "bg-emerald-50/20");
+            labelParent.classList.remove("border-slate-200");
+            textParent.classList.add("text-emerald-700");
+            textParent.classList.remove("text-slate-400");
+            indicatorParent.classList.remove("hidden");
+
+            // Stylize Student Card Inactive (Light Mode)
+            labelStudent.classList.add("border-slate-200");
+            labelStudent.classList.remove("border-emerald-500", "bg-emerald-50/20");
+            textStudent.classList.add("text-slate-400");
+            textStudent.classList.remove("text-emerald-700");
+            indicatorStudent.classList.add("hidden");
+
+            // Update Field Labels/Placeholders
+            nameLabel.innerText = "Parent's Name";
+            fullNameInput.placeholder = "e.g. Eleanor Tan";
+            emailAddressInput.placeholder = "parent.email@domain.com";
+          } else {
+            // Stylize Student Card Active (Light Mode)
+            labelStudent.classList.add("border-emerald-500", "bg-emerald-50/20");
+            labelStudent.classList.remove("border-slate-200");
+            textStudent.classList.add("text-emerald-700");
+            textStudent.classList.remove("text-slate-400");
+            indicatorStudent.classList.remove("hidden");
+
+            // Stylize Parent Card Inactive (Light Mode)
+            labelParent.classList.add("border-slate-200");
+            labelParent.classList.remove("border-emerald-500", "bg-emerald-50/20");
+            textParent.classList.add("text-slate-400");
+            textParent.classList.remove("text-emerald-700");
+            indicatorParent.classList.add("hidden");
+
+            // Update Field Labels/Placeholders
+            nameLabel.innerText = "Student's Name";
+            fullNameInput.placeholder = "e.g. Brandon Tan";
+            emailAddressInput.placeholder = "student.email@domain.com";
+          }
+        });
+      });
+
+      // Simple click listeners on entire radio cards to sync the underlying inputs
+      labelParent.addEventListener("click", () => {
+        const input = labelParent.querySelector('input');
+        input.checked = true;
+        input.dispatchEvent(new Event('change'));
+      });
+      labelStudent.addEventListener("click", () => {
+        const input = labelStudent.querySelector('input');
+        input.checked = true;
+        input.dispatchEvent(new Event('change'));
+      });
+
+      // Run initial layout styling for Active Choice on load
+      labelParent.click();
+
+      // 2. Dynamic Level Condition: Hide Social Studies for Sec 1 and Sec 2
+      academicLevelSelect.addEventListener("change", (e) => {
+        const selectedLevel = e.target.value;
+        if (selectedLevel === "Sec 1" || selectedLevel === "Sec 2") {
+          // Uncheck Social Studies if checked
+          checkboxSS.checked = false;
+          
+          // Smoothly transition and hide the Social Studies card option
+          subjectSS.style.opacity = "0";
+          subjectSS.style.transform = "scale(0.95)";
+          
+          // Re-grid to fill space cleanly
+          setTimeout(() => {
+            subjectSS.classList.add("hidden");
+            subjectsGrid.classList.remove("grid-cols-3");
+            subjectsGrid.classList.add("grid-cols-2");
+          }, 300);
+        } else {
+          // Bring Social Studies back for Upper Secondary levels
+          subjectSS.classList.remove("hidden");
+          subjectsGrid.classList.remove("grid-cols-2");
+          subjectsGrid.classList.add("grid-cols-3");
+          
+          setTimeout(() => {
+            subjectSS.style.opacity = "1";
+            subjectSS.style.transform = "scale(1)";
+          }, 50);
+        }
+      });
+
+      // 3. Handle Actual Google Apps Script Submission
+      academySubscribeForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        // Loading state feedback
+        const originalBtnContent = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+          <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          <span class="text-white">Subscribing...</span>
+        `;
+
+        // Capture field values
+        const role = document.querySelector('input[name="userRole"]:checked').value;
+        const nameVal = fullNameInput.value;
+        const emailVal = emailAddressInput.value;
+        const levelVal = academicLevelSelect.value;
+        const selectedSubs = Array.from(document.querySelectorAll('input[name="subjects"]:checked')).map(cb => cb.value);
+
+        displayEmail.innerText = emailVal;
+
+        try {
+          // Connect to your actual Google Web App URL!
+          const webAppUrl = "https://script.google.com/macros/s/AKfycbwUi3Y2goeL6a0syWeVSxoZccz1A_GcL0MtgiItRIv17vlKcfPOpdE0ShAmd9WUdpq4/exec"; 
+
+          const res = await fetch(webAppUrl, {
+            method: 'POST',
+            mode: 'no-cors', // Critical for Google Sheets to prevent CORS errors on static sites
+            headers: {
+              'Content-Type': 'text/plain' // Using text/plain prevents the browser from doing a preflight check
+            },
+            body: JSON.stringify({ 
+              role: role, 
+              name: nameVal, 
+              email: emailVal, 
+              level: levelVal, 
+              subjects: selectedSubs 
+            })
+          });
+
+          // Since we are using 'no-cors', the response will be opaque, but if no exception is thrown, it is safe to proceed!
+          formSection.classList.add("collapsed");
+          setTimeout(() => {
+            formSection.style.display = "none";
+            successSection.style.display = "block";
+            setTimeout(() => {
+              successSection.classList.remove("collapsed");
+            }, 50);
+          }, 600);
+
+        } catch (error) {
+          const errorMsg = document.createElement("div");
+          errorMsg.className = "bg-rose-50 border border-rose-200 text-rose-800 px-4 py-3 rounded-xl text-sm mb-4 animate-pulse";
+          errorMsg.innerText = "We couldn't subscribe you right now. Please check your network and try again.";
+          academySubscribeForm.prepend(errorMsg);
+
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnContent;
+
+          setTimeout(() => errorMsg.remove(), 4000);
+        }
+      });
+
+      // 4. Reset state
+      resetBtn.addEventListener("click", () => {
+        successSection.classList.add("collapsed");
+        setTimeout(() => {
+          successSection.style.display = "none";
+          academySubscribeForm.reset();
+          
+          // Revert Level selector & bring back Social Studies to default visual grid setting
+          academicLevelSelect.dispatchEvent(new Event('change'));
+
+          // Reset radio selections to Parent
+          labelParent.click();
+
+          formSection.style.display = "block";
+          setTimeout(() => {
+            formSection.classList.remove("collapsed");
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = `<span>Get Free Study Tips</span>`;
+          }, 50);
+        }, 600);
+      });
+
+    });
+  </script>
+</body>
+</html>
