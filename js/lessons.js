@@ -216,7 +216,252 @@ export const allLessons = [
                 </div>
             `,
     },
-
+{ 
+        id: 6, 
+        track: "Geography", 
+        number: 6, 
+        title: "Photographs", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/GY%20Mission%206%20-%20Photographs.mp4", 
+        producer: producers.stace, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Describe and explain features in photographs</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
+                    <p class="text-slate-600 mb-6"><strong>To describe features</strong></p>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Name and specify where the feature is located - address any of the following:</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                            <li>Is the location specified in the question context?</li>
+                            <li>Is the feature in the foreground, middle ground or background?</li>
+                            <li>Is the feature near to another feature that’s already labelled in the figure?</li>
+                        </ul>
+                        <li>Describe what the feature looks like - choose what is most relevant</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Is it a single feature that stands on its own, or is it a feature that consists of individual parts that take up a huge amount of space in total?</li>
+                                <li>Is it tall or short, clustered or dispersed?</li>
+                            </ul>
+                    </ul>
+                    <p class="text-slate-600 mb-6"><strong>To explain features</strong></p>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Identify the keyword in the question, which gives you the question context</li>
+                        <li>Relate each feature in the figure to the question context</li>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            When the question asks you to describe features, do not just identify what you see. For example, “solar panels” will not get you the mark. “Rows of solar panels on the rooftop” is a much better description because you are specifying where the feature is found and how it is laid out.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
+{ 
+        id: 7, 
+        track: "Geography", 
+        number: 7, 
+        title: "Schematic Diagrams", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/GY%20Mission%207%20-%20Schematic%20Diagrams.mp4", 
+        producer: producers.stace, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Describe processes and explain links in schematic diagrams</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
+                    <p class="text-slate-600 mb-6"><strong>To describe processes</strong></p>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Group related processes together and describe them in order</li>
+                    </ul>
+                    <p class="text-slate-600 mb-6"><strong>To explain links</strong></p>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Use the legend to help you understand what symbols in the figure (e.g. links, colours) mean</li>
+                        <li>Identify the keyword in the question, which gives you the question context</li>
+                        <li>Relate information in the figure to the question context</li>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            Every schematic diagram is drawn differently. For example, the water cycle shown in the textbook could be different from what appears in your exam. Answer the question based on the information shown in the figure first, then rely on your own knowledge to fill in any gaps in explanation.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
+{ 
+        id: 8, 
+        track: "Geography", 
+        number: 8, 
+        title: "Infographics", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/GY%20Mission%208%20-%20Infographics.mp4", 
+        producer: producers.stace, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Explain content in an infographic</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3> 
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Identify the keyword in the question, which gives you the piece of information to describe, and the question context</li>
+                        <li>Relate each piece of information in the figure to the question context</li>
+                        <li>Bring in your textbook knowledge to fill in any gaps in the information shown in the figure</li>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            If a piece of information in the figure is better explained using a geographical term that you have learnt, use the geographical term instead. This shows that you are enhancing figure evidence with your knowledge.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
+{ 
+        id: 9, 
+        track: "Geography", 
+        number: 9, 
+        title: "Choropleth Maps", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/GY%20Mission%209%20-%20Choropleth%20Maps.mp4", 
+        producer: producers.stace, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Interpret data in choropleth maps</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3> 
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Look at the legend</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Each shade or type of colour in the legend shows you a different data range</li>
+                            </ul>
+                        <li>Identify the data range that the question specifies</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Does the question require you to talk about all data ranges, or only specific data ranges?</li>
+                            </ul>
+                        <li>Identify locations with colours that match the data range specified in the question</li>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            You are expected to know the names of continents, major countries in the world and countries that are near Singapore (e.g. US, China, Malaysia, Indonesia). This helps you to describe the distribution of data more specifically and accurately when you are given a world map.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
+{ 
+        id: 10, 
+        track: "Geography", 
+        number: 10, 
+        title: "Proportional Symbol Maps", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/GY%20Mission%2010%20-%20Proportional%20Symbol%20Maps.mp4", 
+        producer: producers.stace, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Interpret data in proportional symbol maps</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3> 
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Look at the legend</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Each shade or type of colour in the legend represents a category</li>
+                                <li>The size of the symbol represents the range of data (the bigger the symbol, the proportionately higher the number it represents)</li>
+                            </ul>
+                        <li>Identify the data range that the question specifies</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Does the question require you to talk about all data ranges, or only specific data ranges?</li>
+                            </ul>
+                        <li>Identify locations with colours and symbol sizes that match the data range specified in the question</li>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            Some maps come with the north arrow. This is a hint to you to use compass directions (north, south, east or west) to describe specific locations of a country or continent. For example, write “southeastern parts of Africa” instead of just “in Africa”.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
+{ 
+        id: 11, 
+        track: "Geography", 
+        number: 11, 
+        title: "Mental Maps", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/GY%20Mission%2011%20-%20Mental%20Maps.mp4", 
+        producer: producers.stace, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Interpret perceptions of places through mental maps</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3> 
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Look at the words used to label places</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>These words tell you the most important thing(s) that people associate a place with</li>
+                            </ul>
+                        <li>Look at the colours and symbols used to represent places</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>The more detail drawn in, the more familiar the person is likely to be with a place</li>
+                                <li>Different colours and symbols represent different emotions (e.g. lighter colours and hearts could represent that the person likes the place)</li>
+                            </ul>
+                        <li>Compare the mental map with an actual map</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>A place that is drawn bigger than it is could mean that the person has a stronger positive or negative impression of the place</li>
+                                <li>Two places that are drawn nearer to each other than they actually are could mean that these places are more important to the person</li>
+                            </ul>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            When asked to describe differences between two mental maps, do not write “Map A has X but Map B does not have X.” This is considered a low-level answer that typically is not awarded marks. It is better to identify one thing that both maps have, but are drawn differently.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
+{ 
+        id: 12, 
+        track: "Geography", 
+        number: 12, 
+        title: "Scatterplots", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/GY%20Mission%2012%20-%20Scatterplots.mp4", 
+        producer: producers.stace, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Describe relationships between variables in scatterplots</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Describe the overall relationship</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                            <li>When X increases, does Y increase, decrease or change inconsistently?</li>
+                        </ul>
+                        <li>Describe an exception, if any</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Pick a data point that does not show the overall relationship that you described</li>
+                            </ul>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            At the secondary level, you will mostly encounter scatterplots that show you a linear relationship (i.e. a best-fit straight line can be drawn). Beyond the mainstream secondary syllabus, in reality, scatterplots can show non-linear relationships. For example, a best-fit curve should be drawn for Q2 rather than a best-fit straight line.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
+            
+            
     { id: 16, track: "History/SS", number: 1, title: "Describe", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike, desc: `<div><h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3><p class="text-slate-600 mb-6">Extracting hidden source meanings safely for Core Source-Based Question skills.</p><h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3><ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6"><li>Uncover precise subtextual author intent rather than basic summaries.</li><li>Link matching source evidence chunks back cleanly to assertions.</li></ul><div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl"><h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4><p class="text-amber-900/80 text-sm font-medium leading-relaxed">Don't simply summarize what the text says literally!</p></div></div>` },
     { id: 17, track: "History/SS", number: 2, title: "Explain", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike, desc: "<div>Briefing on evaluating author intent and desired outcomes.</div>" },
     { id: 18, track: "History/SS", number: 3, title: "Analysis of Pictorial Sources", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike, desc: "<div>Briefing on cross-referencing and checking source trustworthiness.</div>" },
