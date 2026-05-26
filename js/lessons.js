@@ -15,7 +15,6 @@ export const allLessons = [
         number: 1, 
         title: "Line Graphs", 
         directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/GY%20Mission%201%20-%20Line%20Graphs.mp4", 
-        pdfId: "1i5p1bLh9-PtME2oRzKfbb3sEIDJC7DDo", 
         producer: producers.stace, 
         desc: `
                 <div>
@@ -51,7 +50,6 @@ export const allLessons = [
         number: 2, 
         title: "Bar Graphs", 
         directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/GY%20Mission%202%20-%20Bar%20Graphs.mp4", 
-        pdfId: "1i5p1bLh9-PtME2oRzKfbb3sEIDJC7DDo", 
         producer: producers.stace, 
         desc: `
                 <div>
@@ -96,19 +94,131 @@ export const allLessons = [
                 </div>
             `,
     },
-    { id: 3, track: "Geography", number: 3, title: "Pie Charts", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on proportion analysis using pie charts.</div>" },
-    { id: 4, track: "Geography", number: 4, title: "Climographs", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on data collection and inquiry techniques.</div>" },
-    { id: 5, track: "Geography", number: 5, title: "Weather Instruments", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on identifying and using meteorological tools.</div>" },
-    { id: 6, track: "Geography", number: 6, title: "Map Reading", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on grid references and symbols.</div>" },
-    { id: 7, track: "Geography", number: 7, title: "Data Collection", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on primary vs secondary data methods.</div>" },
-    { id: 8, track: "Geography", number: 8, title: "Sustainability", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on sustainable urban development.</div>" },
-    { id: 9, track: "Geography", number: 9, title: "Climate Change", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on the greenhouse effect and global warming.</div>" },
-    { id: 10, track: "Geography", number: 10, title: "Plate Tectonics", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on plate boundaries and hazards.</div>" },
-    { id: 11, track: "Geography", number: 11, title: "Coasts", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on erosion and depositional landforms.</div>" },
-    { id: 12, track: "Geography", number: 12, title: "Rivers", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on the hydrological cycle and river profiles.</div>" },
-    { id: 13, track: "Geography", number: 13, title: "Population", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on migration and population pyramids.</div>" },
-    { id: 14, track: "Geography", number: 14, title: "Tourism", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on the impacts of global tourism.</div>" },
-    { id: 15, track: "Geography", number: 15, title: "Food Resources", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.stace, desc: "<div>Briefing on food shortage and farming systems.</div>" },
+{ 
+        id: 3, 
+        track: "Geography", 
+        number: 3, 
+        title: "Pie Charts", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/GY%20Mission%203%20-%20Pie%20Charts.mp4", 
+        producer: producers.stace, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Describe the distribution of data in pie charts</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Describe from most to least percentage</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                            <li>Which category has the highest percentage?</li>
+                            <li>Which category has a moderate percentage?</li>
+                            <li>Which category has the least percentage?</li>
+                        </ul>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            If it is not possible to determine a “most” or “least” category because multiple categories show similar percentages, group these categories together instead. E.g. X and Y both show a high percentage of greenhouse gas emissions.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
+{ 
+        id: 4, 
+        track: "Geography", 
+        number: 4, 
+        title: "Climographs", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/GY%20Mission%204%20-%20Climographs.mp4", 
+        producer: producers.stace, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Describe climate characteristics of climographs</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Describe temperature characteristics</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                            <li>Is the temperature range small, moderate or large?</li>
+                            <li>What is the mean annual temperature?</li>
+                        </ul>
+                        <li>Describe rainfall characteristics</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Is the total annual precipitation low or high?</li>
+                                <li>Is there a distinct wet and dry season? </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            A climograph has two vertical axes - one for temperature and one for rainfall. Make sure you are looking at the correct axis when you cite temperature and rainfall data. If you end up writing that the mean annual temperature of a place is 100 degree celsius, you should know something is wrong!
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
+{ 
+        id: 5, 
+        track: "Geography", 
+        number: 5, 
+        title: "Tables", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/GY%20Mission%205%20-%20Tables.mp4", 
+        producer: producers.stace, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Describe relationships between variables, describe trends and compare data in tables</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
+                    <p class="text-slate-600 mb-6"><strong>To describe relationships</strong></p>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Describe the overall relationship</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                            <li>When X increases, does Y increase, decrease or change inconsistently?</li>
+                        </ul>
+                        <li>Describe an exception, if any</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Pick a data point that does not show the overall relationship that you described</li>
+                            </ul>
+                    </ul>
+                    <p class="text-slate-600 mb-6"><strong>To describe trends</strong></p>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Describe the overall pattern</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                            <li>Does the data increase, decrease, fluctuate or remain constant from the start to the end of the period?</li>
+                        </ul>
+                        <li>Describe specific patterns</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Are there periods of time with significant increase or decrease?</li>
+                                <li>Are there exceptions?</li>
+                    </ul>
+                    <p class="text-slate-600 mb-6"><strong>To compare data</strong></p>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Describe at least one similarity</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                            <li>E.g. Both X and Y increased from 1990 to 2020.</li>
+                            <li>E.g. Both X and Y had the highest percentage in 2010.</li>
+                        </ul>
+                        <li>Describe at least one difference</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>E.g. From 2015 to 2020, X increased by Y decreased. </li>
+                                <li>E.g. In 2020, X had the highest percentage but Y had the lowest percentage.</li>
+                            </ul>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            Not every “describe the relationship” question actually comes with a figure that shows a clear relationship between two variables. In this case, write that “there is no relationship between X and Y”, then justify your answer with data.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
 
     { id: 16, track: "History/SS", number: 1, title: "Describe", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike, desc: `<div><h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3><p class="text-slate-600 mb-6">Extracting hidden source meanings safely for Core Source-Based Question skills.</p><h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3><ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6"><li>Uncover precise subtextual author intent rather than basic summaries.</li><li>Link matching source evidence chunks back cleanly to assertions.</li></ul><div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl"><h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4><p class="text-amber-900/80 text-sm font-medium leading-relaxed">Don't simply summarize what the text says literally!</p></div></div>` },
     { id: 17, track: "History/SS", number: 2, title: "Explain", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike, desc: "<div>Briefing on evaluating author intent and desired outcomes.</div>" },
