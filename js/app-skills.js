@@ -1,6 +1,7 @@
 import { producers, allLessons } from './lessons.js';
 let currentTrack = 'Geography';
 let currentLessonId = null;
+const masterWorkbookUrl = "https://drive.google.com/file/d/1rt7nfWdRcyvrZHxdwiDQeObCnY7-yIv8";
 
 function showPage(pageId) {
     document.getElementById('page-gateway').classList.add('hidden-page');
@@ -29,10 +30,7 @@ window.switchPage = function(pageId) {
 }
 
 window.downloadMasterWorkbook = function() {
-    const url = masterWorkbooks[currentTrack];
-    if (url) {
-        window.open(url, '_blank');
-    }
+    window.open(masterWorkbookUrl, '_blank');
 };
 
 window.setTrack = function(trackName) {
@@ -125,24 +123,24 @@ function updateLessonContent() {
     }
 }
 
-window.toggleMobileMenu = function() {
+function toggleMobileMenu() {
     const mobileNav = document.getElementById('mobile-nav');
     const menuIcon = document.getElementById('menu-icon');
     
-    // Toggle the hidden class on the menu
-    mobileNav.classList.toggle('hidden');
-    
-    // Check if the menu is now hidden or shown
-    if (mobileNav.classList.contains('hidden')) {
-        // If hidden, show the bars icon
-        menuIcon.classList.remove('fa-xmark');
-        menuIcon.classList.add('fa-bars');
-    } else {
-        // If shown, show the cross icon
-        menuIcon.classList.remove('fa-bars');
-        menuIcon.classList.add('fa-xmark');
+    if (mobileNav && menuIcon) {
+        mobileNav.classList.toggle('hidden');
+        
+        if (mobileNav.classList.contains('hidden')) {
+            menuIcon.classList.remove('fa-xmark');
+            menuIcon.classList.add('fa-bars');
+        } else {
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-xmark');
+        }
     }
-};
+}
+// Expose the function so your HTML elements can still trigger it
+window.toggleMobileMenu = toggleMobileMenu;
 
 window.refreshVideo = function() {
     const player = document.getElementById('videoPlayer');
