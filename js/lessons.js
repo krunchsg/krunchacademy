@@ -579,21 +579,539 @@ export const allLessons = [
                 </div>
             `,
     },
-            
-            
-    { id: 16, track: "History/SS", number: 1, title: "Describe", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike, desc: `<div><h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3><p class="text-slate-600 mb-6">Extracting hidden source meanings safely for Core Source-Based Question skills.</p><h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3><ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6"><li>Uncover precise subtextual author intent rather than basic summaries.</li><li>Link matching source evidence chunks back cleanly to assertions.</li></ul><div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl"><h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4><p class="text-amber-900/80 text-sm font-medium leading-relaxed">Don't simply summarize what the text says literally!</p></div></div>` },
-    { id: 17, track: "History/SS", number: 2, title: "Explain", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike, desc: "<div>Briefing on evaluating author intent and desired outcomes.</div>" },
-    { id: 18, track: "History/SS", number: 3, title: "Analysis of Pictorial Sources", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike, desc: "<div>Briefing on cross-referencing and checking source trustworthiness.</div>" },
-    { id: 19, track: "History/SS", number: 4, title: "Analysis of Textual Sources", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HydANU", pdfId: "", producer: producers.mike, desc: "<div>Briefing on the usefulness of sources in historical inquiry.</div>" },
-    { id: 20, track: "History/SS", number: 5, title: "Contextual Knowledge", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike, desc: "<div>Briefing on using background knowledge to support source analysis.</div>" },
-    { id: 21, track: "History/SS", number: 6, title: "Comparison", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike, desc: "<div>Briefing on identifying similarities and differences in sources.</div>" },
-    { id: 22, track: "History/SS", number: 7, title: "Evaluation", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike, desc: "<div>Briefing on judging the value of arguments in a source.</div>" },
-    { id: 23, track: "History/SS", number: 8, title: "Message", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike, desc: "<div>Briefing on summarizing the main point of a cartoon or text.</div>" },
-    { id: 24, track: "History/SS", number: 9, title: "Assertions", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike, desc: "<div>Briefing on making clear historical claims.</div>" },
-    { id: 25, track: "History/SS", number: 10, title: "Origin", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike, desc: "<div>Briefing on how provenance affects source value.</div>" },
-    { id: 26, track: "History/SS", number: 11, title: "Bias", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike, desc: "<div>Briefing on identifying one-sided perspectives.</div>" },
-    { id: 27, track: "History/SS", number: 12, title: "Motive", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike, desc: "<div>Briefing on why an author chose to publish at a specific time.</div>" },
-    { id: 28, track: "History/SS", number: 13, title: "Tone", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike, desc: "<div>Briefing on how language reflects author attitude.</div>" },
-    { id: 29, track: "History/SS", number: 14, title: "Hybrid Questions", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike, desc: "<div>Briefing on questions that combine multiple SBQ skills.</div>" },
-    { id: 30, track: "History/SS", number: 15, title: "Synthesis", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike, desc: "<div>Briefing on grouping sources to answer a big question.</div>" }
+{ 
+        id: 1, 
+        track: "History/SS", 
+        number: 1, 
+        title: "Describe", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/HYSS%20Mission%201%20-%20Describe.mp4", 
+        producer: producers.mike, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Provide information regarding a factor</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Identify a factor that addresses the question</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                            <li>Is the factor relevant to the question asked?</li>
+                        </ul>
+                        <li>Elaborate on the factor by providing information and details about the factor</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Does the information stated support your factor?</li>
+                            </ul>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            Writing an opinion is not describing as it is not backed by evidence. By describing, you bring in information and elaboration that help provide examples to strengthen a factor to answer the question.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },            
+{ 
+        id: 2, 
+        track: "History/SS", 
+        number: 2, 
+        title: "Explain", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/HYSS%20Mission%202%20-%20Explain.mp4", 
+        producer: producers.mike, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Give reasons to show links between factors and questions asked</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Describe the factor</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                            <li>Does the factor answer the question?</li>
+                            <li>Is your factor supported with evidence or examples?</li>
+                        </ul>
+                        <li>Make links to show the factor addressing the question asked</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Does your explanation address “why” or “how” the factor links to the question?</li>
+                            </ul>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            Do not assume that the marker will make the connection for you. You have to make all the connections as explicitly and clearly as possible on your own.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
+{ 
+        id: 3, 
+        track: "History/SS", 
+        number: 3, 
+        title: "Analysis of Pictorial Sources", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/HYSS%20Mission%203%20-%20Source%20Analysis%20(Pictorial).mp4", 
+        producer: producers.mike, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Examine different elements of pictorial sources</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Identify different elements of the pictorial source</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                            <li>What are words, symbols or personalities relevant to the question?</li>
+                        </ul>
+                        <li>Draw conclusions from the pictorial source</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Do the details you identified connect the source to the question?</li>
+                            </ul>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            Analysing pictorial sources is not describing what is in the picture. You need to go beyond the surface, use the elements to establish an understanding of the source to make a conclusion.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
+{ 
+        id: 4, 
+        track: "History/SS", 
+        number: 4, 
+        title: "Analysis of Textual Sources", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/HYSS%20Mission%204%20-%20Source%20Analysis%20(Textual).mp4", 
+        producer: producers.mike, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Infer a source based on examining its keywords</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Identify keywords relevant to the question asked</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                            <li>Highlight/underline the words that are essential in the source</li>
+                        </ul>
+                        <li>Draw a holistic conclusion based on the keywords identified</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Did you look at the source as a whole?</li>
+                            </ul>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            Conclusions from a textual source should not be taken in parts. The source should be taken as a whole to ensure that the inference is conclusive.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
+{ 
+        id: 5, 
+        track: "History/SS", 
+        number: 5, 
+        title: "Provenance", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/HYSS%20Mission%205%20-%20Provenance.mp4", 
+        producer: producers.mike, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Describe the context of the source</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Identify important components of the provenance</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                            <li>Who wrote/said this? Where was this published/made? When was this made?</li>
+                        </ul>
+                        <li>Draw links between the source and provenance for a complete picture of the source</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Have you read the source together with the provenance?</li>
+                            </ul>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            Do not simply state components of the provenance when using the provenance to answer questions. You need to explain how the provenance addresses the question.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
+{ 
+        id: 6, 
+        track: "History/SS", 
+        number: 6, 
+        title: "Inference/Message", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/HYSS%20Mission%206%20-%20Inference_Message.mp4", 
+        producer: producers.mike, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Draw an intelligent conclusion based on the the content of the source</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Infer from the source/provide a claim</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                            <li>Is the claim lifted (copied) or paraphrased?</li>
+                            <li>Did you look at the source from a broader context? [Message]</li>
+                        </ul>
+                        <li>Support your claim</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Is the evidence relevant to the claim?</li>
+                            </ul>
+                        <li>Explain how the claim answers the question</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Does the explanation show links between the inference, the evidence and the question?</li>
+                            </ul>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            The inference is not a summary of the source. You do not summarise, you make a conclusion.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
+{ 
+        id: 7, 
+        track: "History/SS", 
+        number: 7, 
+        title: "Comparison", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/HYSS%20Mission%207%20-%20Comparison.mp4", 
+        producer: producers.mike, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Compare and contrast two sources based on a common criteria</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Compare both sources</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                            <li>What is similar about both sources?</li>
+                            <li>Do the evidence and explanations match the similarity?</li>
+                        </ul>
+                        <li>Contrast both sources</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>What is the common criteria you are contrasting them by? Are the inferences direct opposites of each other?</li>
+                                <li>Do the evidence and explanations address the claims?</li>
+                            </ul>
+                        <li>Higher order comparison</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Is there anything similar or different in the provenance/perspective/tone or purpose of the source?</li>
+                            </ul>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            Lifting from both sources without explicitly showing where the similarity or difference is not considered comparing or contrasting.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
+{ 
+        id: 8, 
+        track: "History/SS", 
+        number: 8, 
+        title: "Purpose", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/HYSS%20Mission%208%20-%20Purpose.mp4", 
+        producer: producers.mike, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Explain the motive of the source</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Analyse the purpose of the source</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                            <li>What is the purpose verb? Who is the target audience? What is the message of the source?</li>
+                            <li>What is the writer hoping the audience would do after reading/looking at the source?</li>
+                        </ul>
+                        <li>Support your claim</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Is your evidence and explanation supporting the purpose you have established?</li>
+                            </ul>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            Do not leave out the message of the source. You need to first convince the audience of the source’s point of view (message) before getting them to make an action.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
+{ 
+        id: 9, 
+        track: "History/SS", 
+        number: 9, 
+        title: "Reliability", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/HYSS%20Mission%209%20-%20Reliability.mp4", 
+        producer: producers.mike, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Evaluate the credibility of a source</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Identify the main message of the source</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                            <li>What is the key point of the source?</li>
+                        </ul>
+                        <li>Cross refer the source to another source</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Does the source support or challenge the key point raised in the main source? Is the message of the other source the same or directly opposite?</li>
+                                <li>Did you include the reliability statement?</li>
+                            </ul>
+                        <li>Analyse beyond the content of the source</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Does the provenance/context/perspective make the source more or less reliable?</li>
+                                <li>What aspects of these make you say so?</li>
+                            </ul>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            When cross-referencing, you need to ensure that your inferences directly match or are direct opposites. They should not be two distinctly different points.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
+{ 
+        id: 10, 
+        track: "History/SS", 
+        number: 10, 
+        title: "Utility", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/HYSS%20Mission%2010%20-%20Utility.mp4", 
+        producer: producers.mike, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Evaluate whether a source is useful in addressing a specific issue</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Identify the main message of the source</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                            <li>What is the key point of the source?</li>
+                            <li>Is there any missing information you can identify from there?</li>
+                        </ul>
+                        <li>Cross refer the source to another source</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Does the source support the key point identified in the main source?</li>
+                                <li>Did you include the reliability statement? Did you link reliability to utility?</li>
+                            </ul>
+                        <li>Analyse beyond the content of the source</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Does the provenance/context/perspective make the source more/less reliable and thus more/less useful?</li>
+                            </ul>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            Do not start your answer by stating that the source is not useful. This is because by doing so, you are making the message of the source invalid.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
+{ 
+        id: 11, 
+        track: "History/SS", 
+        number: 11, 
+        title: "Surprise", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/HYSS%20Mission%2011%20-%20Surprise.mp4", 
+        producer: producers.mike, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Determine if what is written in the source makes you surprised or not</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Identify the main message of the source</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                            <li>What is the key point of the source?</li>
+                        </ul>
+                        <li>Cross refer the source to another source</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Does another source share the same message or a different message?</li>
+                            </ul>
+                        <li>Analyse beyond the content of the source</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Does the provenance/context/perspective make the source more or less surprising?</li>
+                                <li>How do you explain this?</li>
+                            </ul>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            Do not address the reliability of the source for this question. Determining if the source is surprising or not does not require the checking of the source’s reliability.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
+{ 
+        id: 12, 
+        track: "History/SS", 
+        number: 12, 
+        title: "Evaluation (for essay or SRQ)", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/HYSS%20Mission%2012%20-%20Evaluation.mp4", 
+        producer: producers.mike, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Evaluate two factors to conclude which of the two is more significant</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Describe and explain factors</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                            <li>Did you describe (point + elaboration) and explain (link to question) the factors?</li>
+                        </ul>
+                        <li>Weigh both factors using a common criteria</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Is the impact long term or short term? Is the cause a root or contributing one? DId the factor affect a whole population or part of a population?</li>
+                            </ul>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            This paragraph alone does not answer the question. Without your description and explanation of the factors, the paragraph just becomes an opinion, not an evaluation.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
+{ 
+        id: 13, 
+        track: "History/SS", 
+        number: 13, 
+        title: "Study All Sources / Assertion", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/HYSS%20Mission%2013%20-%20Study%20All%20Sources.mp4", 
+        producer: producers.mike, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Infer all the sources to give different perspectives of the statement in the question</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Infer and explain sources</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                            <li>Do your inference and explanation address the statement question? Did you provide relevant evidence?</li>
+                        </ul>
+                        <li>Balance the argument</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Did you ensure you inferred sources that agree and disagree with the statement?</li>
+                                <li>Do you have a balanced number of sources and are not skewed to one perspective?</li>
+                            </ul>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            Explaining the sources is insufficient. The challenge to explain how the sources address the statement in the question.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
+{ 
+        id: 14, 
+        track: "History/SS", 
+        number: 14, 
+        title: "Hybrid Surprise", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/HYSS%20Mission%2014%20-%20Hybrid%20Surprise.mp4", 
+        producer: producers.mike, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Explain why a source is surprising or not, in relation to another source</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Compare/contrast both sources</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                            <li>Do their inferences match or oppose each other?</li>
+                        </ul>
+                        <li>Cross refer to another source</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Does the cross referred source agree with both the sources? Or does the cross referred source only agree with one other source?</li>
+                            </ul>
+                        <li>Analyse beyond the content of the source</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Does the provenance/context/perspective strengthen your argument? How so?</li>
+                            </ul>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            Keep your stand throughout; do not say one moment that it is surprising then again it is not surprising. It may take quite a bit to justify the change in stand.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
+{ 
+        id: 15, 
+        track: "History/SS", 
+        number: 15, 
+        title: "Hybrid Prove", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/HYSS%20Mission%2015%20-%20Hybrid%20Prove.mp4", 
+        producer: producers.mike, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Explain if one source can prove if the other source is right or wrong</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Compare/contrast both sources</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                            <li>Are they similar or different?</li>
+                        </ul>
+                        <li>Cross refer first named source to another source</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Does this make the source reliable or not reliable?</li>
+                                <li>If the first named source is reliable/unreliable then does it prove or not?</li>
+                            </ul>
+                        <li>Analyse beyond the content of the source</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Does the provenance/context/perspective strengthen or diminish the reliability of the source?</li>
+                            </ul>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            There is no need to show that the source proves and does not prove. Just stick to one stand throughout.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
 ];
