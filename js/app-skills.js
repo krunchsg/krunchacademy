@@ -99,7 +99,7 @@ function selectLesson(id) {
 function updateLessonContent() {
     if (currentLessonId === null) return;
     
-    const lesson = allLessons.find(l => l.id === currentLessonId);
+    const lesson = allLessons.find(l => l.id === currentLessonId && l.track === currentTrack);
     if (!lesson) return;
     
     const player = document.getElementById('videoPlayer');
