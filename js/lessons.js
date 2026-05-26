@@ -59,6 +59,7 @@ export const allLessons = [
                     <p class="text-slate-600 mb-6">Describe trends in simple bar graphs & compare data in comparative bar graphs</p>
                     
                     <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
+                    <p class="text-slate-600 mb-6">To describe trends</p>
                     <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
                         <li>Describe the overall pattern</li>
                         <ul class="list-[circle] pl-5 mt-1 space-y-1">
@@ -71,11 +72,25 @@ export const allLessons = [
                             </ul>
                         </li>
                     </ul>
+                        <p class="text-slate-600 mb-6">To compare data</p>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Describe at least one similarity</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                            <li>E.g. Both X and Y increased from 1990 to 2020.</li>
+                            <li>E.g. Both X and Y had the highest percentage in 2010.</li>
+                        </ul>
+                        <li>Describe at least one difference</li>
+                            <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>E.g. From 2015 to 2020, X increased by Y decreased. </li>
+                                <li>E.g. In 2020, X had the highest percentage but Y had the lowest percentage.</li>
+                            </ul>
+                        </li>
+                    </ul>
                     
                     <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
                         <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
                         <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
-                            Make sure your units are correct! Look for the correct units in the question context, the title of the figure or the title of each axis in the figure.
+                            Every point you write needs a common criteria that you use to compare (i.e. a basis of comparison). Do not write all about X, then all about Y. Write one similarity / difference between X and Y in one point, before moving on to the next similarity / difference.
                         </p>
                     </div>
                 </div>
