@@ -27,12 +27,11 @@ export const allLessons = [
                         <ul class="list-[circle] pl-5 mt-1 space-y-1">
                             <li>Does the data increase, decrease, fluctuate or remain constant from the start to the end of the period?</li>
                         </ul>
-                        <li>Describe specific patterns
+                        <li>Describe specific patterns</li>
                             <ul class="list-[circle] pl-5 mt-1 space-y-1">
                                 <li>Are there periods of time with significant increase or decrease?</li>
                                 <li>Are there exceptions?</li>
                             </ul>
-                        </li>
                     </ul>
                     
                     <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
@@ -63,12 +62,11 @@ export const allLessons = [
                         <ul class="list-[circle] pl-5 mt-1 space-y-1">
                             <li>Does the data increase, decrease, fluctuate or remain constant from the start to the end of the period?</li>
                         </ul>
-                        <li>Describe specific patterns
+                        <li>Describe specific patterns</li>
                             <ul class="list-[circle] pl-5 mt-1 space-y-1">
                                 <li>Are there periods of time with significant increase or decrease?</li>
                                 <li>Are there exceptions?</li>
                             </ul>
-                        </li>
                     </ul>
                         <p class="text-slate-600 mb-6"><strong>To compare data</strong></p>
                     <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
@@ -82,7 +80,6 @@ export const allLessons = [
                                 <li>E.g. From 2015 to 2020, X increased by Y decreased. </li>
                                 <li>E.g. In 2020, X had the highest percentage but Y had the lowest percentage.</li>
                             </ul>
-                        </li>
                     </ul>
                     
                     <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
@@ -149,7 +146,6 @@ export const allLessons = [
                                 <li>Is the total annual precipitation low or high?</li>
                                 <li>Is there a distinct wet and dry season? </li>
                             </ul>
-                        </li>
                     </ul>
                     
                     <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
@@ -195,6 +191,7 @@ export const allLessons = [
                             <ul class="list-[circle] pl-5 mt-1 space-y-1">
                                 <li>Are there periods of time with significant increase or decrease?</li>
                                 <li>Are there exceptions?</li>
+                                </ul>
                     </ul>
                     <p class="text-slate-600 mb-6"><strong>To compare data</strong></p>
                     <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
