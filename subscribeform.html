@@ -64,7 +64,7 @@
       <div id="formSection" class="expandable-content">
         <form id="academySubscribeForm" class="space-y-5">
           
-          <!-- Field 1: Role Selector (Parent / Student) -->
+          <!-- Field 1: Role Selector (Parent / Student with indicators removed) -->
           <div>
             <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2.5">I am a...</label>
             <div class="grid grid-cols-2 gap-3">
@@ -72,18 +72,12 @@
               <label class="relative flex items-center justify-center p-3.5 rounded-xl border-2 border-slate-200 bg-white cursor-pointer transition-all select-none hover:border-slate-300" id="labelParent">
                 <input type="radio" name="userRole" value="parent" checked class="sr-only">
                 <span class="text-sm font-semibold text-slate-700" id="textParent">Parent</span>
-                <span class="absolute top-2.5 right-2.5 flex h-2 w-2" id="indicatorParent">
-                  <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                </span>
               </label>
 
               <!-- Student Option -->
               <label class="relative flex items-center justify-center p-3.5 rounded-xl border-2 border-slate-200 bg-white cursor-pointer transition-all select-none hover:border-slate-300" id="labelStudent">
                 <input type="radio" name="userRole" value="student" class="sr-only">
                 <span class="text-sm font-semibold text-slate-400" id="textStudent">Student</span>
-                <span class="absolute top-2.5 right-2.5 h-2 w-2 hidden" id="indicatorStudent">
-                  <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                </span>
               </label>
             </div>
           </div>
@@ -224,8 +218,6 @@
       const labelStudent = document.getElementById("labelStudent");
       const textParent = document.getElementById("textParent");
       const textStudent = document.getElementById("textStudent");
-      const indicatorParent = document.getElementById("indicatorParent");
-      const indicatorStudent = document.getElementById("indicatorStudent");
       
       const nameLabel = document.getElementById("nameLabel");
       const fullNameInput = document.getElementById("fullName");
@@ -245,7 +237,7 @@
       const displayEmail = document.getElementById("displayEmail");
       const resetBtn = document.getElementById("resetBtn");
 
-      // 1. Dynamic Toggle Switch between Parent & Student
+      // 1. Dynamic Toggle Switch between Parent & Student (No visual dot required)
       radioParents.forEach(radio => {
         radio.addEventListener("change", (e) => {
           if (e.target.value === "parent") {
@@ -254,14 +246,12 @@
             labelParent.classList.remove("border-slate-200");
             textParent.classList.add("text-emerald-700");
             textParent.classList.remove("text-slate-400");
-            indicatorParent.classList.remove("hidden");
 
             // Stylize Student Card Inactive (Light Mode)
             labelStudent.classList.add("border-slate-200");
             labelStudent.classList.remove("border-emerald-500", "bg-emerald-50/20");
             textStudent.classList.add("text-slate-400");
             textStudent.classList.remove("text-emerald-700");
-            indicatorStudent.classList.add("hidden");
 
             // Update Field Labels/Placeholders
             nameLabel.innerText = "Parent's Name";
@@ -273,14 +263,12 @@
             labelStudent.classList.remove("border-slate-200");
             textStudent.classList.add("text-emerald-700");
             textStudent.classList.remove("text-slate-400");
-            indicatorStudent.classList.remove("hidden");
 
             // Stylize Parent Card Inactive (Light Mode)
             labelParent.classList.add("border-slate-200");
             labelParent.classList.remove("border-emerald-500", "bg-emerald-50/20");
             textParent.classList.add("text-slate-400");
             textParent.classList.remove("text-emerald-700");
-            indicatorParent.classList.add("hidden");
 
             // Update Field Labels/Placeholders
             nameLabel.innerText = "Student's Name";
@@ -418,7 +406,7 @@
           setTimeout(() => {
             formSection.classList.remove("collapsed");
             submitBtn.disabled = false;
-            submitBtn.innerHTML = `<span>Get Free Study Tips</span>`;
+            submitBtn.innerHTML = `<span>Subscribe</span>`;
           }, 50);
         }, 600);
       });
