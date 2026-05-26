@@ -3,11 +3,6 @@ export const producers = {
             mike: { handle: "@mrmike.history.ss", link: "https://www.instagram.com/mrmike.history.ss/" }
         };
 
-export const masterWorkbooks = {
-    "Geography": "[https://drive.google.com/uc?export=download&id=1i5p1bLh9-PtME2oRzKfbb3sEIDJC7DDo](https://drive.google.com/uc?export=download&id=1i5p1bLh9-PtME2oRzKfbb3sEIDJC7DDo)", // replace this ID if needed
-    "History/SS": "[https://drive.google.com/uc?export=download&id=1i5p1bLh9-PtME2oRzKfbb3sEIDJC7DDo](https://drive.google.com/uc?export=download&id=1i5p1bLh9-PtME2oRzKfbb3sEIDJC7DDo)" // replace with your master History Drive ID
-};
-
 export const allLessons = [
     { 
         id: 1, 
