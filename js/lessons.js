@@ -59,7 +59,7 @@ export const allLessons = [
                     <p class="text-slate-600 mb-6">Describe trends in simple bar graphs & compare data in comparative bar graphs</p>
                     
                     <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
-                    <p class="text-slate-600 mb-6">To describe trends</p>
+                    <p class="text-slate-600 mb-6"><strong>To describe trends</strong></p>
                     <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
                         <li>Describe the overall pattern</li>
                         <ul class="list-[circle] pl-5 mt-1 space-y-1">
@@ -72,7 +72,7 @@ export const allLessons = [
                             </ul>
                         </li>
                     </ul>
-                        <p class="text-slate-600 mb-6">To compare data</p>
+                        <p class="text-slate-600 mb-6"><strong>To compare data</strong></p>
                     <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
                         <li>Describe at least one similarity</li>
                         <ul class="list-[circle] pl-5 mt-1 space-y-1">
