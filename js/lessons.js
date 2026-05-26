@@ -460,6 +460,125 @@ export const allLessons = [
                 </div>
             `,
     },
+{ 
+        id: 13, 
+        track: "Geography", 
+        number: 13, 
+        title: "Bipolar Graphs", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/GY%20Mission%2013%20-%20Bipolar%20Graphs.mp4", 
+        producer: producers.stace, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Interpret data in perception surveys and represent the data in bipolar graphs</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
+                    <p class="text-slate-600 mb-6"><strong>To interpret data in perception surveys</strong></p>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Look at the questions given in the survey</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Opposing descriptors are placed in the same row for survey respondents to rate</li>
+                            </ul>
+                        <li>For each set of opposing descriptors, compare the number of respondents who responded positively and negatively</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>This gives you a quick overview of whether respondents view the place positively or negatively</li>
+                            </ul>
+                    </ul>
+                    <p class="text-slate-600 mb-6"><strong>To represent data in bipolar graphs</strong></p>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Look at one set of descriptors at a time</li>
+                        <li>Leave out those who respond ‘0’</li>
+                        <li>Calculate data for those who responded negatively: (number of respondents x -2) + (number of respondents x -1) etc.</li>
+                         <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Plot this negative number on the negative side of the bipolar graph</li>
+                            </ul>
+                        <li>Calculate data for those who responded positively: (number of respondents x 1) + (number of respondents x 2) etc.</li>
+                         <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>Plot this positive number on the positive side of the bipolar graph</li>
+                            </ul>
+                        <li>Repeat the steps for each set of descriptors</li>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            The positive and negative segments of the bipolar graph need to be calculated separately. Do not sum the positive and negative results for each set of descriptors.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
+{ 
+        id: 14, 
+        track: "Geography", 
+        number: 14, 
+        title: "Sentiment Analysis", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/GY%20Mission%2014%20-%20Sentiment%20Analysis.mp4", 
+        producer: producers.stace, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Interpret data in sentiment analysis charts</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3> 
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Look at the question given in the survey</li>
+                        <li>Compare the number of respondents who responded positively and negatively for the question</li>
+                        <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>This gives you a quick overview of whether respondents view the situation, place or object positively or negatively</li>
+                            </ul>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            Sentiment analysis involves categorising the emotional tone conveyed in survey responses. This means that the investigator determines whether to categorise a response positively or negatively, which introduces bias. Therefore, sentiment analysis may not be as reliable as environmental perception surveys, which reflect respondents’ actual rating.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
+{ 
+        id: 15, 
+        track: "Geography", 
+        number: 15, 
+        title: "Stacked Bar Graphs", 
+        directUrl: "https://pub-437a98034bc3494e97b57ffdc5bf43af.r2.dev/GY%20Mission%2015%20-%20Stacked%20Bar%20Graphs.mp4", 
+        producer: producers.stace, 
+        desc: `
+                <div>
+                    <h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3>
+                    <p class="text-slate-600 mb-6">Interpret and compare data in stacked bar graphs</p>
+                    
+                    <h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3>
+                    <p class="text-slate-600 mb-6"><strong>To interpret data</strong></p>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Mark out the start (lower limit) and end (upper limit) of each category</li>
+                        <li>Take the upper limit - lower limit = the percentage associated with each category</li>
+                    </ul>
+                    <p class="text-slate-600 mb-6"><strong>To compare data</strong></p>
+                    <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6">
+                        <li>Describe at least one similarity</li>
+                         <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>E.g. Both X and Y increased from 1990 to 2020.</li>
+                                <li>E.g. Both X and Y had the highest percentage in 2010.</li>
+                            </ul>
+                        <li>Describe at least one difference</li>
+                         <ul class="list-[circle] pl-5 mt-1 space-y-1">
+                                <li>E.g. From 2015 to 2020, X increased by Y decreased.</li>
+                                <li>E.g. In 2020, X had the highest percentage but Y had the lowest percentage.</li>
+                            </ul>
+                    </ul>
+                    
+                    <div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                        <h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4>
+                        <p class="text-amber-900/80 text-sm font-medium leading-relaxed">
+                            Stacked bar graphs are different from simple bar graphs. Stacked bar graphs lay categories on top of each other or side by side to show you the proportion of each category. This is why you must take extra effort to calculate the percentage of each category for stacked bar graphs.
+                        </p>
+                    </div>
+                </div>
+            `,
+    },
             
             
     { id: 16, track: "History/SS", number: 1, title: "Describe", directUrl: "1pAEpGRrMVs2HpXlHEbPdxZ6cYL9HvANU", pdfId: "", producer: producers.mike, desc: `<div><h3 class="text-xl font-extrabold text-slate-900 uppercase tracking-tight mb-2">The Command</h3><p class="text-slate-600 mb-6">Extracting hidden source meanings safely for Core Source-Based Question skills.</p><h3 class="text-sm font-black text-emerald-600 uppercase tracking-wider mb-2">The Protocol</h3><ul class="list-disc pl-5 space-y-1 text-slate-600 mb-6"><li>Uncover precise subtextual author intent rather than basic summaries.</li><li>Link matching source evidence chunks back cleanly to assertions.</li></ul><div class="p-5 bg-amber-50/60 border border-amber-100 rounded-2xl"><h4 class="text-sm font-black text-amber-800 uppercase tracking-wider mb-1">⚠️ The Trap</h4><p class="text-amber-900/80 text-sm font-medium leading-relaxed">Don't simply summarize what the text says literally!</p></div></div>` },
