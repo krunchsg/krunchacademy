@@ -718,11 +718,6 @@
 
     </main>
 
-    <!-- Custom Micro Notification system for checkout actions -->
-    <div id="cart-toast" class="fixed bottom-5 right-5 z-50 bg-brand-900 text-white px-5 py-3 rounded-xl text-xs font-semibold shadow-xl border border-brand-600/50 hidden transform transition duration-300">
-        🛒 Course package added to cart!
-    </div>
-
     <!-- Interactive Scripts -->
     <script>
         // Assessment toggle accordion handler
@@ -765,17 +760,6 @@
             }
         }
 
-        // Add to cart notification helper
-        function addToCart(packageName) {
-            const toast = document.getElementById('cart-toast');
-            toast.innerText = `🛒 Added "${packageName}" package to cart!`;
-            toast.classList.remove('hidden');
-            
-            // Auto hide after 3 seconds
-            setTimeout(() => {
-                toast.classList.add('hidden');
-            }, 3000);
-        }
     </script>
 </body>
     <footer class="mt-16 pt-8 border-t border-slate-100 text-center pb-8">
