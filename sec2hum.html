@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KRUNCH Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+    <body class="antialiased">
+
+    <header class="glass-header">
+        <div class="w-full px-4 md:px-8 min-h-[80px] py-4 flex flex-row items-center justify-between lg:justify-start gap-4">
+            <a href="index.html" class="flex items-center gap-1 cursor-pointer group shrink-0">
+                <div class="logo-container border border-slate-100 shadow-sm transition-transform group-hover:scale-105">
+                    <img id="mainLogo" 
+                         src="https://lh3.googleusercontent.com/d/1jf3Kop9mGRripXM8WCxV9n9M5VceElcH" 
+                         alt="KRUNCH Ninja" 
+                         class="logo-img"
+                         onerror="this.src='https://krunch.sg/wp-content/uploads/2022/01/cropped-Krunch-Logo-Circle-192x192.png'">
+                </div>
+                <div class="flex flex-col justify-center leading-none">
+                    <h1 class="font-black text-2xl tracking-tighter leading-none text-slate-900 uppercase group-hover:text-emerald-600 transition-colors">KRUNCH</h1>
+                    <span class="text-[10px] font-bold text-slate-400 tracking-[0.3em] uppercase mt-0.5">Academy</span>
+                </div>
+            </a>
+
+            <button id="menu-btn" class="lg:hidden menu-toggle-btn p-2 text-slate-600 hover:bg-slate-50 rounded-lg flex items-center justify-center ml-auto">
+                <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+            </button>
+            
+            <div class="hidden lg:block flex-grow"></div>
+
+            <nav class="hidden lg:flex items-center h-full gap-8">
+                <a href="skillsslam.html" id="tab-skillsslam" class="nav-tab">Skills Slam</a>
+                <a href="subjectnav.html" id="tab-combi" class="nav-tab">Subject Navigator</a>
+
+                <div class="w-px h-6 bg-slate-200 mx-2"></div>
+
+                <div class="dropdown">
+                    <button class="flex items-center gap-2 text-sm font-bold text-slate-700 hover:text-emerald-600 transition-colors py-4">
+                        Courses
+                        <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <div class="bg-white rounded-2xl border border-slate-50 p-2 shadow-inner">
+                            <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest px-3 py-2">Select Your Level</p>
+                            <a href="https://krunch.sg/sec1hum/" target="_blank" class="dropdown-item group">
+                                <span class="block text-[10px] font-bold text-emerald-600 uppercase tracking-tight">Sec 1</span>
+                                <span class="block text-sm font-black text-slate-700 group-hover:text-emerald-700">Geography & History</span>
+                            </a>
+                            <a href="https://krunch.sg/sec2hum/" target="_blank" class="dropdown-item group">
+                                <span class="block text-[10px] font-bold text-emerald-600 uppercase tracking-tight">Sec 2</span>
+                                <span class="block text-sm font-black text-slate-700 group-hover:text-emerald-700">Geography & History</span>
+                            </a>
+                            <a href="https://krunch.sg/sec3hum/" target="_blank" class="dropdown-item group">
+                                <span class="block text-[10px] font-bold text-emerald-600 uppercase tracking-tight">Sec 3</span>
+                                <span class="block text-sm font-black text-slate-700 group-hover:text-emerald-700">Geography, History & Social Studies</span>
+                            </a>
+                            <a href="https://krunch.sg/sec4hum/" target="_blank" class="dropdown-item group">
+                                <span class="block text-[10px] font-bold text-emerald-600 uppercase tracking-tight">Sec 4</span>
+                                <span class="block text-sm font-black text-slate-700 group-hover:text-emerald-700">Geography, History & Social Studies</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://krunchacademy.com/subscribe.html" class="accent-bg text-white px-4 md:px-8 py-2 md:py-3 rounded-xl md:rounded-2xl text-[12px] md:text-sm font-black uppercase tracking-widest hover:opacity-90 transition-all shadow-lg shadow-emerald-200 active:scale-95">
+                    Subscribe for tips
+                </a>
+            </nav>
+        </div>
+
+        <div id="mobile-nav" class="hidden lg:hidden bg-white border-b border-slate-100 p-6 space-y-6 shadow-xl animate-in slide-in-from-top duration-300">
+            <div class="flex flex-col gap-3">
+                <a href="skillsslam.html" id="tab-skillsslam" class="nav-tab">Skills Slam</a>
+                <a href="subjectnav.html" id="tab-combi" class="nav-tab">Subject Navigator</a>
+            </div>
+            
+            <div class="space-y-3">
+                <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-2">Our Courses</p>
+                <div class="grid grid-cols-1 gap-2">
+                    <a href="https://krunch.sg/sec1hum/" target="_blank" class="p-3 border border-slate-100 rounded-xl font-bold text-sm">Sec 1 Geography & History</a>
+                    <a href="https://krunch.sg/sec2hum/" target="_blank" class="p-3 border border-slate-100 rounded-xl font-bold text-sm">Sec 2 Geography & History</a>
+                    <a href="https://krunch.sg/sec3hum/" target="_blank" class="p-3 border border-slate-100 rounded-xl font-bold text-sm">Sec 3 Geography, History & Social Studies</a>
+                    <a href="https://krunch.sg/sec4hum/" target="_blank" class="p-3 border border-slate-100 rounded-xl font-bold text-sm">Sec 4 Geography, History & Social Studies</a>
+                </div>
+            </div>
+
+            <a href="https://krunchacademy.com/subscribe.html" class="block w-full accent-bg text-white py-4 rounded-2xl font-black text-center text-xs uppercase tracking-[0.2em]">
+                Subscribe for tips
+            </a>
+        </div>
+    </header>
+
+<main id="page-combi" class="h-[calc(100vh-80px)] flex flex-col justify-between overflow-hidden bg-slate-50">
+    <div class="flex-1 w-full min-h-0 relative">
+        <iframe 
+            src="https://krunchacademy.com/sec2info.html" 
+            width="100%" 
+            height="100%" 
+            frameborder="0" 
+            style="border:none; overflow:hidden; position: absolute; inset: 0;">
+        </iframe>
+    </div>
+</main>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
