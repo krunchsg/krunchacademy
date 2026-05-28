@@ -1,92 +1,145 @@
-import React, { useState } from 'react';
-import { 
-  ArrowRight, 
-  BookOpen
-} from 'lucide-react';
-
-export default function App() {
-  // URLs for each course level
-  const [urls] = useState({
-    sec1: 'https://krunchacademy.com/sec1hum',
-    sec2: 'https://krunchacademy.com/sec2hum',
-    sec3: 'https://krunchacademy.com/sec3hum',
-    sec4: 'https://krunchacademy.com/sec4hum'
-  });
-
-  // Simplified Levels Data
-  const levelsData = [
-    {
-      id: 'sec1',
-      title: 'Sec 1 Geography & History'
-    },
-    {
-      id: 'sec2',
-      title: 'Sec 2 Geography & History'
-    },
-    {
-      id: 'sec3',
-      title: 'Sec 3 Geography, History & Social Studies'
-    },
-    {
-      id: 'sec4',
-      title: 'Sec 4 Geography, History & Social Studies'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krunch Academy Course Navigator</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Premium Google Font (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
     }
-  ];
+  </style>
+</head>
+<body class="bg-[#fafafa] text-slate-900 antialiased selection:bg-emerald-100 selection:text-emerald-950">
 
-  return (
-    <div className="min-h-screen bg-[#fafafa] text-slate-900 font-sans flex flex-col antialiased selection:bg-emerald-100 selection:text-emerald-950">
-      
-      {/* Main Container */}
-      <div className="flex-grow max-w-5xl w-full mx-auto p-6 md:p-12 flex flex-col justify-center">
+  <!-- Main Container -->
+  <div class="min-h-screen flex flex-col justify-center">
+    <div class="flex-grow max-w-5xl w-full mx-auto p-6 md:p-12 flex flex-col justify-center">
 
-        {/* Header Block: Clean, balanced typography with plenty of breathing room */}
-        <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">
-            Explore Our <span className="text-emerald-600 relative inline-block">Online Courses</span>
-          </h1>
-          <p className="mt-3.5 text-slate-500 max-w-xl mx-auto text-sm md:text-base font-semibold tracking-wide">
-            For strategic revision of Geography, History, and Social Studies
-          </p>
-        </div>
+      <!-- Header Block: Clean, balanced typography with plenty of breathing room -->
+      <div class="text-center mb-12">
+        <h1 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">
+          Explore Our <span class="text-emerald-600 relative inline-block">Online Courses</span>
+        </h1>
+        <p class="mt-3.5 text-slate-500 max-w-xl mx-auto text-sm md:text-base font-semibold tracking-wide">
+          For strategic revision of Geography, History, and Social Studies
+        </p>
+      </div>
 
-        {/* Level Navigation Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
-          {levelsData.map((lvl) => (
-            <a
-              key={lvl.id}
-              href={urls[lvl.id]}
-              className="group relative bg-white rounded-2xl border border-slate-200/70 p-6 flex flex-col justify-between transition-all duration-350 shadow-[0_2px_8px_rgba(0,0,0,0.015)] hover:shadow-[0_15px_30px_rgba(16,185,129,0.08)] hover:border-emerald-500/80 hover:-translate-y-1.5 cursor-pointer"
-            >
-              <div>
-                {/* Subtle top indicator containing only the icon for premium aesthetic */}
-                <div className="flex justify-end mb-6">
-                  <BookOpen className="w-4 h-4 text-slate-300 group-hover:text-emerald-500 transition-colors duration-300" />
-                </div>
+      <!-- Level Navigation Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+        
+        <!-- Sec 1 Card -->
+        <a href="https://krunchacademy.com/sec1hum" class="group relative bg-white rounded-2xl border border-slate-200/70 p-6 flex flex-col justify-between transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.015)] hover:shadow-[0_15px_30px_rgba(16,185,129,0.08)] hover:border-emerald-500/80 hover:-translate-y-1.5 cursor-pointer">
+          <div>
+            <div class="flex justify-end mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-300 group-hover:text-emerald-500 transition-colors duration-300">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+              </svg>
+            </div>
+            <h3 class="text-lg font-extrabold text-slate-900 tracking-tight leading-snug group-hover:text-emerald-600 transition-colors duration-300">
+              Sec 1 Geography & History
+            </h3>
+          </div>
+          <div class="mt-8 pt-4 border-t border-slate-50 flex items-center justify-between text-xs font-black tracking-wider text-slate-400 group-hover:text-emerald-600 uppercase transition-colors duration-200">
+            <span>Explore Course</span>
+            <span class="bg-slate-50 group-hover:bg-emerald-50 text-slate-400 group-hover:text-emerald-600 p-1.5 rounded-lg transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transform transition-transform duration-300 group-hover:translate-x-1">
+                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+              </svg>
+            </span>
+          </div>
+        </a>
 
-                {/* Level Title: Clear, readable hierarchy */}
-                <h3 className="text-lg font-extrabold text-slate-900 tracking-tight leading-snug group-hover:text-emerald-600 transition-colors duration-250">
-                  {lvl.title}
-                </h3>
-              </div>
+        <!-- Sec 2 Card -->
+        <a href="https://krunchacademy.com/sec2hum" class="group relative bg-white rounded-2xl border border-slate-200/70 p-6 flex flex-col justify-between transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.015)] hover:shadow-[0_15px_30px_rgba(16,185,129,0.08)] hover:border-emerald-500/80 hover:-translate-y-1.5 cursor-pointer">
+          <div>
+            <div class="flex justify-end mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-300 group-hover:text-emerald-500 transition-colors duration-300">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+              </svg>
+            </div>
+            <h3 class="text-lg font-extrabold text-slate-900 tracking-tight leading-snug group-hover:text-emerald-600 transition-colors duration-300">
+              Sec 2 Geography & History
+            </h3>
+          </div>
+          <div class="mt-8 pt-4 border-t border-slate-50 flex items-center justify-between text-xs font-black tracking-wider text-slate-400 group-hover:text-emerald-600 uppercase transition-colors duration-200">
+            <span>Explore Course</span>
+            <span class="bg-slate-50 group-hover:bg-emerald-50 text-slate-400 group-hover:text-emerald-600 p-1.5 rounded-lg transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transform transition-transform duration-300 group-hover:translate-x-1">
+                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+              </svg>
+            </span>
+          </div>
+        </a>
 
-              {/* Action Button Indicator: Clean link styling with dynamic sliding arrow icon */}
-              <div className="mt-8 pt-4 border-t border-slate-50/80 flex items-center justify-between text-xs font-black tracking-wider text-slate-400 group-hover:text-emerald-600 uppercase transition-colors duration-200">
-                <span>Explore Course</span>
-                <span className="bg-slate-50 group-hover:bg-emerald-50 text-slate-400 group-hover:text-emerald-600 p-1.5 rounded-lg transition-all duration-300">
-                  <ArrowRight className="w-3.5 h-3.5 transform transition-transform duration-300 group-hover:translate-x-1" />
-                </span>
-              </div>
-            </a>
-          ))}
-        </div>
+        <!-- Sec 3 Card -->
+        <a href="https://krunchacademy.com/sec3hum" class="group relative bg-white rounded-2xl border border-slate-200/70 p-6 flex flex-col justify-between transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.015)] hover:shadow-[0_15px_30px_rgba(16,185,129,0.08)] hover:border-emerald-500/80 hover:-translate-y-1.5 cursor-pointer">
+          <div>
+            <div class="flex justify-end mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-300 group-hover:text-emerald-500 transition-colors duration-300">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+              </svg>
+            </div>
+            <h3 class="text-lg font-extrabold text-slate-900 tracking-tight leading-snug group-hover:text-emerald-600 transition-colors duration-300">
+              Sec 3 Geography, History & Social Studies
+            </h3>
+          </div>
+          <div class="mt-8 pt-4 border-t border-slate-50 flex items-center justify-between text-xs font-black tracking-wider text-slate-400 group-hover:text-emerald-600 uppercase transition-colors duration-200">
+            <span>Explore Course</span>
+            <span class="bg-slate-50 group-hover:bg-emerald-50 text-slate-400 group-hover:text-emerald-600 p-1.5 rounded-lg transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transform transition-transform duration-300 group-hover:translate-x-1">
+                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+              </svg>
+            </span>
+          </div>
+        </a>
 
-        <footer className="mt-16 pt-8 border-t border-slate-100 text-center pb-8">
-            <p className="text-xs font-medium text-slate-400 tracking-wide">
-                We make every byte count. | <a href="mailto:keepitkrunchy@gmail.com" className="text-[#059669] font-semibold hover:underline">keepitkrunchy@gmail.com</a>
-            </p>
-        </footer>
+        <!-- Sec 4 Card -->
+        <a href="https://krunchacademy.com/sec4hum" class="group relative bg-white rounded-2xl border border-slate-200/70 p-6 flex flex-col justify-between transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.015)] hover:shadow-[0_15px_30px_rgba(16,185,129,0.08)] hover:border-emerald-500/80 hover:-translate-y-1.5 cursor-pointer">
+          <div>
+            <div class="flex justify-end mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-300 group-hover:text-emerald-500 transition-colors duration-300">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+              </svg>
+            </div>
+            <h3 class="text-lg font-extrabold text-slate-900 tracking-tight leading-snug group-hover:text-emerald-600 transition-colors duration-300">
+              Sec 4 Geography, History & Social Studies
+            </h3>
+          </div>
+          <div class="mt-8 pt-4 border-t border-slate-50 flex items-center justify-between text-xs font-black tracking-wider text-slate-400 group-hover:text-emerald-600 uppercase transition-colors duration-200">
+            <span>Explore Course</span>
+            <span class="bg-slate-50 group-hover:bg-emerald-50 text-slate-400 group-hover:text-emerald-600 p-1.5 rounded-lg transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transform transition-transform duration-300 group-hover:translate-x-1">
+                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+              </svg>
+            </span>
+          </div>
+        </a>
 
       </div>
+      <!-- Footer Block -->
+      <footer class="mt-16 pt-8 border-t border-slate-100 text-center pb-8">
+        <p class="text-xs font-medium text-slate-400 tracking-wide">
+          We make every byte count. | <a href="mailto:keepitkrunchy@gmail.com" class="text-emerald-600 font-semibold hover:underline">keepitkrunchy@gmail.com</a>
+        </p>
+      </footer>
+
     </div>
-  );
-}
+  </div>
+
+</body>
+</html>
