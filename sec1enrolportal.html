@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krunch | Sec 1 Humanities Enrolment Portal</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts for Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome for Premium Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            krunch: {
+              navy: '#0B192C',
+              gold: '#F1C40F',
+              teal: '#1ABC9C',
+              slate: '#34495E',
+              accent: '#E74C3C',
+              bg: '#F8FAFC'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #F8FAFC;
+    }
+    .selection-card {
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .selection-card:hover {
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body class="font-sans text-slate-800 antialiased min-h-screen flex flex-col">
+
+  <!-- Main Content Container with optimized top spacing -->
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-krunch-navy mt-3 tracking-tight">
+        Sec 1 Geography & History Enrolment Portal
+      </h1>
+      <p class="text-slate-500 mt-2 text-sm sm:text-base">
+        Select your Sec 1 subject bundles or lesson sets, fill in your details and proceed to secure checkout.
+      </p>
+    </div>
+
+    <!-- Main Flex Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- LEFT COLUMN: COURSE SELECTION & INFO FORM (7 COLS) -->
+      <div class="lg:col-span-7 space-y-6">
+        
+        <!-- STEP 1: SELECT COURSES -->
+        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 space-y-6">
+          <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+            <div class="flex items-center space-x-3">
+              <div class="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold">1</div>
+              <h2 class="text-lg font-bold text-krunch-navy">Choose Your Lessons</h2>
+            </div>
+            <span class="text-xs text-slate-400 font-medium">*Multi-selection supported</span>
+          </div>
+
+          <!-- SECTION 1.1: BUNDLE PURCHASES -->
+          <div>
+            <div class="flex items-center space-x-2 mb-3">
+              <span class="bg-amber-100 text-amber-800 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">Value Bundles</span>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <!-- Sec 1 History Bundle -->
+              <div id="card-hist-bundle" onclick="toggleCourse('hist_bundle')" class="selection-card border-2 border-slate-100 hover:border-slate-300 rounded-xl p-4 flex flex-col justify-between cursor-pointer select-none">
+                <div class="flex items-start space-x-3 mb-4">
+                  <div id="checkbox-hist-bundle" class="w-5 h-5 rounded border border-slate-300 flex items-center justify-center bg-white mt-0.5 transition-colors shrink-0">
+                    <i class="fas fa-check text-[10px] text-white hidden"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-slate-900 text-sm leading-snug">Sec 1 History Bundle</h3>
+                    <p class="text-xs text-slate-400 mt-1">Complete bundle of 6 lesssons</p>
+                  </div>
+                </div>
+                <div class="flex items-baseline justify-between border-t border-slate-50 pt-2.5 mt-auto">
+                  <span class="text-[10px] text-slate-400 font-semibold uppercase">Bundle price</span>
+                  <span class="text-lg font-extrabold text-krunch-navy">$450</span>
+                </div>
+              </div>
+
+              <!-- Sec 1 Geography Bundle -->
+              <div id="card-geog-bundle" onclick="toggleCourse('geog_bundle')" class="selection-card border-2 border-slate-100 hover:border-slate-300 rounded-xl p-4 flex flex-col justify-between cursor-pointer select-none">
+                <div class="flex items-start space-x-3 mb-4">
+                  <div id="checkbox-geog-bundle" class="w-5 h-5 rounded border border-slate-300 flex items-center justify-center bg-white mt-0.5 transition-colors shrink-0">
+                    <i class="fas fa-check text-[10px] text-white hidden"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-slate-900 text-sm leading-snug">Sec 1 Geography Bundle</h3>
+                    <p class="text-xs text-slate-400 mt-1">Complete bundle of 6 lesssons</p>
+                  </div>
+                </div>
+                <div class="flex items-baseline justify-between border-t border-slate-50 pt-2.5 mt-auto">
+                  <span class="text-[10px] text-slate-400 font-semibold uppercase">Bundle price</span>
+                  <span class="text-lg font-extrabold text-krunch-navy">$450</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 1.2: PAY-PER-LESSON SETS (HISTORY) -->
+          <div>
+            <div class="flex items-center space-x-2 mb-3">
+              <span class="bg-indigo-50 text-indigo-700 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">History Lesson Sets</span>
+              <p class="text-xs text-slate-400">Flexible pay-per-lesson set option</p>
+            </div>
+            
+            <div class="space-y-3">
+              <!-- Set 1 -->
+              <div id="card-hist-set1" onclick="toggleCourse('hist_set1')" class="selection-card border-2 border-slate-100 hover:border-slate-300 rounded-xl p-4 flex justify-between items-center cursor-pointer select-none">
+                <div class="flex items-start space-x-3 pr-2">
+                  <div id="checkbox-hist-set1" class="w-5 h-5 rounded border border-slate-300 flex items-center justify-center bg-white mt-0.5 transition-colors shrink-0">
+                    <i class="fas fa-check text-[10px] text-white hidden"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-slate-900 text-sm">Sec 1 History Content Revision - Units 1 & 2</h3>
+                    <p class="text-xs text-slate-400 mt-0.5">2 & 16 Jul, Thursdays, 7-8:30pm</p>
+                  </div>
+                </div>
+                <div class="text-right shrink-0">
+                  <span class="text-base font-extrabold text-krunch-navy">$160</span>
+                </div>
+              </div>
+
+              <!-- Set 2 -->
+              <div id="card-hist-set2" onclick="toggleCourse('hist_set2')" class="selection-card border-2 border-slate-100 hover:border-slate-300 rounded-xl p-4 flex justify-between items-center cursor-pointer select-none">
+                <div class="flex items-start space-x-3 pr-2">
+                  <div id="checkbox-hist-set2" class="w-5 h-5 rounded border border-slate-300 flex items-center justify-center bg-white mt-0.5 transition-colors shrink-0">
+                    <i class="fas fa-check text-[10px] text-white hidden"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-slate-900 text-sm">Sec 1 History Skills Revision: Source-Based & Structured Questions</h3>
+                    <p class="text-xs text-slate-400 mt-0.5">30 Jul & 13 Aug, Thursdays, 7-8:30pm</p>
+                  </div>
+                </div>
+                <div class="text-right shrink-0">
+                  <span class="text-base font-extrabold text-krunch-navy">$160</span>
+                </div>
+              </div>
+
+              <!-- Set 3 -->
+              <div id="card-hist-set3" onclick="toggleCourse('hist_set3')" class="selection-card border-2 border-slate-100 hover:border-slate-300 rounded-xl p-4 flex justify-between items-center cursor-pointer select-none">
+                <div class="flex items-start space-x-3 pr-2">
+                  <div id="checkbox-hist-set3" class="w-5 h-5 rounded border border-slate-300 flex items-center justify-center bg-white mt-0.5 transition-colors shrink-0">
+                    <i class="fas fa-check text-[10px] text-white hidden"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-slate-900 text-sm">Sec 1 History Exam Prep: Mock Exam #1 & #2</h3>
+                    <p class="text-xs text-slate-400 mt-0.5">27 Aug & 10 Sep, Thursdays, 7-8:30pm</p>
+                  </div>
+                </div>
+                <div class="text-right shrink-0">
+                  <span class="text-base font-extrabold text-krunch-navy">$160</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 1.3: PAY-PER-LESSON SETS (GEOGRAPHY) -->
+          <div>
+            <div class="flex items-center space-x-2 mb-3">
+              <span class="bg-teal-50 text-teal-800 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider">Geography Lesson Sets</span>
+              <p class="text-xs text-slate-400">Flexible pay-per-lesson-set option</p>
+            </div>
+            
+            <div class="space-y-3">
+              <!-- Set 1 -->
+              <div id="card-geog-set1" onclick="toggleCourse('geog_set1')" class="selection-card border-2 border-slate-100 hover:border-slate-300 rounded-xl p-4 flex justify-between items-center cursor-pointer select-none">
+                <div class="flex items-start space-x-3 pr-2">
+                  <div id="checkbox-geog-set1" class="w-5 h-5 rounded border border-slate-300 flex items-center justify-center bg-white mt-0.5 transition-colors shrink-0">
+                    <i class="fas fa-check text-[10px] text-white hidden"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-slate-900 text-sm">Sec 1 Geog Content Revision: Water - Chapters 3 & 4</h3>
+                    <p class="text-xs text-slate-400 mt-0.5">9 & 23 Jul, Thursdays, 7-8:30pm</p>
+                  </div>
+                </div>
+                <div class="text-right shrink-0">
+                  <span class="text-base font-extrabold text-krunch-navy">$160</span>
+                </div>
+              </div>
+
+              <!-- Set 2 -->
+              <div id="card-geog-set2" onclick="toggleCourse('geog_set2')" class="selection-card border-2 border-slate-100 hover:border-slate-300 rounded-xl p-4 flex justify-between items-center cursor-pointer select-none">
+                <div class="flex items-start space-x-3 pr-2">
+                  <div id="checkbox-geog-set2" class="w-5 h-5 rounded border border-slate-300 flex items-center justify-center bg-white mt-0.5 transition-colors shrink-0">
+                    <i class="fas fa-check text-[10px] text-white hidden"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-slate-900 text-sm">Sec 1 Geog Content Revision: Tropical Forests - Chapters 5 & 6</h3>
+                    <p class="text-xs text-slate-400 mt-0.5">6 & 20 Aug, Thursdays, 7-8:30pm</p>
+                  </div>
+                </div>
+                <div class="text-right shrink-0">
+                  <span class="text-base font-extrabold text-krunch-navy">$160</span>
+                </div>
+              </div>
+
+              <!-- Set 3 -->
+              <div id="card-geog-set3" onclick="toggleCourse('geog_set3')" class="selection-card border-2 border-slate-100 hover:border-slate-300 rounded-xl p-4 flex justify-between items-center cursor-pointer select-none">
+                <div class="flex items-start space-x-3 pr-2">
+                  <div id="checkbox-geog-set3" class="w-5 h-5 rounded border border-slate-300 flex items-center justify-center bg-white mt-0.5 transition-colors shrink-0">
+                    <i class="fas fa-check text-[10px] text-white hidden"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-slate-900 text-sm">Sec 1 Geog Exam Prep: Mock Exams #1 & #2</h3>
+                    <p class="text-xs text-slate-400 mt-0.5">3 & 17 Sep, Thursdays, 7-8:30pm</p>
+                  </div>
+                </div>
+                <div class="text-right shrink-0">
+                  <span class="text-base font-extrabold text-krunch-navy">$160</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2: REGISTRATION DETAILS -->
+        <form id="payment-form" onsubmit="handleFormSubmit(event)" class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 space-y-6">
+          <div class="flex items-center space-x-3 mb-2">
+            <div class="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold">2</div>
+            <h2 class="text-lg font-bold text-krunch-navy">Personal Details</h2>
+          </div>
+
+          <!-- Parent Fields Group -->
+          <div class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5" for="parent_name">Parent's name *</label>
+                <div class="relative">
+                  <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400">
+                    <i class="far fa-user text-sm"></i>
+                  </span>
+                  <input type="text" id="parent_name" required placeholder="e.g., Janice Tan" class="w-full bg-slate-50 border border-slate-200 rounded-xl py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5" for="parent_email">Parent's email address *</label>
+                <div class="relative">
+                  <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400">
+                    <i class="far fa-envelope text-sm"></i>
+                  </span>
+                  <input type="email" id="parent_email" required placeholder="e.g., janice@gmail.com" class="w-full bg-slate-50 border border-slate-200 rounded-xl py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all">
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5" for="parent_phone">Parent's mobile no. *</label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400">
+                  <i class="fas fa-phone-alt text-sm"></i>
+                </span>
+                <input type="tel" id="parent_phone" required placeholder="e.g., +65 9123 4567" class="w-full bg-slate-50 border border-slate-200 rounded-xl py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all">
+              </div>
+            </div>
+          </div>
+
+          <!-- Child Fields Group -->
+          <div class="space-y-4 pt-2">            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5" for="student_name">Child's name *</label>
+                <div class="relative">
+                  <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400">
+                    <i class="far fa-user text-sm"></i>
+                  </span>
+                  <input type="text" id="student_name" required placeholder="e.g., Ryan Tan" class="w-full bg-slate-50 border border-slate-200 rounded-xl py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5" for="student_email">
+                  Child's email * <span class="text-[10px] text-indigo-600 normal-case font-semibold">(Gmail required for materials access)</span>
+                </label>
+                <div class="relative">
+                  <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400">
+                    <i class="far fa-envelope text-sm"></i>
+                  </span>
+                  <input type="email" id="student_email" required placeholder="e.g., ryan@gmail.com" class="w-full bg-slate-50 border border-slate-200 rounded-xl py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all">
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5" for="student_school">Child's school *</label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400">
+                  <i class="far fa-building text-sm"></i>
+                </span>
+                <input type="text" id="student_school" required placeholder="e.g., ABC Secondary School" class="w-full bg-slate-50 border border-slate-200 rounded-xl py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all">
+              </div>
+            </div>
+          </div>
+        </form>
+
+      </div>
+
+      <!-- RIGHT COLUMN: ORDER SUMMARY (5 COLS) -->
+      <div class="lg:col-span-5 space-y-6">
+        
+        <!-- ORDER SUMMARY CARD -->
+        <div class="bg-white rounded-2xl border border-slate-100 shadow-md p-6 sticky top-6">
+          <h2 class="text-lg font-bold text-krunch-navy mb-4 flex items-center">
+            <i class="fas fa-shopping-bag mr-2.5 text-indigo-600"></i> Order Summary
+          </h2>
+
+          <div id="no-items-selected" class="text-center py-8 text-slate-400">
+            <i class="fas fa-shopping-cart text-3xl mb-2.5 opacity-50 block"></i>
+            <span class="text-xs font-medium">Please select a course to start.</span>
+          </div>
+
+          <div id="summary-section" class="hidden space-y-4">
+            <!-- Dynamic Items Container -->
+            <div id="selected-items-list" class="space-y-3 pb-4 border-b border-slate-100 max-h-60 overflow-y-auto pr-1">
+              <!-- Elements injected by JS -->
+            </div>
+
+            <!-- Price Breakdown Calculation -->
+            <div class="space-y-2 text-sm text-slate-500">
+              <div class="flex justify-between">
+                <span>Subtotal</span>
+                <span id="subtotal-display" class="font-semibold text-slate-800">$0.00</span>
+              </div>
+              <div class="flex justify-between text-base font-bold text-krunch-navy pt-2 border-t border-dashed border-slate-200">
+                <span>Total Due</span>
+                <span id="total-display" class="text-xl text-indigo-600">$0.00</span>
+              </div>
+            </div>
+
+            <!-- Webhook Connection & Stripe Launch Trigger Button -->
+            <button type="submit" form="payment-form" class="w-full bg-krunch-navy hover:bg-slate-800 text-white font-bold py-3.5 px-6 rounded-xl transition duration-150 flex items-center justify-center space-x-2.5 shadow-lg shadow-slate-900/10 hover:shadow-xl hover:shadow-slate-900/20 active:translate-y-[1px]">
+              <span>Proceed to Secure Stripe Payment</span>
+              <i class="fas fa-arrow-right text-sm"></i>
+            </button>
+
+            <!-- SSL Badges -->
+            <div class="flex items-center justify-center space-x-4 pt-2 text-[10px] text-slate-400 font-semibold tracking-wider uppercase">
+              <span><i class="fas fa-lock mr-1 text-emerald-500"></i> SSL Encrypted</span>
+              <span>•</span>
+              <span><i class="fab fa-stripe mr-1 text-indigo-500"></i> Verified checkout</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Premium Footer with centered layout, updated branding and custom active support mailto link -->
+  <footer class="bg-white border-t border-slate-100 py-8 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center text-xs text-slate-400 font-medium text-center">
+      <div class="flex flex-wrap items-center justify-center gap-2">
+        <span>We make every byte count.</span>
+        <span class="text-slate-300">|</span>
+        <a href="mailto:keepitkrunchy@gmail.com" class="text-[#059669] hover:opacity-80 transition-opacity font-semibold">keepitkrunchy@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Notification Banner Modal -->
+  <div id="custom-modal" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-[9999] flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-100 transform transition-all">
+      <div id="modal-icon-container" class="w-12 h-12 rounded-full flex items-center justify-center mb-4">
+        <!-- Injected via JavaScript -->
+      </div>
+      <h3 id="modal-title" class="text-lg font-bold text-slate-900 mb-1">Status Notification</h3>
+      <p id="modal-message" class="text-sm text-slate-500 leading-relaxed mb-6"></p>
+      <div class="flex justify-end">
+        <button onclick="closeModal()" id="modal-close-btn" class="bg-slate-950 text-white font-semibold text-sm px-6 py-2.5 rounded-xl transition hover:bg-slate-800">
+          Dismiss
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Developer Setup: Insert your Make.com Webhook URL between the double quotes below.
+    const MAKE_WEBHOOK_URL = "";
+
+    // Comprehensive list of active products with prices
+    const products = {
+      hist_bundle: { id: "prod_hist_bundle", name: "Sec 1 History Bundle", price: 450.00, desc: "Full Masterclass access" },
+      geog_bundle: { id: "prod_geog_bundle", name: "Sec 1 Geography Bundle", price: 450.00, desc: "Full Masterclass access" },
+      hist_set1: { id: "prod_hist_set1", name: "Sec 1 History - 2 & 16 Jul: Units 1 & 2", price: 160.00, desc: "Modular set" },
+      hist_set2: { id: "prod_hist_set2", name: "Sec 1 History: 30 Jul & 13 Aug", price: 160.00, desc: "Modular set" },
+      hist_set3: { id: "prod_hist_set3", name: "Sec 1 History: 27 Aug & 10 Sep", price: 160.00, desc: "Modular set" },
+      geog_set1: { id: "prod_geog_set1", name: "Sec 1 Geog: 9 & 23 Jul - Ch 3 & 4", price: 160.00, desc: "Modular set" },
+      geog_set2: { id: "prod_geog_set2", name: "Sec 1 Geog: 6 & 20 Aug - Ch 5 & 6", price: 160.00, desc: "Modular set" },
+      geog_set3: { id: "prod_geog_set3", name: "Sec 1 Geog: 3 & 17 Sep - Mock Exam 1 & 2", price: 160.00, desc: "Modular set" }
+    };
+
+    let selectedCourses = {
+      hist_bundle: false,
+      geog_bundle: false,
+      hist_set1: false,
+      hist_set2: false,
+      hist_set3: false,
+      geog_set1: false,
+      geog_set2: false,
+      geog_set3: false
+    };
+
+    // Initialize state
+    document.addEventListener("DOMContentLoaded", () => {
+      calculateTotals();
+    });
+
+    function toggleCourse(type) {
+      selectedCourses[type] = !selectedCourses[type];
+      updateCardUi(type);
+      calculateTotals();
+    }
+
+    function updateCardUi(type) {
+      const card = document.getElementById(`card-${type.replace('_', '-')}`);
+      const checkbox = document.getElementById(`checkbox-${type.replace('_', '-')}`);
+      const checkIcon = checkbox.querySelector('i');
+
+      if (selectedCourses[type]) {
+        card.classList.add('border-indigo-600', 'bg-indigo-50/10');
+        checkbox.classList.remove('border-slate-300', 'bg-white');
+        checkbox.classList.add('bg-indigo-600', 'border-indigo-600');
+        checkIcon.classList.remove('hidden');
+      } else {
+        card.classList.remove('border-indigo-600', 'bg-indigo-50/10');
+        checkbox.classList.add('border-slate-300', 'bg-white');
+        checkbox.classList.remove('bg-indigo-600', 'border-indigo-600');
+        checkIcon.classList.add('hidden');
+      }
+    }
+
+    function calculateTotals() {
+      const container = document.getElementById("selected-items-list");
+      const noItemsMsg = document.getElementById("no-items-selected");
+      const summarySection = document.getElementById("summary-section");
+      const subtotalDisplay = document.getElementById("subtotal-display");
+      const totalDisplay = document.getElementById("total-display");
+
+      container.innerHTML = "";
+      let total = 0;
+      let count = 0;
+
+      Object.keys(selectedCourses).forEach(key => {
+        if (selectedCourses[key]) {
+          count++;
+          const prod = products[key];
+          total += prod.price;
+
+          // Add DOM row for items
+          const row = document.createElement("div");
+          row.className = "flex justify-between items-center bg-slate-50 p-2.5 rounded-lg border border-slate-100 text-xs";
+          row.innerHTML = `
+            <div>
+              <span class="font-bold text-slate-800 block">${prod.name}</span>
+              <span class="text-slate-400 font-medium text-[10px]">${prod.desc}</span>
+            </div>
+            <span class="font-extrabold text-slate-700 pl-2">$${prod.price.toFixed(2)}</span>
+          `;
+          container.appendChild(row);
+        }
+      });
+
+      if (count === 0) {
+        noItemsMsg.classList.remove("hidden");
+        summarySection.classList.add("hidden");
+        return;
+      }
+
+      noItemsMsg.classList.add("hidden");
+      summarySection.classList.remove("hidden");
+
+      subtotalDisplay.innerText = `$${total.toFixed(2)}`;
+      totalDisplay.innerText = `$${total.toFixed(2)}`;
+    }
+
+    // Modal Control Handler
+    function showModal(title, msg, type = 'success') {
+      const modal = document.getElementById('custom-modal');
+      const iconContainer = document.getElementById('modal-icon-container');
+      const titleEl = document.getElementById('modal-title');
+      const msgEl = document.getElementById('modal-message');
+
+      titleEl.innerText = title;
+      msgEl.innerText = msg;
+
+      if (type === 'success') {
+        iconContainer.className = "w-12 h-12 rounded-full flex items-center justify-center mb-4 bg-emerald-50 text-emerald-600";
+        iconContainer.innerHTML = '<i class="fas fa-check text-lg"></i>';
+      } else if (type === 'error') {
+        iconContainer.className = "w-12 h-12 rounded-full flex items-center justify-center mb-4 bg-rose-50 text-rose-600";
+        iconContainer.innerHTML = '<i class="fas fa-exclamation-triangle text-lg"></i>';
+      } else {
+        iconContainer.className = "w-12 h-12 rounded-full flex items-center justify-center mb-4 bg-indigo-50 text-indigo-600";
+        iconContainer.innerHTML = '<i class="fas fa-spinner animate-spin text-lg"></i>';
+      }
+
+      modal.classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('custom-modal').classList.add('hidden');
+    }
+
+    // Submit handler targeting Make.com webhook endpoint
+    async function handleFormSubmit(event) {
+      event.preventDefault();
+
+      // Check if at least one course selected
+      const selectedKeys = Object.keys(selectedCourses).filter(k => selectedCourses[k]);
+      if (selectedKeys.length === 0) {
+        showModal("No Selection Made", "Please choose at least one Secondary 1 course to proceed to checkout.", "error");
+        return;
+      }
+
+      const parentName = document.getElementById("parent_name").value.trim();
+      const parentEmail = document.getElementById("parent_email").value.trim();
+      const parentPhone = document.getElementById("parent_phone").value.trim();
+      const studentName = document.getElementById("student_name").value.trim();
+      const studentEmail = document.getElementById("student_email").value.trim();
+      const schoolName = document.getElementById("student_school").value.trim();
+
+      // Resolve URL from top const variable (or check fallback in storage if previously saved)
+      const webhookUrl = MAKE_WEBHOOK_URL || localStorage.getItem("krunch_make_webhook");
+      
+      if (!webhookUrl) {
+        showModal(
+          "Setup Required", 
+          "The Webhook URL is not configured. Please open the HTML code and paste your Make.com Webhook URL into the 'MAKE_WEBHOOK_URL' variable inside the script (line 344).", 
+          "error"
+        );
+        return;
+      }
+
+      showModal("Contacting Server...", "Processing checkout items and securing a Stripe connection session...", "info");
+
+      // Payload compilation
+      const selectedItemsDetails = selectedKeys.map(k => ({
+        courseKey: k,
+        productId: products[k].id,
+        name: products[k].name,
+        price: products[k].price
+      }));
+
+      const finalTotal = selectedItemsDetails.reduce((sum, item) => sum + item.price, 0);
+
+      const payload = {
+        parentName: parentName,
+        parentEmail: parentEmail,
+        parentPhone: parentPhone,
+        studentName: studentName,
+        studentEmail: studentEmail,
+        schoolName: schoolName,
+        totalAmount: finalTotal,
+        purchasedItems: selectedItemsDetails,
+        timestamp: new Date().toISOString(),
+        environment: "Production - Krunch Checkout"
+      };
+
+      try {
+        // Send webhook request to Make.com
+        const response = await fetch(webhookUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+          const responseData = await response.json().catch(() => null);
+
+          if (responseData && responseData.stripeCheckoutUrl) {
+            showModal("Redirecting...", "Connecting you securely to your custom payment link...", "success");
+            setTimeout(() => {
+              window.location.href = responseData.stripeCheckoutUrl;
+            }, 1500);
+          } else {
+            showModal(
+              "Checkout Sent!", 
+              "Your registration has been securely routed to Make.com to set up your order details.", 
+              "success"
+            );
+          }
+        } else {
+          showModal(
+            "Connection Interrupted", 
+            `Server status response was ${response.status}. Please check your Make.com workflow.`, 
+            "error"
+          );
+        }
+      } catch (error) {
+        showModal(
+          "Network Error", 
+          "Could not establish connection to the payment system. Please try again later.", 
+          "error"
+        );
+      }
+    }
+  </script>
+</body>
+</html>
