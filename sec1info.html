@@ -116,10 +116,10 @@
                     </div>
 
                     <!-- Set 1 Bracket (Content Set) -->
-                    <div class="relative bg-white rounded-2xl p-5 border-l-4 border-amber-500 border-y border-r border-slate-100 shadow-sm space-y-4">
+                    <div class="relative bg-slate-100 rounded-2xl p-5 border-l-4 border-slate-300 border-y border-r border-slate-100 shadow-sm space-y-4">
                         <div class="flex justify-between items-start">
                             <div>
-                                <h4 class="font-extrabold text-sm text-slate-800 mt-1">Content Revision</h4>
+                                <h4 class="font-extrabold text-sm text-slate-800 mt-1">Content Revision <span class="text-rose-500">(closed)</span></h4>
                             </div>
                         </div>
                         <div class="space-y-4 pt-1 border-t border-slate-50">
@@ -456,7 +456,7 @@
                                     <h4 class="font-extrabold text-xs sm:text-sm text-slate-800">Geography Mock Exam</h4>
                                 </div>
                                 <div class="space-y-2 text-xs text-slate-600">
-                                    <div class="flex justify-between border-b border-brand-100/50 pb-1.5">
+                                    <div class="flex justify-between border-b border-amber-100/50 pb-1.5">
                                         <span class="font-medium">Duration:</span>
                                         <span class="font-bold text-slate-800">1 hr 15 mins</span>
                                     </div>
@@ -644,12 +644,26 @@
                             <span class="bg-brand-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">Best Value</span>
                         </div>
                         <h3 class="text-lg sm:text-xl font-bold">Full Subject Bundle</h3>
-                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">Register for the bundle of 3 lesson sets (for each subject) to unlock extended support</p>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">Register for the bundle to unlock extended support</p>
                         
-                        <div class="flex items-baseline space-x-2">
-                            <span class="text-3xl sm:text-4xl font-extrabold text-brand-500">$450</span>
-                            <span class="text-sm line-through text-slate-400">$480</span>
-                            <span class="text-xs text-slate-400">per subject</span>
+                        <!-- Dual Subject Pricing Block -->
+                        <div class="space-y-2 pt-1">
+                            <!-- Geography Bundle -->
+                            <div class="flex justify-between items-center border-b border-brand-800 pb-2">
+                                <span class="text-xs sm:text-sm text-slate-300">Geography (all 3 lesson sets)</span>
+                                <div class="flex items-baseline space-x-2">
+                                    <span class="text-xl sm:text-2xl font-extrabold text-brand-500">$450</span>
+                                    <span class="text-xs line-through text-slate-400">$480</span>
+                                </div>
+                            </div>
+                            <!-- History Bundle -->
+                            <div class="flex justify-between items-center pt-1">
+                                <span class="text-xs sm:text-sm text-slate-300">History (2 remaining lesson sets)</span>
+                                <div class="flex items-baseline space-x-2">
+                                    <span class="text-xl sm:text-2xl font-extrabold text-brand-500">$300</span>
+                                    <span class="text-xs line-through text-slate-400">$320</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div>
@@ -799,6 +813,9 @@
                 </div>
             </div>
         </section>
+
+        <!-- INSERT THE TESTIMONIALS SECTION HERE -->
+
     </main>
 
     <!-- Interactive Scripts -->
@@ -849,9 +866,9 @@
             const cardWidth = 424; 
 
             if (direction === 'left') {
-                track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+                track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' });
             } else {
-                track.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                track.scrollBy({ left: track.clientWidth, behavior: 'smooth' });
             }
         }
 
@@ -859,7 +876,7 @@
 </body>
     <footer class="mt-16 pt-8 border-t border-slate-100 text-center pb-8">
         <p class="text-xs font-medium text-slate-400 tracking-wide">
-            We make every byte count. | <a href="mailto:keepitkrunchy@gmail.com" class="text-brand-600 font-semibold hover:underline">keepitkrunchy@gmail.com</a>
+            We make every byte count. | <a href="http://krunch.sg/" target="_blank" class="text-emerald-500 hover:text-emerald-600 transition-colors font-bold">krunch.sg</a>
         </p>
     </footer>
 </html>
