@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krunch | Registration Closed</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',    
+                            100: '#d1fae5',
+                            500: '#10b981',   
+                            600: '#059669',
+                            700: '#047857',
+                            900: '#0f172a',   
+                        }
+                    },
+                    screens: {
+                        'xs': '400px',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+        :root {
+            --krunch-accent: #10b981; 
+            --krunch-accent-soft: #ecfdf5;
+            --krunch-dark: #0f172a; 
+            --krunch-bg: #f8fafc; 
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--krunch-bg);
+            color: #334155;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen p-0 m-0 leading-relaxed justify-between">
+
+    <!-- Main Container -->
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-grow w-full flex flex-col justify-center items-center space-y-8 text-center">
+
+        <!-- Section A: Hero Section -->
+        <section class="space-y-4 max-w-2xl">
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-brand-900 leading-tight">
+                Registration Has Closed — <br class="hidden sm:inline"/><span class="text-brand-600">See You Next Year!</span>
+            </h1>
+            <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+                Thank you for the support! We have closed enrolment for the year.
+            </p>
+        </section>
+
+        <!-- Section B: Primary Call-To-Action (Subscribe Card) -->
+        <section class="w-full bg-white rounded-3xl p-6 sm:p-10 border border-slate-100 shadow-xl shadow-slate-200/50 space-y-6 relative overflow-hidden">
+           <div class="space-y-2 max-w-md mx-auto">
+                <h2 class="text-xl sm:text-2xl font-bold text-brand-900">
+                    Don't miss out on 2027 classes
+                </h2>
+                <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">
+                    Join our mailing list for priority registration when our 2027 classes open
+                </p>
+            </div>
+
+            <div class="pt-2">
+                <a href="https://krunchacademy.com/subscribe" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center space-x-2 w-full sm:w-auto px-8 py-4 bg-brand-600 hover:bg-brand-700 active:scale-[0.98] text-white font-bold rounded-2xl text-sm sm:text-base transition-all shadow-lg shadow-brand-500/25">
+                    <span>Subscribe</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-slate-100 text-center">
+        <p class="text-xs font-medium text-slate-400 tracking-wide">
+            We make every byte count. | <a href="mailto:keepitkrunchy@gmail.com" class="text-brand-600 font-semibold hover:underline">keepitkrunchy@gmail.com</a>
+        </p>
+    </footer>
+
+</body>
+</html>
