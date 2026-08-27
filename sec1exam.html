@@ -27,7 +27,7 @@
             }
         }
     </script>
-    <!-- FontAwesome for beautiful icons -->
+    <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,7 +62,6 @@
 </head>
 <body class="flex flex-col min-h-screen p-0 m-0 leading-relaxed">
 
-    <!-- Overview Header Section -->
     <section class="text-slate-800 pt-12 pb-6 px-4 sm:px-12">
         <div class="max-w-4xl mx-auto space-y-4 text-center sm:text-left">
             <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-brand-900">
@@ -77,7 +76,6 @@
     <!-- Main Container -->
     <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 flex-grow w-full space-y-12">
 
-        <!-- SPLIT SUBJECT COLUMNS SECTION -->
         <section class="space-y-8">
             <div class="text-center space-y-1">
                 <h2 class="text-xl sm:text-2xl font-bold text-brand-900">Lesson Schedule</h2>
@@ -100,12 +98,10 @@
                 </div>
             </section>
 
-            <!-- Side-by-Side Subject Columns Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
                 
-                <!-- ================= HISTORY COLUMN (Left) ================= -->
+                <!-- History Column (Left) -->
                 <div class="space-y-6">
-                    <!-- Column Header -->
                     <div class="flex items-center space-x-3 bg-amber-500/10 border border-amber-200 p-4 rounded-xl">
                         <div class="w-10 h-10 rounded-lg bg-amber-500 text-white flex items-center justify-center text-lg shrink-0">
                             <i class="fa-solid fa-landmark"></i>
@@ -115,35 +111,30 @@
                         </div>
                     </div>
 
-                    <!-- Set 3 Bracket (Exam Prep Set) -->
-                    <div class="relative bg-white rounded-2xl p-5 border-l-4 border-amber-500 border-y border-r border-slate-100 shadow-sm space-y-4">
+                    <div class="relative bg-slate-100 rounded-2xl p-5 border-l-4 border-slate-300 border-y border-r border-slate-100 shadow-sm space-y-4">
                         <div class="flex justify-between items-start">
                             <div>
-                                <h4 class="font-extrabold text-sm text-slate-800 mt-1">Exam Prep</h4>
+                                <h4 class="font-extrabold text-sm text-slate-800 mt-1">Exam Prep <span class="text-rose-500">(closed)</span></h4>
                             </div>
                         </div>
                         <div class="space-y-4 pt-1 border-t border-slate-50">
-                            <!-- Lesson 1 -->
                             <div class="flex items-start space-x-3">
                                 <div class="text-[10px] font-extrabold text-slate-400 font-mono mt-0.5 w-12 shrink-0">AUG 27</div>
                                 <div class="space-y-0.5">
-                                    <h5 class="font-bold text-xs text-slate-800">Walkthrough of Mock Exam #1</h5>
+                                    <h5 class="font-bold text-xs text-slate-800">Mock Exam #1</h5>
                                 </div>
                             </div>
-                            <!-- Lesson 2 -->
                             <div class="flex items-start space-x-3">
                                 <div class="text-[10px] font-extrabold text-slate-400 font-mono mt-0.5 w-12 shrink-0">SEP 10</div>
                                 <div class="space-y-0.5">
-                                    <h5 class="font-bold text-xs text-slate-800">Walkthrough of Mock Exam #2</h5>
+                                    <h5 class="font-bold text-xs text-slate-800">Mock Exam #2</h5>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- ================= GEOGRAPHY COLUMN (Right) ================= -->
                 <div class="space-y-6">
-                    <!-- Column Header -->
                     <div class="flex items-center space-x-3 bg-brand-500/10 border border-brand-200 p-4 rounded-xl">
                         <div class="w-10 h-10 rounded-lg bg-brand-500 text-white flex items-center justify-center text-lg shrink-0">
                             <i class="fa-solid fa-earth-americas"></i>
@@ -153,7 +144,6 @@
                         </div>
                     </div>
 
-                    <!-- Set 3 Bracket (Exam Prep Set) -->
                     <div class="relative bg-white rounded-2xl p-5 border-l-4 border-brand-500 border-y border-r border-slate-100 shadow-sm space-y-4">
                         <div class="flex justify-between items-start">
                             <div>
@@ -161,18 +151,16 @@
                             </div>
                         </div>
                         <div class="space-y-4 pt-1 border-t border-slate-50">
-                            <!-- Lesson 1 -->
                             <div class="flex items-start space-x-3">
                                 <div class="text-[10px] font-extrabold text-slate-400 font-mono mt-0.5 w-12 shrink-0">SEP 3</div>
                                 <div class="space-y-0.5">
-                                    <h5 class="font-bold text-xs text-slate-800">Walkthrough of Mock Exam #1</h5>
+                                    <h5 class="font-bold text-xs text-slate-800">Mock Exam #1</h5>
                                 </div>
                             </div>
-                            <!-- Lesson 2 -->
                             <div class="flex items-start space-x-3">
                                 <div class="text-[10px] font-extrabold text-slate-400 font-mono mt-0.5 w-12 shrink-0">SEP 17</div>
                                 <div class="space-y-0.5">
-                                    <h5 class="font-bold text-xs text-slate-800">Walkthrough of Mock Exam #2</h5>
+                                    <h5 class="font-bold text-xs text-slate-800">Mock Exam #2</h5>
                                 </div>
                             </div>
                         </div>
@@ -182,16 +170,13 @@
             </div>
         </section>
 
-        <!-- RESTRUCTURED LESSON DETAILS & MOCK FORMATS -->
         <section class="space-y-8 max-w-5xl mx-auto">
             <div class="text-center space-y-1">
                 <h2 class="text-xl sm:text-2xl font-bold text-brand-900">What Our Lesson Sets Include</h2>
             </div>
 
-            <!-- Single Centered Container for Exam Prep Set -->
             <div class="max-w-xl mx-auto w-full">
                 <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-sm space-y-6">
-                    <!-- Header -->
                     <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-slate-100 pb-5">
                         <div class="flex items-center space-x-3">
                             <div class="w-11 h-11 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-lg shrink-0">
@@ -206,7 +191,6 @@
                         </span>
                     </div>
 
-                    <!-- Features Grid -->
                     <div class="space-y-4">
                         <div class="flex items-center space-x-3">
                             <span class="text-indigo-500 shrink-0"><i class="fa-solid fa-chevron-right text-xs"></i></span>
@@ -229,7 +213,7 @@
                         <div class="flex items-center space-x-3">
                             <span class="text-emerald-500 shrink-0"><i class="fa-solid fa-check text-xs"></i></span>
                             <div class="space-y-1">
-                                <h4 class="text-xs sm:text-sm text-slate-800">Q&A email support till your exam date</h4>
+                                <h4 class="text-xs sm:text-sm text-slate-800">Q&A email support till 1 week after the purchased lesson set</h4>
                             </div>
                         </div>
                         <div class="flex items-center space-x-3">
@@ -240,7 +224,6 @@
                         </div>
                     </div>
 
-                    <!-- Accordion: Mock Exam Formats -->
                     <div class="border border-slate-100 rounded-2xl overflow-hidden mt-4">
                         <button onclick="toggleAssessmentAccordion('exam-formats-panel', 'exam-chevron-icon')" class="w-full flex justify-between items-center bg-slate-50/50 hover:bg-slate-50 transition px-5 py-4 text-left font-bold text-slate-700 text-xs sm:text-sm">
                             <span class="flex items-center space-x-2">
@@ -312,24 +295,18 @@
             </div>
         </section>
     
-        <!-- Testimonials Section -->
         <section class="space-y-6 pt-6">
-            <!-- Header Text -->
             <div class="text-center space-y-1">
                 <h2 class="text-xl sm:text-2xl font-bold text-brand-900">How We've Helped</h2>
                 <p class="text-xs sm:text-sm text-slate-500">Swipe to read our success stories 👉</p>
             </div>
 
             <div class="relative max-w-5xl mx-auto px-4">
-                
-                <!-- Left Arrow Button -->
                 <button onclick="scrollTestimonials('left')" class="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white shadow-md border border-slate-100 flex items-center justify-center hover:bg-slate-50 transition active:scale-95 focus:outline-none hidden md:flex">
                     <i class="fa-solid fa-chevron-left text-slate-600 text-xs"></i>
                 </button>
-                <!-- Swipeable Track -->
+                
                 <div id="testimonial-track" class="flex overflow-x-auto gap-6 px-4 py-4 snap-x snap-mandatory scrollbar-none">
-                    
-                    <!-- Card 1 -->
                     <div class="shrink-0 w-[85%] sm:w-[400px] snap-center bg-white p-6 rounded-3xl border border-slate-100 shadow-sm relative flex flex-col justify-between min-h-[180px]">
                         <i class="fa-solid fa-quote-left text-brand-500/10 text-4xl absolute top-4 left-4"></i>
                         <p class="text-slate-600 text-xs sm:text-sm italic leading-relaxed relative z-10 pt-2">
@@ -340,7 +317,6 @@
                         </div>
                     </div>
 
-                    <!-- Card 2 -->
                     <div class="shrink-0 w-[85%] sm:w-[400px] snap-center bg-white p-6 rounded-3xl border border-slate-100 shadow-sm relative flex flex-col justify-between min-h-[180px]">
                         <i class="fa-solid fa-quote-left text-brand-500/10 text-4xl absolute top-4 left-4"></i>
                         <p class="text-slate-600 text-xs sm:text-sm italic leading-relaxed relative z-10 pt-2">
@@ -351,7 +327,6 @@
                         </div>
                     </div>
 
-                    <!-- Card 3 -->
                     <div class="shrink-0 w-[85%] sm:w-[400px] snap-center bg-white p-6 rounded-3xl border border-slate-100 shadow-sm relative flex flex-col justify-between min-h-[180px]">
                         <i class="fa-solid fa-quote-left text-brand-500/10 text-4xl absolute top-4 left-4"></i>
                         <p class="text-slate-600 text-xs sm:text-sm italic leading-relaxed relative z-10 pt-2">
@@ -362,7 +337,6 @@
                         </div>
                     </div>
 
-                    <!-- Card 4 -->
                     <div class="shrink-0 w-[85%] sm:w-[400px] snap-center bg-white p-6 rounded-3xl border border-slate-100 shadow-sm relative flex flex-col justify-between min-h-[180px]">
                         <i class="fa-solid fa-quote-left text-brand-500/10 text-4xl absolute top-4 left-4"></i>
                         <p class="text-slate-600 text-xs sm:text-sm italic leading-relaxed relative z-10 pt-2">
@@ -373,7 +347,6 @@
                         </div>
                     </div>
 
-                    <!-- Card 5 -->
                     <div class="shrink-0 w-[85%] sm:w-[400px] snap-center bg-white p-6 rounded-3xl border border-slate-100 shadow-sm relative flex flex-col justify-between min-h-[180px]">
                         <i class="fa-solid fa-quote-left text-brand-500/10 text-4xl absolute top-4 left-4"></i>
                         <p class="text-slate-600 text-xs sm:text-sm italic leading-relaxed relative z-10 pt-2">
@@ -383,21 +356,17 @@
                             Y. M. Cheng (Parent)
                         </div>
                     </div>
-
                 </div>
-                <!-- Right Arrow Button -->
+
                 <button onclick="scrollTestimonials('right')" class="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white shadow-md border border-slate-100 flex items-center justify-center hover:bg-slate-50 transition active:scale-95 focus:outline-none hidden md:flex">
                     <i class="fa-solid fa-chevron-right text-slate-600 text-xs"></i>
                 </button>
-
             </div>
         </section>
         
-        <!-- Fee Structure and Packages -->
         <section class="space-y-6">
             <h2 class="text-xl sm:text-2xl font-bold text-brand-900 text-center">Fee Structure</h2>
 
-            <!-- Single Centered Purchase Option -->
             <div class="max-w-xl mx-auto w-full">
                 <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 flex flex-col justify-between space-y-6">
                     <div class="space-y-4">
@@ -418,36 +387,32 @@
             </div>
         </section>
 
-        <!-- Terms & Agreements Accordion -->
         <section class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm space-y-3">
             <button onclick="toggleAccordion('terms-panel')" class="w-full flex justify-between items-center text-left font-bold text-brand-900 text-xs sm:text-sm">
                 <span>📋 Registration Terms</span>
                 <i id="terms-icon" class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
             </button>
             <div id="terms-panel" class="hidden space-y-3 text-xs text-slate-600 border-t border-gray-100 pt-3 leading-relaxed">
-                <p>1. Kindly allow us <strong>1 business day to process registration</strong>. We are unable to provide the Zoom link for a class that runs on the day that you register.</p>
-                <p>2. <strong>All purchases are non-refundable.</strong> Refunds are only allowed if a lesson is rescheduled due to unforeseen circumstances. If you cannot attend the rescheduled lesson, you can opt to watch the recording or obtain a refund. Pay-per-lesson set clients will receive a $80 refund and existing bundle purchase clients will receive a $75 refund. Materials & the recording will not be provided for the refunded lesson.</p>
-                <p>3. By registering for this class, you agree to be informed via email about future classes organised by the tutor(s). You are also automatically subscribed to the Krunch mailing list, which you can unsubscribe from at any time. You will only be contacted on your phone number should there be technical issues or unforeseen changes to the class schedule.</p>
+                <p>1. Geography and History are sold separately to prevent disappointment should one subject reach full capacity before the other.</p>
+                <p>2. Kindly allow us <strong>1 business day to process registration</strong>. We are unable to provide the Zoom link for a class that runs on the day that you register.</p>
+                <p>3. <strong>All purchases are non-refundable.</strong> Refunds are only allowed if a lesson is rescheduled due to unforeseen circumstances. If you cannot attend the rescheduled lesson, you can opt to watch the recording or obtain a refund. Pay-per-lesson set clients will receive a $80 refund and bundle purchase clients will receive a $75 refund. Materials & the recording will not be provided for the refunded lesson.</p>
+                <p>4. By registering for this class, you agree to be informed via email about future classes organised by the tutor(s). You are also automatically subscribed to the Krunch mailing list, which you can unsubscribe from at any time. You will only be contacted on your phone number should there be technical issues or unforeseen changes to the class schedule.</p>
             </div>
         </section>
 
-        <!-- How it works (Timeline) -->
         <section class="space-y-6">
             <h2 class="text-xl sm:text-2xl font-bold text-brand-900 text-center">How It Works</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                <!-- Step 1 -->
                 <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm text-center space-y-2">
                     <span class="w-8 h-8 rounded-full bg-brand-50 text-brand-600 font-extrabold flex items-center justify-center text-xs mx-auto">1</span>
                     <h4 class="font-bold text-xs sm:text-sm text-brand-900">Confirmation</h4>
                     <p class="text-[11px] sm:text-xs text-slate-500">You will receive a confirmation email within 1 business day of successful payment.</p>
                 </div>
-                <!-- Step 2 -->
                 <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm text-center space-y-2">
                     <span class="w-8 h-8 rounded-full bg-brand-50 text-brand-600 font-extrabold flex items-center justify-center text-xs mx-auto">2</span>
                     <h4 class="font-bold text-xs sm:text-sm text-brand-900">Materials & Zoom Link</h4>
                     <p class="text-[11px] sm:text-xs text-slate-500">Pre-class materials (i.e. notes & mocks) and the Zoom link are sent at least 1 week before the lesson. There is no need to attempt questions beforehand. Recordings and any supplementary materials are sent within 3 business days after the lesson.</p>
                 </div>
-                <!-- Step 3 -->
                 <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm text-center space-y-2">
                     <span class="w-8 h-8 rounded-full bg-brand-50 text-brand-600 font-extrabold flex items-center justify-center text-xs mx-auto">3</span>
                     <h4 class="font-bold text-xs sm:text-sm text-brand-900">Marking & Q&A</h4>
@@ -456,11 +421,9 @@
             </div>
         </section>
 
-        <!-- Dynamic FAQ Panel -->
         <section class="space-y-4">
             <h2 class="text-xl sm:text-2xl font-bold text-brand-900 text-center">Frequently Asked Questions</h2>
             <div class="space-y-3 max-w-3xl mx-auto">
-                <!-- FAQ 1 -->
                 <div class="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm">
                     <button onclick="toggleFaq(1)" class="w-full p-4 text-left font-bold text-brand-900 text-xs sm:text-sm flex justify-between items-center bg-slate-50/50 hover:bg-slate-50 transition">
                         <span>My child is studying G2/IP. Are the lessons suitable for my child?</span>
@@ -473,7 +436,6 @@
                     </div>
                 </div>
 
-                <!-- FAQ 2 -->
                 <div class="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm">
                     <button onclick="toggleFaq(2)" class="w-full p-4 text-left font-bold text-brand-900 text-xs sm:text-sm flex justify-between items-center bg-slate-50/50 hover:bg-slate-50 transition">
                         <span>Is there a cap on the number of students?</span>
@@ -486,7 +448,6 @@
                     </div>
                 </div>
 
-                <!-- FAQ 3 -->
                 <div class="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm">
                     <button onclick="toggleFaq(3)" class="w-full p-4 text-left font-bold text-brand-900 text-xs sm:text-sm flex justify-between items-center bg-slate-50/50 hover:bg-slate-50 transition">
                         <span>Which are your business days?</span>
@@ -499,7 +460,6 @@
                     </div>
                 </div>
 
-                <!-- FAQ 4 -->
                 <div class="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm">
                     <button onclick="toggleFaq(4)" class="w-full p-4 text-left font-bold text-brand-900 text-xs sm:text-sm flex justify-between items-center bg-slate-50/50 hover:bg-slate-50 transition">
                         <span>Who do I contact for further queries?</span>
@@ -512,7 +472,6 @@
             </div>
         </section>
 
-        <!-- Instructor Biographies -->
         <section class="space-y-6">
             <h2 class="text-xl sm:text-2xl font-bold text-brand-900 text-center">About Our Instructors</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -549,18 +508,15 @@
                             </a>
                         </div>
                         <p class="text-xs text-slate-600 leading-relaxed">
-                            Mr Mike is a seasoned History, Social Studies and Geography educator with 15+ years of teaching experience across the O Level and Integrated Programme tracks. His career includes tenures at St. Patrick’s School and Serangoon Secondary. He also spent time at MOE’s Curriculum Planning and Development Division, where he was involved in developing and training teachers in implementing the Social Studies syllabus. He is a published author with EPH, notably writing the O Level Pure & Elective History Ten-Year Series.
+                            Mr Mike is a seasoned History, Social Studies and Geography educator with 15+ years of teaching experience across the O Level and Integrated Programme tracks. His career includes tenures at St. Patrick’s School and Serangoon Secondary. She also spent time at MOE’s Curriculum Planning and Development Division, where she was involved in developing and training teachers in implementing the Social Studies syllabus. He is a published author with EPH, notably writing the O Level Pure & Elective History Ten-Year Series.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- INSERT THE TESTIMONIALS SECTION HERE -->
-
     </main>
 
-    <!-- Interactive Scripts -->
     <script>
         // Assessment toggle accordion handler
         function toggleAssessmentAccordion(panelId, iconId) {
@@ -601,24 +557,22 @@
                 faqIcon.className = "fa-solid fa-chevron-right text-[10px] text-slate-400 transition-transform";
             }
         }
+
         // Horizontal scroll navigation for testimonials
         function scrollTestimonials(direction) {
             const track = document.getElementById('testimonial-track');
-            // Determine the width of one card (approx. 400px including gaps)
-            const cardWidth = 424; 
-
             if (direction === 'left') {
                 track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' });
             } else {
                 track.scrollBy({ left: track.clientWidth, behavior: 'smooth' });
             }
         }
-
     </script>
-</body>
+
     <footer class="mt-16 pt-8 border-t border-slate-100 text-center pb-8">
         <p class="text-xs font-medium text-slate-400 tracking-wide">
             We make every byte count. | <a href="http://krunch.sg/" target="_blank" class="text-emerald-500 hover:text-emerald-600 transition-colors font-bold">krunch.sg</a>
         </p>
     </footer>
+</body>
 </html>
