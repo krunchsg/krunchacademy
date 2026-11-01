@@ -346,13 +346,20 @@
                     <div class="space-y-4">
                         <div class="flex items-center space-x-3">
                             <span class="text-brand-500 shrink-0"><i class="fa-solid fa-chevron-right text-xs"></i></span>
-                                <h4 class="text-xs sm:text-sm text-slate-800">Breakdown of essential concepts/skills & questions</h4>
+                                <h4 class="text-xs sm:text-sm text-slate-800">Breakdown of essential concepts and skills</h4>
                         </div>
                         <div class="flex items-center space-x-3">
                             <span class="text-brand-500 shrink-0"><i class="fa-solid fa-chevron-right text-xs"></i></span>
                             <div class="space-y-1">
                                 <h4 class="text-xs sm:text-sm text-slate-800">1 downloadable mock WA with answers per lesson</h4>
                             </div>
+                         <div class="flex items-center space-x-3">
+                            <span class="text-brand-500 shrink-0"><i class="fa-solid fa-chevron-right text-xs"></i></span>
+                                <h4 class="text-xs sm:text-sm text-slate-800">Walkthrough of selected mock WA questions</h4>
+                                <p class="text-[11px] sm:text-xs text-slate-500 leading-relaxed">
+                                    <em>(Students do not attempt the mock WA in class. They may do so after class and submit it for marking.)</em>
+                                </p>
+                        </div>
                         </div>
                     </div>
 
@@ -431,7 +438,7 @@
                         <div class="flex items-center space-x-3">
                             <span class="text-indigo-500 shrink-0"><i class="fa-solid fa-chevron-right text-xs"></i></span>
                             <div class="space-y-1">
-                                <h4 class="text-xs sm:text-sm text-slate-800">Breakdown of answering techniques & misconceptions</h4>
+                                <h4 class="text-xs sm:text-sm text-slate-800">Breakdown of exam strategy and answering techniques</h4>
                             </div>
                         </div>
                         <div class="flex items-center space-x-3">
@@ -439,6 +446,13 @@
                             <div class="space-y-1">
                                 <h4 class="text-xs sm:text-sm text-slate-800">1 downloadable mock exam with answers per lesson</h4>
                             </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-brand-500 shrink-0"><i class="fa-solid fa-chevron-right text-xs"></i></span>
+                                <h4 class="text-xs sm:text-sm text-slate-800">Walkthrough of all mock exam questions</h4>
+                                <p class="text-[11px] sm:text-xs text-slate-500 leading-relaxed">
+                                    <em>(Students do not attempt the mock exam in class. They may do so after class and submit it for marking.)</em>
+                                </p>
                         </div>
                     </div>
 
@@ -645,45 +659,79 @@
 
             </div>
 
-            <!-- Purchase Options -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                                <!-- Option 1: Pay Per Lesson -->
-                <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 flex flex-col justify-between space-y-6">
+            <!-- Purchase Options (3 Distinct Cards) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
+                <!-- Option 1: Pay Per Lesson Set -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 flex flex-col justify-between h-full">
                     <div class="space-y-4">
                         <div>
                             <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">Flexible Option</span>
                         </div>
                         <h3 class="text-lg sm:text-xl font-bold text-brand-900">Pay-Per-Lesson Set</h3>
-                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Pick specific lesson sets to fill in gaps</p>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Pick specific lesson sets to target learning gaps</p>
                         
-                        <div class="flex items-baseline space-x-2">
-                            <span class="text-3xl sm:text-4xl font-extrabold text-slate-900">$160</span>
-                            <span class="text-xs text-slate-400">for all other lesson sets</span>
+                        <div class="space-y-2 pt-2 border-t border-slate-100">
+                            <div class="flex items-baseline justify-between">
+                                <span class="text-xs text-slate-600 font-medium">Content Set 1 (1 lesson):</span>
+                                <span class="text-xl font-extrabold text-slate-900">$80</span>
+                            </div>
+                            <div class="flex items-baseline justify-between">
+                                <span class="text-xs text-slate-600 font-medium">Content Sets 2, 3 & Exam Prep (2 lessons per set):</span>
+                                <span class="text-xl font-extrabold text-slate-900">$160</span>
+                            </div>
                         </div>
                     </div>
-                    <div>
+                    <div class="pt-6">
                         <a href="https://forms.fillout.com/t/qi1biLt81aus" target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-slate-900 hover:bg-slate-800 active:scale-[0.98] text-white font-bold py-3.5 rounded-xl text-xs sm:text-sm transition-all shadow-sm">
                             Enrol now
                         </a>
                     </div>
                 </div>
 
-                <!-- Option 2: Bundle Purchase -->
-                <div class="bg-brand-900 text-white rounded-3xl p-6 shadow-md border border-brand-700 flex flex-col justify-between space-y-6">
+                <!-- Option 2: One-Subject Bundle -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-brand-300 flex flex-col justify-between h-full relative ring-1 ring-brand-500/20">
                     <div class="space-y-4">
-                        <div>
-                            <span class="bg-brand-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">Best Value</span>
+                        <div class="flex items-center justify-between">
+                            <span class="bg-brand-50 text-brand-700 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">Single Subject</span>
                         </div>
-                        <h3 class="text-lg sm:text-xl font-bold">Full History Bundle</h3>
-                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">Register for the bundle of 2 remaining lesson sets (for History only) to unlock extended support</p>
+                        <h3 class="text-lg sm:text-xl font-bold text-brand-900">One-Subject Bundle</h3>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Select Geography <strong>or</strong> History</p>
                         
-                        <div class="flex items-baseline space-x-2">
-                            <span class="text-3xl sm:text-4xl font-extrabold text-brand-500">$300</span>
-                            <span class="text-sm line-through text-slate-400">$320</span>
+                        <div class="space-y-1 pt-2 border-t border-slate-100">
+                            <div class="flex items-baseline space-x-2">
+                                <span class="text-3xl sm:text-4xl font-extrabold text-brand-600">$525</span>
+                                <span class="text-sm line-through text-slate-400">$560</span>
+                            </div>
+                            <p class="text-[11px] text-slate-400">Includes all 4 sets (7 lessons total)</p>
                         </div>
                     </div>
-                    <div>
-                        <a href="https://forms.fillout.com/t/qi1biLt81aus" target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-brand-500 hover:bg-brand-600 active:scale-[0.98] text-white font-bold py-3.5 rounded-xl text-xs sm:text-sm transition-all shadow-sm">
+                    <div class="pt-6">
+                        <a href="https://forms.fillout.com/t/qi1biLt81aus" target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-brand-600 hover:bg-brand-700 active:scale-[0.98] text-white font-bold py-3.5 rounded-xl text-xs sm:text-sm transition-all shadow-sm">
+                            Enrol now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Option 3: Two-Subject Bundle (Waitlist Exclusive) -->
+                <div class="bg-brand-900 text-white rounded-3xl p-6 shadow-md border-2 border-amber-400 flex flex-col justify-between h-full relative overflow-hidden">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-2">
+                            <span class="bg-amber-400/20 text-amber-300 border border-amber-400/40 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">Waitlist Exclusive</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-white">Two-Subject Bundle</h3>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">Includes Geography <strong>and</strong> History</p>
+                        
+                        <div class="space-y-1 pt-2 border-t border-slate-700">
+                            <div class="flex items-baseline space-x-2">
+                                <span class="text-3xl sm:text-4xl font-extrabold text-amber-400">$980</span>
+                                <span class="text-sm line-through text-slate-400">$1,120</span>
+                            </div>
+                            <p class="text-[11px] text-slate-300">Includes all 8 sets (14 lessons total)</p>
+                            <p class="text-[11px] text-amber-200/90 font-medium pt-1">Exclusive offer only for waitlisted parents</p>
+                        </div>
+                    </div>
+                    <div class="pt-6">
+                        <a href="https://forms.fillout.com/t/qi1biLt81aus" target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 active:scale-[0.98] text-slate-950 font-extrabold py-3.5 rounded-xl text-xs sm:text-sm transition-all shadow-md">
                             Enrol now
                         </a>
                     </div>
@@ -698,17 +746,16 @@
                 <i id="terms-icon" class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
             </button>
             <div id="terms-panel" class="hidden space-y-3 text-xs text-slate-600 border-t border-gray-100 pt-3 leading-relaxed">
-                <p>1. Geography and History are sold separately to prevent disappointment should one subject reach full capacity before the other.</p>
-                <p>2. Kindly allow us <strong>1 business day to process registration</strong>. We are unable to provide the Zoom link for a class that runs on the day that you register.</p>
-                <p>3. <strong>All purchases are non-refundable.</strong> Refunds are only allowed if a lesson is rescheduled due to unforeseen circumstances. If you cannot attend the rescheduled lesson, you can opt to watch the recording or obtain a refund. Pay-per-lesson set clients will receive a $80 refund and bundle purchase clients will receive a $75 refund. Materials & the recording will not be provided for the refunded lesson.</p>
-                <p>4. </strong> By registering for this class, you agree to be informed via email about future classes organised by the tutor(s). You are also automatically subscribed to the Krunch mailing list, which you can unsubscribe from at any time. You will only be contacted on your phone number should there be technical issues or unforeseen changes to the class schedule.</p>
+                <p>1. Please allow us <strong>1 business day to process registration</strong>. We are unable to provide the Zoom link for a class that runs on the day that you register.</p>
+                <p>2. <strong>All purchases are non-refundable.</strong> Refunds are only allowed if a lesson is rescheduled due to unforeseen circumstances. If you cannot attend the rescheduled lesson, you can opt to watch the recording or obtain a refund. Pay-per-lesson set / single-subject bundle / two-subject bundle clients will receive a $80 / $75 / $70 refund respectively. Materials & the recording will not be provided for the refunded lesson.</p>
+                <p>3. </strong> By registering for this course, you agree to be informed via email about future courses provided by Krunch. You are also automatically subscribed to the Krunch mailing list, which you can unsubscribe from at any time. You will only be contacted on your phone number should there be technical issues or unforeseen changes to the course schedule.</p>
             </div>
         </section>
 
         <!-- How it works (Timeline) -->
         <section class="space-y-6">
             <h2 class="text-xl sm:text-2xl font-bold text-brand-900 text-center">How It Works</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 <!-- Step 1 -->
                 <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm text-center space-y-2">
                     <span class="w-8 h-8 rounded-full bg-brand-50 text-brand-600 font-extrabold flex items-center justify-center text-xs mx-auto">1</span>
@@ -718,18 +765,12 @@
                 <!-- Step 2 -->
                 <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm text-center space-y-2">
                     <span class="w-8 h-8 rounded-full bg-brand-50 text-brand-600 font-extrabold flex items-center justify-center text-xs mx-auto">2</span>
-                    <h4 class="font-bold text-xs sm:text-sm text-brand-900">Pre-Class Materials</h4>
-                    <p class="text-[11px] sm:text-xs text-slate-500">Notes & mocks are sent at least 1 week before the lesson. There is no need to attempt questions beforehand.</p>
+                    <h4 class="font-bold text-xs sm:text-sm text-brand-900">Materials & Zoom Link</h4>
+                    <p class="text-[11px] sm:text-xs text-slate-500">Pre-class materials (i.e. notes & mocks) and the Zoom link are sent at least 1 week before the lesson. There is no need to attempt questions beforehand. Recordings and any supplementary materials are sent within 3 business days after the lesson.</p>
                 </div>
                 <!-- Step 3 -->
                 <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm text-center space-y-2">
                     <span class="w-8 h-8 rounded-full bg-brand-50 text-brand-600 font-extrabold flex items-center justify-center text-xs mx-auto">3</span>
-                    <h4 class="font-bold text-xs sm:text-sm text-brand-900">Zoom Link</h4>
-                    <p class="text-[11px] sm:text-xs text-slate-500">The Zoom link is sent a few days before each lesson. Recordings and any supplementary materials are sent within 3 business days after the lesson.</p>
-                </div>
-                <!-- Step 4 -->
-                <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm text-center space-y-2">
-                    <span class="w-8 h-8 rounded-full bg-brand-50 text-brand-600 font-extrabold flex items-center justify-center text-xs mx-auto">4</span>
                     <h4 class="font-bold text-xs sm:text-sm text-brand-900">Marking & Q&A</h4>
                     <p class="text-[11px] sm:text-xs text-slate-500">Email us to submit your mocks for marking and/or to ask questions. We will respond within 3 business days.</p>
                 </div>
@@ -760,7 +801,7 @@
                         <i id="faq-icon-2" class="fa-solid fa-chevron-right text-[10px] text-slate-400 transition-transform"></i>
                     </button>
                     <div id="faq-ans-2" class="hidden p-4 text-xs sm:text-sm text-slate-600 border-t border-gray-100 bg-white leading-relaxed">
-                        <strong>Content lessons are limited to 25 students.</strong> This class size facilitates collaborative learning through the exchange of ideas while ensuring meaningful teacher-student interaction for concept and skill development.
+                        <strong>Content lessons do not have a fixed cap.</strong> We will close registration once we reach optimal capacity. This ensures that every cohort remains at a size that allows for collaborative learning and meaningful teacher-student interaction.
                         <br><br>
                         <strong>Exam prep lessons do not have a cap</strong> because lessons are conducted in a seminar-style with Q&A. These lessons are comprehensive walkthroughs that focus on mastering answering techniques and deconstructing exam questions.
                     </div>
@@ -895,7 +936,7 @@
 </body>
     <footer class="mt-16 pt-8 border-t border-slate-100 text-center pb-8">
         <p class="text-xs font-medium text-slate-400 tracking-wide">
-            We make every byte count. | <a href="http://krunch.sg/" target="_blank" class="text-emerald-500 hover:text-emerald-600 transition-colors font-bold">krunch.sg</a>
+           <a href="http://krunchacademy.com/" target="_blank" class="text-emerald-500 hover:text-emerald-600 transition-colors font-bold">Krunch</a> | We make every byte count.
         </p>
     </footer>
 </html>
