@@ -750,20 +750,32 @@
             <div id="terms-panel" class="hidden space-y-3 text-xs text-slate-600 border-t border-gray-100 pt-3 leading-relaxed">
                 <p>1. Please allow us <strong>1 business day to process registration</strong>. We are unable to provide the Zoom link for a class that runs on the day that you register.</p>
                 <p>2. <strong>All purchases are non-refundable.</strong> Refunds are only allowed if a lesson is rescheduled due to unforeseen circumstances. If you cannot attend the rescheduled lesson, you can opt to watch the recording or obtain a refund. Pay-per-lesson set / single-subject bundle / two-subject bundle clients will receive a $80 / $75 / $70 refund respectively. Materials & the recording will not be provided for the refunded lesson.</p>
-                <p>3. By registering for this course, you agree to be informed via email about future courses provided by Krunch. You are also automatically subscribed to the Krunch mailing list, which you can unsubscribe from at any time. You will only be contacted on your phone number should there be technical issues or unforeseen changes to the course schedule.</p>
+                <p>3. </strong> By registering for this course, you agree to be informed via email about future courses provided by Krunch. You are also automatically subscribed to the Krunch mailing list, which you can unsubscribe from at any time. You will only be contacted on your phone number should there be technical issues or unforeseen changes to the course schedule.</p>
             </div>
         </section>
 
-        <!-- How it works Accordion -->
-        <section class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm space-y-3">
-            <button onclick="toggleHowItWorksAccordion()" class="w-full flex justify-between items-center text-left font-bold text-brand-900 text-xs sm:text-sm">
-                <span>📖 How It Works</span>
-                <i id="how-it-works-icon" class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
-            </button>
-            <div id="how-it-works-panel" class="hidden space-y-3 text-xs text-slate-600 border-t border-gray-100 pt-3 leading-relaxed">
-                <p>1. You will receive a confirmation email within 1 business day of successful payment.</p>
-                <p>2. Pre-class materials (i.e. notes & mocks) and the Zoom link are sent at least 1 week before the lesson. Recordings and any supplementary materials are sent within 3 business days after the lesson.</p>
-                <p>3. Email us to submit your mocks for marking and/or to ask questions. We will respond within 3 business days.</p>
+        <!-- How it works (Timeline) -->
+        <section class="space-y-6">
+            <h2 class="text-xl sm:text-2xl font-bold text-brand-900 text-center">How It Works</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <!-- Step 1 -->
+                <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm text-center space-y-2">
+                    <span class="w-8 h-8 rounded-full bg-brand-50 text-brand-600 font-extrabold flex items-center justify-center text-xs mx-auto">1</span>
+                    <h4 class="font-bold text-xs sm:text-sm text-brand-900">Confirmation</h4>
+                    <p class="text-[11px] sm:text-xs text-slate-500">You will receive a confirmation email within 1 business day of successful payment.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm text-center space-y-2">
+                    <span class="w-8 h-8 rounded-full bg-brand-50 text-brand-600 font-extrabold flex items-center justify-center text-xs mx-auto">2</span>
+                    <h4 class="font-bold text-xs sm:text-sm text-brand-900">Materials & Zoom Link</h4>
+                    <p class="text-[11px] sm:text-xs text-slate-500">Pre-class materials (i.e. notes & mocks) and the Zoom link are sent at least 1 week before the lesson. Recordings and any supplementary materials are sent within 3 business days after the lesson.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm text-center space-y-2">
+                    <span class="w-8 h-8 rounded-full bg-brand-50 text-brand-600 font-extrabold flex items-center justify-center text-xs mx-auto">3</span>
+                    <h4 class="font-bold text-xs sm:text-sm text-brand-900">Marking & Q&A</h4>
+                    <p class="text-[11px] sm:text-xs text-slate-500">Email us to submit your mocks for marking and/or to ask questions. We will respond within 3 business days.</p>
+                </div>
             </div>
         </section>
 
@@ -887,19 +899,6 @@
         function toggleAccordion(panelId) {
             const panel = document.getElementById(panelId);
             const icon = document.getElementById('terms-icon');
-            if (panel.classList.contains('hidden')) {
-                panel.classList.remove('hidden');
-                icon.className = "fa-solid fa-chevron-up text-xs text-brand-500 transition-transform";
-            } else {
-                panel.classList.add('hidden');
-                icon.className = "fa-solid fa-chevron-down text-xs text-slate-400 transition-transform";
-            }
-        }
-
-        // How It Works Accordion utility
-        function toggleHowItWorksAccordion() {
-            const panel = document.getElementById('how-it-works-panel');
-            const icon = document.getElementById('how-it-works-icon');
             if (panel.classList.contains('hidden')) {
                 panel.classList.remove('hidden');
                 icon.className = "fa-solid fa-chevron-up text-xs text-brand-500 transition-transform";
