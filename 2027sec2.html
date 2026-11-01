@@ -661,25 +661,36 @@
 
             </div>
 
-            <!-- Purchase Options (3 Distinct Cards) -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
+            <!-- Purchase Options (2 Spacious Columns) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
                 <!-- Option 1: Pay Per Lesson Set -->
-                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 flex flex-col justify-between h-full">
-                    <div class="space-y-4">
-                        <div>
-                            <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">Flexible Option</span>
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 flex flex-col justify-between h-full">
+                    <div class="space-y-5">
+                        <div class="flex items-center justify-between">
+                            <span class="bg-slate-100 text-slate-700 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Flexible Option</span>
                         </div>
-                        <h3 class="text-lg sm:text-xl font-bold text-brand-900">Pay-Per-Lesson Set</h3>
-                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Pick specific lesson sets to target learning gaps</p>
+                        <div>
+                            <h3 class="text-xl sm:text-2xl font-bold text-brand-900">Pay-Per-Lesson Set</h3>
+                            <p class="text-xs sm:text-sm text-slate-500 mt-1 leading-relaxed">Pick specific lesson sets to target learning gaps</p>
+                        </div>
                         
-                        <div class="space-y-2 pt-2 border-t border-slate-100">
-                            <div class="flex items-baseline justify-between">
-                                <span class="text-xs text-slate-600 font-medium">Content Set 1 (1 lesson):</span>
-                                <span class="text-xl font-extrabold text-slate-900">$80</span>
+                        <div class="space-y-3 pt-3 border-t border-slate-100">
+                            <!-- Set 1 Single -->
+                            <div class="bg-slate-50/80 rounded-2xl p-4 border border-slate-100 flex items-baseline justify-between">
+                                <div>
+                                    <h4 class="text-xs sm:text-sm font-bold text-slate-800">Content Set 1</h4>
+                                    <p class="text-[11px] text-slate-500">1 lesson only</p>
+                                </div>
+                                <span class="text-2xl font-extrabold text-slate-900">$80</span>
                             </div>
-                            <div class="flex items-baseline justify-between">
-                                <span class="text-xs text-slate-600 font-medium">Content Sets 2, 3 & Exam Prep (2 lessons per set):</span>
-                                <span class="text-xl font-extrabold text-slate-900">$160</span>
+
+                            <!-- Sets 2, 3 & Exam Prep Pair -->
+                            <div class="bg-slate-50/80 rounded-2xl p-4 border border-slate-100 flex items-baseline justify-between">
+                                <div>
+                                    <h4 class="text-xs sm:text-sm font-bold text-slate-800">Content Sets 2, 3 & Exam Prep Set</h4>
+                                    <p class="text-[11px] text-slate-500">2 lessons per set</p>
+                                </div>
+                                <span class="text-2xl font-extrabold text-slate-900">$160</span>
                             </div>
                         </div>
                     </div>
@@ -690,50 +701,46 @@
                     </div>
                 </div>
 
-                <!-- Option 2: One-Subject Bundle -->
-                <div class="bg-white rounded-3xl p-6 shadow-sm border border-brand-300 flex flex-col justify-between h-full relative ring-1 ring-brand-500/20">
-                    <div class="space-y-4">
+                <!-- Option 2: Subject Bundles (Merged 1 & 2 Subject Options) -->
+                <div class="bg-brand-900 text-white rounded-3xl p-6 sm:p-8 shadow-lg border-2 border-emerald-500/40 flex flex-col justify-between h-full relative overflow-hidden">
+                    <div class="space-y-5">
                         <div class="flex items-center justify-between">
-                            <span class="bg-brand-50 text-brand-700 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">Single Subject</span>
+                            <span class="bg-emerald-400 text-slate-950 text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">Best Value</span>
                         </div>
-                        <h3 class="text-lg sm:text-xl font-bold text-brand-900">One-Subject Bundle</h3>
-                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Select Geography <strong>or</strong> History</p>
+                        <div>
+                            <h3 class="text-xl sm:text-2xl font-bold text-white">Subject Bundles</h3>
+                            <p class="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed">Get comprehensive syllabus coverage and all bundle add-ons</p>
+                        </div>
                         
-                        <div class="space-y-1 pt-2 border-t border-slate-100">
-                            <div class="flex items-baseline space-x-2">
-                                <span class="text-3xl sm:text-4xl font-extrabold text-brand-600">$525</span>
-                                <span class="text-sm line-through text-slate-400">$560</span>
+                        <div class="space-y-3 pt-3 border-t border-slate-800">
+                            <!-- Sub-Option A: One-Subject Bundle -->
+                            <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-4 flex items-center justify-between transition-all hover:border-emerald-500/50">
+                                <div>
+                                    <h4 class="text-xs sm:text-sm font-bold text-white">One-Subject Bundle</h4>
+                                    <p class="text-[11px] text-slate-300 mt-0.5">Select Geography <strong>or</strong> History (4 sets / 7 lessons)</p>
+                                </div>
+                                <div class="text-right shrink-0 pl-3">
+                                    <span class="text-2xl font-extrabold text-emerald-400">$525</span>
+                                    <span class="text-xs line-through text-slate-400 block -mt-0.5">$560</span>
+                                </div>
                             </div>
-                            <p class="text-[11px] text-slate-400">Includes all 4 sets (7 lessons total)</p>
-                        </div>
-                    </div>
-                    <div class="pt-6">
-                        <a href="https://forms.fillout.com/t/qi1biLt81aus" target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-brand-600 hover:bg-brand-700 active:scale-[0.98] text-white font-bold py-3.5 rounded-xl text-xs sm:text-sm transition-all shadow-sm">
-                            Enrol now
-                        </a>
-                    </div>
-                </div>
 
-                <!-- Option 3: Two-Subject Bundle (Waitlist Exclusive) -->
-                <div class="bg-brand-900 text-white rounded-3xl p-6 shadow-md border-2 border-amber-400 flex flex-col justify-between h-full relative overflow-hidden">
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-2">
-                            <span class="bg-amber-400/20 text-amber-300 border border-amber-400/40 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">Waitlist Exclusive</span>
-                        </div>
-                        <h3 class="text-lg sm:text-xl font-bold text-white">Two-Subject Bundle</h3>
-                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">Includes Geography <strong>and</strong> History</p>
-                        
-                        <div class="space-y-1 pt-2 border-t border-slate-700">
-                            <div class="flex items-baseline space-x-2">
-                                <span class="text-3xl sm:text-4xl font-extrabold text-amber-400">$980</span>
-                                <span class="text-sm line-through text-slate-400">$1,120</span>
+                            <!-- Sub-Option B: Two-Subject Bundle -->
+                            <div class="bg-gradient-to-r from-slate-800/90 to-amber-950/40 border border-amber-400/40 rounded-2xl p-4 flex items-center justify-between transition-all hover:border-amber-400/70">
+                                <div>
+                                    <h4 class="text-xs sm:text-sm font-bold text-amber-200">Two-Subject Bundle</h4>
+                                    <p class="text-[11px] text-slate-300 mt-0.5">Geography <strong>and</strong> History (8 sets / 14 lessons)</p>
+                                    <span class="text-[11px] text-amber-300 font-medium block mt-0.5">Exclusive to waitlisted parents</span>
+                                </div>
+                                <div class="text-right shrink-0 pl-3">
+                                    <span class="text-2xl font-extrabold text-amber-400">$980</span>
+                                    <span class="text-xs line-through text-slate-400 block -mt-0.5">$1,120</span>
+                                </div>
                             </div>
-                            <p class="text-[11px] text-slate-300">Includes all 8 sets (14 lessons total)</p>
-                            <p class="text-[11px] text-amber-200/90 font-medium pt-1">Exclusive offer only for waitlisted parents</p>
                         </div>
                     </div>
                     <div class="pt-6">
-                        <a href="https://forms.fillout.com/t/qi1biLt81aus" target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 active:scale-[0.98] text-slate-950 font-extrabold py-3.5 rounded-xl text-xs sm:text-sm transition-all shadow-md">
+                        <a href="https://forms.fillout.com/t/qi1biLt81aus" target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 active:scale-[0.98] text-slate-950 font-extrabold py-3.5 rounded-xl text-xs sm:text-sm transition-all shadow-md">
                             Enrol now
                         </a>
                     </div>
