@@ -756,9 +756,9 @@
 
         <!-- How it works Accordion -->
         <section class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm space-y-3">
-            <button onclick="toggleAccordion('works-panel')" class="w-full flex justify-between items-center text-left font-bold text-brand-900 text-xs sm:text-sm">
+            <button onclick="toggleworkAccordion('works-panel')" class="w-full flex justify-between items-center text-left font-bold text-brand-900 text-xs sm:text-sm">
                 <span>📖 How it works</span>
-                <i id="terms-icon" class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
+                <i id="work-icon" class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
             </button>
             <div id="works-panel" class="hidden space-y-3 text-xs text-slate-600 border-t border-gray-100 pt-3 leading-relaxed">
                 <p>1. You will receive a confirmation email within 1 business day of successful payment.</p>
@@ -883,10 +883,23 @@
             }
         }
 
-        // Accordion utility
+        // Terms accordion utility
         function toggleAccordion(panelId) {
             const panel = document.getElementById(panelId);
             const icon = document.getElementById('terms-icon');
+            if (panel.classList.contains('hidden')) {
+                panel.classList.remove('hidden');
+                icon.className = "fa-solid fa-chevron-up text-xs text-brand-500 transition-transform";
+            } else {
+                panel.classList.add('hidden');
+                icon.className = "fa-solid fa-chevron-down text-xs text-slate-400 transition-transform";
+            }
+        }
+
+        // How it works accordion utility
+        function toggleworkAccordion(panelId) {
+            const panel = document.getElementById(panelId);
+            const icon = document.getElementById('work-icon');
             if (panel.classList.contains('hidden')) {
                 panel.classList.remove('hidden');
                 icon.className = "fa-solid fa-chevron-up text-xs text-brand-500 transition-transform";
